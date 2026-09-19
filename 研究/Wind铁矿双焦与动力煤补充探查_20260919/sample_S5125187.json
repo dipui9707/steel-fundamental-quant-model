@@ -1,0 +1,18 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "S5125187",
+      "observation": "2"
+    },
+    "target_code": "S5125187",
+    "target_name": "中国:秦皇岛港:场存量:煤炭"
+  },
+  "retrieved_at": "2026-09-19T17:26:17+0800",
+  "response": {
+    "ok": false,
+    "code": "backend_error",
+    "message": "账户积分余额不足，无法完成当前操作。请提示用户先进行充值。官网充值链接地址：https://market.windalice.com/#/user/credits"
+  }
+}

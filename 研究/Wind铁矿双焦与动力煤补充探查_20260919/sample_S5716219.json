@@ -1,0 +1,18 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "S5716219",
+      "observation": "2"
+    },
+    "target_code": "S5716219",
+    "target_name": "中国:铁矿石价格指数(62%,FOB)"
+  },
+  "retrieved_at": "2026-09-19T17:26:04+0800",
+  "response": {
+    "ok": false,
+    "code": "backend_error",
+    "message": "账户积分余额不足，无法完成当前操作。请提示用户先进行充值。官网充值链接地址：https://market.windalice.com/#/user/credits"
+  }
+}

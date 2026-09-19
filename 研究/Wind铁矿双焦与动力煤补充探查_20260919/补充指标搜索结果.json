@@ -1,0 +1,519 @@
+{
+  "西澳到青岛 铁矿石 运费": {
+    "query": "西澳到青岛 运费",
+    "count": 0,
+    "metrics": []
+  },
+  "图巴朗到青岛 铁矿石 运费": {
+    "query": "巴西到青岛 运费",
+    "count": 1,
+    "metrics": [
+      {
+        "code": "S0238270",
+        "name": "马士基:航运:平均运费",
+        "unit": "美元/FFE",
+        "source": "上市公司公告",
+        "currency": "美元",
+        "updateDate": "20260728",
+        "beginDate": "20081231",
+        "endDate": "20171231",
+        "freq": "年"
+      }
+    ]
+  },
+  "波罗的海干散货指数 BDI": {
+    "query": "波罗的海干散货指数 BDI",
+    "count": 2,
+    "metrics": [
+      {
+        "code": "S0031550",
+        "name": "波罗的海干散货指数(BDI)",
+        "source": "根据新闻整理",
+        "updateDate": "20260918",
+        "beginDate": "19881019",
+        "endDate": "20260918",
+        "freq": "日"
+      },
+      {
+        "code": "T3549529",
+        "name": "波罗的海货运指数",
+        "source": "根据新闻整理",
+        "updateDate": "20260919",
+        "beginDate": "20191101",
+        "endDate": "20260918",
+        "freq": "周"
+      }
+    ]
+  },
+  "海岬型散货船运价指数 BCI": {
+    "query": "海岬型散货船运价指数 BCI",
+    "count": 2,
+    "metrics": [
+      {
+        "code": "S0031550",
+        "name": "波罗的海干散货指数(BDI)",
+        "source": "根据新闻整理",
+        "updateDate": "20260918",
+        "beginDate": "19881019",
+        "endDate": "20260918",
+        "freq": "日"
+      },
+      {
+        "code": "S0266069",
+        "name": "中国进口干散货运价指数:海岬型船:铁矿石",
+        "unit": "点",
+        "source": "根据新闻整理",
+        "updateDate": "20260918",
+        "beginDate": "20171128",
+        "endDate": "20260918",
+        "freq": "日"
+      }
+    ]
+  },
+  "青岛港 PB粉 现货价格": {
+    "query": "青岛港 PB粉 价格",
+    "count": 2,
+    "metrics": [
+      {
+        "code": "S0174655",
+        "name": "中国:青岛港:车板价:PB粉矿(61.5%,澳大利亚)",
+        "unit": "元/湿吨",
+        "source": "Wind",
+        "currency": "人民币",
+        "updateDate": "20260918",
+        "beginDate": "20110908",
+        "endDate": "20260918",
+        "freq": "日"
+      },
+      {
+        "code": "D6279316",
+        "name": "中国:青岛港:市场价:铁矿石:PB粉(进口,61.5%)",
+        "unit": "元/湿吨",
+        "source": "百川盈孚",
+        "currency": "人民币",
+        "updateDate": "20260918",
+        "beginDate": "20210101",
+        "endDate": "20260918",
+        "freq": "日"
+      }
+    ]
+  },
+  "青岛港 超特粉 价格": {
+    "query": "青岛港 超特粉 价格",
+    "count": 1,
+    "metrics": [
+      {
+        "code": "S0265491",
+        "name": "(停止)中国:青岛港:车板价:超特粉(56.5%,澳大利亚)",
+        "unit": "元/湿吨",
+        "source": "Wind",
+        "currency": "人民币",
+        "updateDate": "20260723",
+        "beginDate": "20151221",
+        "endDate": "20260723",
+        "freq": "日"
+      }
+    ]
+  },
+  "唐山 迁安 铁精粉 价格": {
+    "query": "迁安 铁精粉 价格",
+    "count": 2,
+    "metrics": [
+      {
+        "code": "S0033114",
+        "name": "(停止)中国:迁安:价格(干基含税):铁精粉(66%)",
+        "unit": "元/吨",
+        "source": "Wind",
+        "currency": "人民币",
+        "updateDate": "20260130",
+        "beginDate": "20020319",
+        "endDate": "20230912",
+        "freq": "日"
+      },
+      {
+        "code": "A3695347",
+        "name": "中国:迁安:市场价(湿基不含税):铁精粉(0.66)",
+        "unit": "元/吨",
+        "source": "百川盈孚",
+        "currency": "人民币",
+        "updateDate": "20260919",
+        "beginDate": "20170101",
+        "endDate": "20260919",
+        "freq": "日"
+      }
+    ]
+  },
+  "普氏 铁矿石 62% 指数": {
+    "query": "普氏 铁矿石 62% 指数",
+    "count": 1,
+    "metrics": [
+      {
+        "code": "S5716219",
+        "name": "中国:铁矿石价格指数(62%,FOB)",
+        "unit": "美元/吨",
+        "source": "唐宋钢铁在线监测预警大数据智能平台",
+        "currency": "美元",
+        "updateDate": "20260918",
+        "beginDate": "20190927",
+        "endDate": "20260917",
+        "freq": "日"
+      }
+    ]
+  },
+  "甘其毛都 口岸 蒙煤 通关": {
+    "query": "甘其毛都 蒙煤",
+    "count": 0,
+    "metrics": []
+  },
+  "山西 柳林 主焦煤 价格": {
+    "query": "山西 柳林 主焦煤 价格",
+    "count": 4,
+    "metrics": [
+      {
+        "code": "Z0659454",
+        "name": "中国:车板价(不含税):主焦煤(A11%,V20-22%,S0.5%,G75,淮北矿业产)",
+        "unit": "元/吨",
+        "source": "中国煤炭市场网",
+        "currency": "人民币",
+        "updateDate": "20260911",
+        "beginDate": "20161104",
+        "endDate": "20260901",
+        "freq": "月"
+      },
+      {
+        "code": "T9230290",
+        "name": "中国:车板价:焦精煤(A10%,V28%,S0.4%,G70,龙煤集团产)",
+        "unit": "元/吨",
+        "source": "中国煤炭市场网",
+        "currency": "人民币",
+        "updateDate": "20260911",
+        "beginDate": "20200101",
+        "endDate": "20260901",
+        "freq": "月"
+      },
+      {
+        "code": "Y0092606",
+        "name": "中国:出厂价:焦精煤(A9.5-10%,V26%,S0.8%,G85,冀中能源产)",
+        "unit": "元/吨",
+        "source": "中国煤炭市场网",
+        "currency": "人民币",
+        "updateDate": "20260911",
+        "beginDate": "20200101",
+        "endDate": "20260901",
+        "freq": "月"
+      },
+      {
+        "code": "K5754914",
+        "name": "中国:现货价(FOB):炼焦煤:主焦煤(低挥发,澳大利亚)",
+        "unit": "美元/吨",
+        "source": "根据新闻整理",
+        "currency": "美元",
+        "updateDate": "20260918",
+        "beginDate": "20101001",
+        "endDate": "20260917",
+        "freq": "日"
+      }
+    ]
+  },
+  "澳大利亚 峰景 焦煤 价格": {
+    "query": "峰景 炼焦煤 价格",
+    "count": 1,
+    "metrics": [
+      {
+        "code": "C7866049",
+        "name": "中国:现货价:炼焦煤",
+        "unit": "元/吨",
+        "source": "商务部",
+        "currency": "人民币",
+        "updateDate": "20260916",
+        "beginDate": "20211105",
+        "endDate": "20260911",
+        "freq": "周"
+      }
+    ]
+  },
+  "日照港 准一级 冶金焦 价格": {
+    "query": "日照港 准一级 冶金焦 价格",
+    "count": 3,
+    "metrics": [
+      {
+        "code": "P8829103",
+        "name": "中国:日照港:市场价:冶金焦(准一级,A<13.0%,S<0.7%,Mt:0%,M25>90%,CSR>60%,华北,贸易商)",
+        "unit": "元/吨",
+        "source": "钢之家",
+        "currency": "人民币",
+        "updateDate": "20260918",
+        "beginDate": "20240520",
+        "endDate": "20260918",
+        "freq": "日"
+      },
+      {
+        "code": "S5134898",
+        "name": "中国:日照港:平仓价(含税):冶金焦(准一级,A13,S0.7,CSR60,MT7)",
+        "unit": "元/吨",
+        "source": "Wind",
+        "currency": "人民币",
+        "updateDate": "20260918",
+        "beginDate": "20170613",
+        "endDate": "20260918",
+        "freq": "日"
+      },
+      {
+        "code": "S5132296",
+        "name": "日照港:平均均价:冶金焦(中国产)",
+        "unit": "元/吨",
+        "source": "钢之家",
+        "currency": "人民币",
+        "updateDate": "20260918",
+        "beginDate": "20160104",
+        "endDate": "20260918",
+        "freq": "日"
+      }
+    ]
+  },
+  "全国 吨焦 盈利 利润": {
+    "query": "吨焦 盈利 利润",
+    "count": 1,
+    "metrics": [
+      {
+        "code": "S9985549",
+        "name": "中国:毛利:焦炭",
+        "unit": "元/吨",
+        "source": "百川盈孚",
+        "currency": "人民币",
+        "updateDate": "20260918",
+        "beginDate": "20170106",
+        "endDate": "20260918",
+        "freq": "周"
+      }
+    ]
+  },
+  "秦皇岛港 动力煤 平仓价 Q5500": {
+    "query": "秦皇岛港 动力煤 Q5500",
+    "count": 2,
+    "metrics": [
+      {
+        "code": "S5104572",
+        "name": "中国:秦皇岛港:平仓价:动力煤(Q5500K)",
+        "unit": "元/吨",
+        "source": "秦皇岛煤炭网",
+        "currency": "人民币",
+        "updateDate": "20260916",
+        "beginDate": "20030228",
+        "endDate": "20260916",
+        "freq": "周"
+      },
+      {
+        "code": "S9983507",
+        "name": "中国:秦皇岛:市场价(含税):动力煤(Q5500)",
+        "unit": "元/吨",
+        "source": "百川盈孚",
+        "currency": "人民币",
+        "updateDate": "20260919",
+        "beginDate": "20170101",
+        "endDate": "20260919",
+        "freq": "日"
+      }
+    ]
+  },
+  "鄂尔多斯 动力煤 坑口价": {
+    "query": "鄂尔多斯 动力煤 价格",
+    "count": 1,
+    "metrics": [
+      {
+        "code": "S5133608",
+        "name": "中国:鄂尔多斯:车板价:动力煤(Q5500)",
+        "unit": "元/吨",
+        "source": "中国煤炭市场网",
+        "currency": "人民币",
+        "updateDate": "20260914",
+        "beginDate": "20140930",
+        "endDate": "20260911",
+        "freq": "周"
+      }
+    ]
+  },
+  "秦皇岛港 煤炭 库存": {
+    "query": "秦皇岛港 煤炭 库存",
+    "count": 3,
+    "metrics": [
+      {
+        "code": "S5103725",
+        "name": "中国:秦皇岛港:库存量:煤炭",
+        "unit": "万吨",
+        "source": "秦皇岛煤炭网",
+        "magnitude": "万",
+        "updateDate": "20260919",
+        "beginDate": "20020123",
+        "endDate": "20260919",
+        "freq": "日"
+      },
+      {
+        "code": "S0069694",
+        "name": "中国:秦皇岛港:库存量:煤炭",
+        "unit": "万吨",
+        "source": "Wind",
+        "magnitude": "万",
+        "updateDate": "20260919",
+        "beginDate": "20070729",
+        "endDate": "20260919",
+        "freq": "周"
+      },
+      {
+        "code": "S5125187",
+        "name": "中国:秦皇岛港:场存量:煤炭",
+        "unit": "万吨",
+        "source": "秦皇岛煤炭网",
+        "magnitude": "万",
+        "updateDate": "20260919",
+        "beginDate": "20060601",
+        "endDate": "20260919",
+        "freq": "日"
+      }
+    ]
+  },
+  "环渤海 港口 动力煤 库存": {
+    "query": "环渤海 动力煤 库存",
+    "count": 1,
+    "metrics": [
+      {
+        "code": "D7901707",
+        "name": "仓单数量:动力煤",
+        "unit": "张",
+        "source": "郑州商品交易所",
+        "updateDate": "20260918",
+        "beginDate": "20160421",
+        "endDate": "20260918",
+        "freq": "日"
+      }
+    ]
+  },
+  "沿海八省 电厂 日耗 库存": {
+    "query": "沿海电厂 动力煤 日耗",
+    "count": 4,
+    "metrics": [
+      {
+        "code": "Q0149884",
+        "name": "中国:日耗量:煤炭重点电厂",
+        "unit": "万吨",
+        "source": "根据新闻整理",
+        "magnitude": "万",
+        "updateDate": "20260915",
+        "beginDate": "20220113",
+        "endDate": "20260910",
+        "freq": "周"
+      },
+      {
+        "code": "F1277979",
+        "name": "中国:日耗量:煤炭统调电厂",
+        "unit": "万吨",
+        "source": "根据新闻整理",
+        "magnitude": "万",
+        "updateDate": "20260914",
+        "beginDate": "20220112",
+        "endDate": "20260901",
+        "freq": "周"
+      },
+      {
+        "code": "L9611498",
+        "name": "中国:南方电厂:日耗量:煤炭",
+        "unit": "万吨",
+        "source": "根据新闻整理",
+        "magnitude": "万",
+        "updateDate": "20260916",
+        "beginDate": "20220118",
+        "endDate": "20260914",
+        "freq": "周"
+      },
+      {
+        "code": "W7824334",
+        "name": "中国:日耗量:煤炭:样本区域电厂",
+        "unit": "万吨",
+        "source": "根据新闻整理",
+        "magnitude": "万",
+        "updateDate": "20260916",
+        "beginDate": "20220114",
+        "endDate": "20260911",
+        "freq": "周"
+      }
+    ]
+  },
+  "张家港 废钢 价格 重废": {
+    "query": "张家港 废钢 价格",
+    "count": 1,
+    "metrics": [
+      {
+        "code": "S5712502",
+        "name": "中国:张家港:市场价(不含税):废钢(6-8mm)",
+        "unit": "元/吨",
+        "source": "Wind",
+        "currency": "人民币",
+        "updateDate": "20260918",
+        "beginDate": "20120605",
+        "endDate": "20260918",
+        "freq": "日"
+      }
+    ]
+  },
+  "沙钢 废钢 采购价": {
+    "query": "沙钢 废钢 采购价",
+    "count": 5,
+    "metrics": [
+      {
+        "code": "S9973428",
+        "name": "富宝:中国:价格(13%税):重废(三类,≥6mm):沙钢",
+        "unit": "元/吨",
+        "source": "富宝资讯",
+        "currency": "人民币",
+        "updateDate": "20260919",
+        "beginDate": "20060124",
+        "endDate": "20260919",
+        "freq": "日"
+      },
+      {
+        "code": "S9973429",
+        "name": "富宝:中国:价格(13%税):高炉废钢(一类,φ≥8mm,长度<12cm):沙钢",
+        "unit": "元/吨",
+        "source": "富宝资讯",
+        "currency": "人民币",
+        "updateDate": "20260919",
+        "beginDate": "20190524",
+        "endDate": "20260919",
+        "freq": "日"
+      },
+      {
+        "code": "S9973430",
+        "name": "富宝:中国:价格(13%税):纯净废钢(二类):沙钢",
+        "unit": "元/吨",
+        "source": "富宝资讯",
+        "currency": "人民币",
+        "updateDate": "20260919",
+        "beginDate": "20190524",
+        "endDate": "20260919",
+        "freq": "日"
+      },
+      {
+        "code": "S9973439",
+        "name": "富宝:中国:价格(13%税):中废(一类,≥3mm):沙钢",
+        "unit": "元/吨",
+        "source": "富宝资讯",
+        "currency": "人民币",
+        "updateDate": "20260919",
+        "beginDate": "20140328",
+        "endDate": "20260919",
+        "freq": "日"
+      },
+      {
+        "code": "S9973446",
+        "name": "富宝:中国:价格(13%税):统废(≥1mm):沙钢",
+        "unit": "元/吨",
+        "source": "富宝资讯",
+        "currency": "人民币",
+        "updateDate": "20260919",
+        "beginDate": "20140328",
+        "endDate": "20260919",
+        "freq": "日"
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "D6279316",
+      "observation": "2"
+    },
+    "target_code": "D6279316",
+    "target_name": "中国:青岛港:市场价:铁矿石:PB粉(进口,61.5%)"
+  },
+  "retrieved_at": "2026-09-19T17:26:03+0800",
+  "response": {
+    "ok": false,
+    "code": "backend_error",
+    "message": "账户积分余额不足，无法完成当前操作。请提示用户先进行充值。官网充值链接地址：https://market.windalice.com/#/user/credits"
+  }
+}

@@ -25,6 +25,8 @@ previews/
 .env
 .env.*
 !.env.example
+config/tqsdk_config.json
+!config/tqsdk_config.example.json
 
 # 运行日志
 *.log

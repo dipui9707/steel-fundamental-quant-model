@@ -1,0 +1,5 @@
+{
+  "_comment": "天勤量化 (TqSdk) 凭据配置模板。请复制本文件为 config/tqsdk_config.json 并填入真实的快期账号和密码（在 shinnytech.com 免费注册）。config/tqsdk_config.json 已被 .gitignore 忽略，绝不会提交到代码库。",
+  "tq_user": "YOUR_SHINNYTECH_PHONE_OR_USERNAME",
+  "tq_password": "YOUR_PASSWORD"
+}

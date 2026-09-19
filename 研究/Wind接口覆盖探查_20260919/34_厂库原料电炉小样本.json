@@ -1,0 +1,29 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "L2776415,S9907010,R5003090,U5157465",
+      "beginDate": "2026-09-10",
+      "endDate": "2026-09-18"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:02:13+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"summary\":\"受限指标已剔除：无权限：S9907010\",\"metrics\":[{\"meta\":{\"code\":\"L2776415\",\"name\":\"中国:库存量:热轧板卷:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20200207\",\"endDate\":\"20260918\",\"freq\":\"周\"},\"date\":[\"20260911\",\"20260918\"],\"value\":[66.38,67.25]},{\"meta\":{\"code\":\"R5003090\",\"name\":\"中国:现货领先价格:铁矿石\",\"unit\":\"元/吨\",\"source\":\"Wind\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20231106\",\"endDate\":\"20260918\",\"freq\":\"日\"},\"date\":[\"20260910\",\"20260911\",\"20260914\",\"20260915\",\"20260916\",\"20260917\",\"20260918\"],\"value\":[730,714,710,703,697,691,694]},{\"meta\":{\"code\":\"U5157465\",\"name\":\"中国:唐山:到厂价(含税):冶金焦(二级)\",\"unit\":\"元/吨\",\"source\":\"西本新干线\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20100413\",\"endDate\":\"20260918\",\"freq\":\"日\"},\"date\":[\"20260910\",\"20260911\",\"20260914\",\"20260915\",\"20260916\",\"20260917\",\"20260918\"],\"value\":[2090,2090,2090,2090,2090,2090,2090]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

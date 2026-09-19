@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国空调库存量"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:10:45+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "没有搜索到指标，中国空调库存量"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

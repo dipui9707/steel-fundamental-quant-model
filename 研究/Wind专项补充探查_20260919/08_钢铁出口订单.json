@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国钢铁行业PMI新出口订单指数"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:08:58+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S5708126\",\"name\":\"中国:钢铁行业采购经理人指数(PMI)\",\"unit\":\"%\",\"source\":\"根据新闻整理\",\"updateDate\":\"20260701\",\"beginDate\":\"20080131\",\"endDate\":\"20260630\",\"freq\":\"月\"},{\"code\":\"M6425937\",\"name\":\"中国:钢铁PMI\",\"unit\":\"%\",\"source\":\"中国物流与采购联合会\",\"updateDate\":\"20260630\",\"beginDate\":\"20120331\",\"endDate\":\"20260630\",\"freq\":\"月\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

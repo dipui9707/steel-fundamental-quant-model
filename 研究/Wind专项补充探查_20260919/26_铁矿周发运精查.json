@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "澳大利亚巴西铁矿石发运量周度"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:11:15+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S5713343\",\"name\":\"澳大利亚:发货量:铁矿石:力拓\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260915\",\"beginDate\":\"20140202\",\"endDate\":\"20260913\",\"freq\":\"周\"},{\"code\":\"S5713345\",\"name\":\"澳大利亚:发货量:铁矿石:芬兰矿业集团(FMG)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260915\",\"beginDate\":\"20140202\",\"endDate\":\"20260913\",\"freq\":\"周\"},{\"code\":\"S5713344\",\"name\":\"澳大利亚:发货量:铁矿石:必和必拓\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260915\",\"beginDate\":\"20140202\",\"endDate\":\"20260913\",\"freq\":\"周\"},{\"code\":\"S5708284\",\"name\":\"巴西:发货量:铁矿石:淡水河谷子公司(CPBS)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260915\",\"beginDate\":\"20100707\",\"endDate\":\"20260913\",\"freq\":\"周\"},{\"code\":\"S5708286\",\"name\":\"巴西:发货量:铁矿石:国民钢铁公司(CSN Terminal)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260915\",\"beginDate\":\"20100707\",\"endDate\":\"20260913\",\"freq\":\"周\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

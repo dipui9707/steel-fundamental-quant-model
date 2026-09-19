@@ -1,0 +1,29 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "S9906513,S9906537,S9906486,A5167175,O6193552",
+      "beginDate": "2026-09-10",
+      "endDate": "2026-09-18"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:12:28+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "受限指标已剔除：无权限：S9906513,S9906537,S9906486,A5167175,O6193552"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

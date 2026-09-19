@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国独立焦化企业焦炭日均产量 产能利用率"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:09:43+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S5133408\",\"name\":\"中国:生产率:焦炉:国内独立焦化厂(230家)\",\"unit\":\"%\",\"source\":\"Wind\",\"updateDate\":\"20260918\",\"beginDate\":\"20160701\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"S5133399\",\"name\":\"中国:生产率:焦炉:产能(>200万吨):国内独立焦化厂(230家)\",\"unit\":\"%\",\"source\":\"Wind\",\"updateDate\":\"20260918\",\"beginDate\":\"20160805\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"M6403966\",\"name\":\"中国:产量:焦炭\",\"unit\":\"万吨\",\"source\":\"国家统计局\",\"magnitude\":\"万\",\"updateDate\":\"20240808\",\"beginDate\":\"19981231\",\"endDate\":\"20231231\",\"freq\":\"年\"},{\"code\":\"S5133390\",\"name\":\"中国:开工率:产能(100-200万吨):焦化企业(230家)\",\"unit\":\"%\",\"source\":\"Wind\",\"updateDate\":\"20260918\",\"beginDate\":\"20160722\",\"endDate\":\"20260918\",\"freq\":\"周\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "废钢日耗"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:10:22+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S9906486\",\"name\":\"富宝:中国:日耗量:废钢:147家钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20170714\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"S9906512\",\"name\":\"富宝:中国:日耗量:废钢:70家长流程钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20170714\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"S9906511\",\"name\":\"富宝:中国:日耗量:废钢:49家短流程钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20170714\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"Y5540896\",\"name\":\"富宝:中国:日耗量:废钢:255家钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20210107\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"T5561179\",\"name\":\"富宝:中国:日耗量:废钢:89家短流程钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20210107\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"H8445925\",\"name\":\"富宝:中国:日耗量:废钢:29家全流程钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20210107\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"O6193552\",\"name\":\"富宝:中国:日耗量:废钢:320家钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20230105\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"H5782286\",\"name\":\"富宝:中国:日耗量:废钢:35家全流程钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20230105\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"F5323933\",\"name\":\"富宝:中国:消耗量:废钢\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260701\",\"beginDate\":\"20211231\",\"endDate\":\"20251231\",\"freq\":\"年\"},{\"code\":\"C9679548\",\"name\":\"韩国:使用量:废钢\",\"unit\":\"千吨\",\"source\":\"韩国环境部\",\"magnitude\":\"千\",\"updateDate\":\"20250729\",\"beginDate\":\"20101231\",\"endDate\":\"20231231\",\"freq\":\"年\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

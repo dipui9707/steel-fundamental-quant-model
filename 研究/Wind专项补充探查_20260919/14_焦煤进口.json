@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国炼焦煤进口数量"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:09:22+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"A3008498\",\"name\":\"中国:进口数量:炼焦煤(27011210)\",\"unit\":\"千克\",\"source\":\"海关统计数据平台\",\"updateDate\":\"20260820\",\"beginDate\":\"19950131\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S5102163\",\"name\":\"中国:进口数量:炼焦煤\",\"unit\":\"万吨\",\"source\":\"海关总署\",\"magnitude\":\"万\",\"updateDate\":\"20210421\",\"beginDate\":\"20041231\",\"endDate\":\"20141231\",\"freq\":\"年\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

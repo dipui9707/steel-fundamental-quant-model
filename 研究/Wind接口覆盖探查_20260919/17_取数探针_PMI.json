@@ -1,0 +1,28 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "M0017126",
+      "observation": "3"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:00:08+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"meta\":{\"code\":\"M0017126\",\"name\":\"中国:制造业PMI\",\"unit\":\"%\",\"source\":\"国家统计局\",\"updateDate\":\"20260831\",\"beginDate\":\"20050131\",\"endDate\":\"20260831\",\"freq\":\"月\"},\"date\":[\"20260630\",\"20260731\",\"20260831\"],\"value\":[50.3,49.2,49.8]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

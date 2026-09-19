@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国独立电弧炉钢厂开工率、产能利用率、废钢到货量"
+    }
+  },
+  "retrieved_at": "2026-09-19T15:58:39+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S5715660\",\"name\":\"中国:产能利用率:电炉\",\"unit\":\"%\",\"source\":\"中国联合钢铁网\",\"updateDate\":\"20260918\",\"beginDate\":\"20171208\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"S5715672\",\"name\":\"中国:产能利用率:电炉(短流程钢厂)\",\"unit\":\"%\",\"source\":\"中国联合钢铁网\",\"updateDate\":\"20260918\",\"beginDate\":\"20171222\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"S5715670\",\"name\":\"中国:开工率:电炉(短流程钢厂)\",\"unit\":\"%\",\"source\":\"中国联合钢铁网\",\"updateDate\":\"20260918\",\"beginDate\":\"20171222\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"X8156879\",\"name\":\"富宝:中国:到货量:废钢:117家独立电炉厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20230103\",\"endDate\":\"20260918\",\"freq\":\"日\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国螺纹钢社会库存、钢厂库存、表观消费量、建筑钢材每日成交量"
+    }
+  },
+  "retrieved_at": "2026-09-19T15:58:57+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S0181750\",\"name\":\"中国:库存量:螺纹钢(含上海全部仓库)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20100521\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"H6924748\",\"name\":\"中国:社会库存量:螺纹钢\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20200120\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"S0066721\",\"name\":\"中国:库存量:钢筋\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260902\",\"beginDate\":\"20050131\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S0066723\",\"name\":\"中国:库存量:带肋\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260902\",\"beginDate\":\"20050131\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S9985710\",\"name\":\"中国:市场库存量:螺纹钢\",\"unit\":\"吨\",\"source\":\"百川盈孚\",\"updateDate\":\"20260918\",\"beginDate\":\"20170106\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"A5938607\",\"name\":\"中国:表观需求量:螺纹钢\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20150807\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"S9987649\",\"name\":\"中国:表观消费量:螺纹钢\",\"unit\":\"吨\",\"source\":\"百川盈孚\",\"updateDate\":\"20260822\",\"beginDate\":\"20170131\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S9989196\",\"name\":\"中国:表观消费量:螺纹钢\",\"unit\":\"吨\",\"source\":\"百川盈孚\",\"updateDate\":\"20260202\",\"beginDate\":\"20171231\",\"endDate\":\"20251231\",\"freq\":\"年\"},{\"code\":\"X4173142\",\"name\":\"中国:成交量:建筑钢材\",\"unit\":\"吨\",\"source\":\"Wind\",\"updateDate\":\"20260918\",\"beginDate\":\"20230208\",\"endDate\":\"20260918\",\"freq\":\"日\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

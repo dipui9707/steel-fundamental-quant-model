@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国焦炭表观消费量"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:09:54+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S5118228\",\"name\":\"中国:表观消费量:焦炭\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260820\",\"beginDate\":\"19950131\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S9989157\",\"name\":\"中国:表观消费量:焦炭\",\"unit\":\"吨\",\"source\":\"百川盈孚\",\"updateDate\":\"20260202\",\"beginDate\":\"20171231\",\"endDate\":\"20251231\",\"freq\":\"年\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

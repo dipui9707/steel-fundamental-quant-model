@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国产量焦炭当月值"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:11:38+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S0026997\",\"name\":\"中国:产量:焦炭:当月值\",\"unit\":\"万吨\",\"source\":\"国家统计局\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"19900131\",\"endDate\":\"20260831\",\"freq\":\"月\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

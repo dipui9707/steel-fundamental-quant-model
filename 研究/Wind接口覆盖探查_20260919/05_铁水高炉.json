@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国247家钢厂日均铁水产量、高炉开工率、高炉炼铁产能利用率"
+    }
+  },
+  "retrieved_at": "2026-09-19T15:58:30+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"C1925068\",\"name\":\"中国:高炉开工率(247家)\",\"unit\":\"%\",\"source\":\"Wind\",\"updateDate\":\"20260918\",\"beginDate\":\"20180302\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"Y6907796\",\"name\":\"中国:日均产量(247家):铁水\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20180302\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"O2244511\",\"name\":\"中国:高炉炼铁产能利用率(247家)\",\"unit\":\"%\",\"source\":\"Wind\",\"updateDate\":\"20260918\",\"beginDate\":\"20180302\",\"endDate\":\"20260918\",\"freq\":\"周\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

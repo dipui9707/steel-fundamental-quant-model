@@ -1,0 +1,29 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "S5713285,S5118222,S5713343,S5713344,S5713345,S5708284,S5708286",
+      "beginDate": "2026-09-10",
+      "endDate": "2026-09-18"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:12:21+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"meta\":{\"code\":\"S5713285\",\"name\":\"中国:主要45港口:日均疏港量:铁矿石\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20151225\",\"endDate\":\"20260918\",\"freq\":\"周\"},\"date\":[\"20260911\",\"20260918\"],\"value\":[345.01,335.81]},{\"meta\":{\"code\":\"S5118222\",\"name\":\"中国:平均库存可用天数:进口铁矿石:大中型钢厂\",\"unit\":\"天\",\"source\":\"Wind\",\"updateDate\":\"20260917\",\"beginDate\":\"20110819\",\"endDate\":\"20260916\",\"freq\":\"周\"},\"date\":[\"20260916\"],\"value\":[24]},{\"meta\":{\"code\":\"S5713343\",\"name\":\"澳大利亚:发货量:铁矿石:力拓\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260915\",\"beginDate\":\"20140202\",\"endDate\":\"20260913\",\"freq\":\"周\"},\"date\":[\"20260913\"],\"value\":[566.7]},{\"meta\":{\"code\":\"S5713344\",\"name\":\"澳大利亚:发货量:铁矿石:必和必拓\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260915\",\"beginDate\":\"20140202\",\"endDate\":\"20260913\",\"freq\":\"周\"},\"date\":[\"20260913\"],\"value\":[422.2]},{\"meta\":{\"code\":\"S5713345\",\"name\":\"澳大利亚:发货量:铁矿石:芬兰矿业集团(FMG)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260915\",\"beginDate\":\"20140202\",\"endDate\":\"20260913\",\"freq\":\"周\"},\"date\":[\"20260913\"],\"value\":[366.6]},{\"meta\":{\"code\":\"S5708284\",\"name\":\"巴西:发货量:铁矿石:淡水河谷子公司(CPBS)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260915\",\"beginDate\":\"20100707\",\"endDate\":\"20260913\",\"freq\":\"周\"},\"date\":[\"20260913\"],\"value\":[44.59]},{\"meta\":{\"code\":\"S5708286\",\"name\":\"巴西:发货量:铁矿石:国民钢铁公司(CSN Terminal)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260915\",\"beginDate\":\"20100707\",\"endDate\":\"20260913\",\"freq\":\"周\"},\"date\":[\"20260913\"],\"value\":[37.3]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

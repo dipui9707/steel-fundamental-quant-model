@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国手持船舶订单量"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:08:55+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S6000012\",\"name\":\"中国:手持船舶订单量\",\"unit\":\"万载重吨\",\"source\":\"中华人民共和国工业和信息化部\",\"magnitude\":\"万\",\"updateDate\":\"20260429\",\"beginDate\":\"20021231\",\"endDate\":\"20251231\",\"freq\":\"年\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

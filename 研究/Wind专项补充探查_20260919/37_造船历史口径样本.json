@@ -1,0 +1,29 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "S6000031,S6000029,S6000012",
+      "beginDate": "2025-12-01",
+      "endDate": "2025-12-31"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:12:27+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"meta\":{\"code\":\"S6000031\",\"name\":\"中国:新接船舶订单量:累计值\",\"unit\":\"万载重吨\",\"source\":\"中华人民共和国工业和信息化部\",\"magnitude\":\"万\",\"updateDate\":\"20260429\",\"beginDate\":\"20080229\",\"endDate\":\"20251231\",\"freq\":\"月\"},\"date\":[\"20251231\"],\"value\":[10782]},{\"meta\":{\"code\":\"S6000029\",\"name\":\"中国:造船完工量:累计值\",\"unit\":\"万载重吨\",\"source\":\"中华人民共和国工业和信息化部\",\"magnitude\":\"万\",\"updateDate\":\"20260429\",\"beginDate\":\"20080229\",\"endDate\":\"20251231\",\"freq\":\"月\"},\"date\":[\"20251231\"],\"value\":[5369]},{\"meta\":{\"code\":\"S6000012\",\"name\":\"中国:手持船舶订单量\",\"unit\":\"万载重吨\",\"source\":\"中华人民共和国工业和信息化部\",\"magnitude\":\"万\",\"updateDate\":\"20260429\",\"beginDate\":\"20021231\",\"endDate\":\"20251231\",\"freq\":\"年\"},\"date\":[\"20251231\"],\"value\":[27442]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

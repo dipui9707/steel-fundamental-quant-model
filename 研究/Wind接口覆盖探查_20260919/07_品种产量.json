@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国螺纹钢周度产量、热轧板卷周度产量"
+    }
+  },
+  "retrieved_at": "2026-09-19T15:58:46+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S5713307\",\"name\":\"中国:产量:螺纹钢:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20150227\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"P5075301\",\"name\":\"中国:产量:热轧板卷:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20200207\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"Q0185200\",\"name\":\"富宝:中国:产量:热轧带钢\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20220225\",\"endDate\":\"20260917\",\"freq\":\"周\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

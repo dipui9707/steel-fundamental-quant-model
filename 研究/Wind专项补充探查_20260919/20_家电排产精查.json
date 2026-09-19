@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "产业在线 空调 排产"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:10:31+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S0028202\",\"name\":\"中国:产量:空调:当月值\",\"unit\":\"万台\",\"source\":\"国家统计局\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"19900131\",\"endDate\":\"20260831\",\"freq\":\"月\"},{\"code\":\"S0028426\",\"name\":\"中国:产量:空调:累计值\",\"unit\":\"万台\",\"source\":\"国家统计局\",\"magnitude\":\"万\",\"updateDate\":\"20260720\",\"beginDate\":\"19900331\",\"endDate\":\"20260630\",\"freq\":\"季\"},{\"code\":\"M6404009\",\"name\":\"中国:产量:空调\",\"unit\":\"万台\",\"source\":\"国家统计局\",\"magnitude\":\"万\",\"updateDate\":\"20260527\",\"beginDate\":\"19981231\",\"endDate\":\"20251231\",\"freq\":\"年\"},{\"code\":\"M6458608\",\"name\":\"中国:产量:房间空气调节器\",\"unit\":\"万台\",\"source\":\"国家统计局\",\"magnitude\":\"万\",\"updateDate\":\"20241230\",\"beginDate\":\"20041231\",\"endDate\":\"20231231\",\"freq\":\"年\"},{\"code\":\"G2600513\",\"name\":\"巴基斯坦:产量:空调:当月值\",\"unit\":\"台\",\"source\":\"巴基斯坦统计局\",\"updateDate\":\"20260916\",\"beginDate\":\"20110131\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S0243463\",\"name\":\"春兰股份:产量:空调\",\"unit\":\"万台\",\"source\":\"上市公司公告\",\"magnitude\":\"万\",\"updateDate\":\"20260720\",\"beginDate\":\"20111231\",\"endDate\":\"20251231\",\"freq\":\"年\"},{\"code\":\"G0704632\",\"name\":\"马来西亚:产量:工业产品:房间空调器\",\"unit\":\"个\",\"source\":\"马来西亚央行\",\"updateDate\":\"20240329\",\"beginDate\":\"19891231\",\"endDate\":\"20231231\",\"freq\":\"年\"},{\"code\":\"J5674252\",\"name\":\"日本:生产数量:分体式空调\",\"unit\":\"台\",\"source\":\"日本电机工业协会\",\"updateDate\":\"20260915\",\"beginDate\":\"20230131\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"V5530957\",\"name\":\"日本:生产数量:分体式空调\",\"unit\":\"台\",\"source\":\"日本电机工业协会\",\"updateDate\":\"20260420\",\"beginDate\":\"19901231\",\"endDate\":\"20241231\",\"freq\":\"年\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

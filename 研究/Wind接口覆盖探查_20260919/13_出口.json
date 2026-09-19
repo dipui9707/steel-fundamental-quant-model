@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国钢材出口数量当月值、热轧板卷出口数量、热轧板卷出口订单、热卷出口FOB报价"
+    }
+  },
+  "retrieved_at": "2026-09-19T15:59:41+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S0060268\",\"name\":\"中国:出口数量:热轧薄板\",\"unit\":\"吨\",\"source\":\"海关总署\",\"updateDate\":\"20260820\",\"beginDate\":\"20040131\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S0060269\",\"name\":\"中国:出口数量:热轧普薄板\",\"unit\":\"吨\",\"source\":\"海关总署\",\"updateDate\":\"20260820\",\"beginDate\":\"20040131\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S0060246\",\"name\":\"中国:出口数量:热轧普中板\",\"unit\":\"吨\",\"source\":\"海关总署\",\"updateDate\":\"20260821\",\"beginDate\":\"20040131\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S0060245\",\"name\":\"中国:出口数量:热轧中板\",\"unit\":\"吨\",\"source\":\"海关总署\",\"updateDate\":\"20260820\",\"beginDate\":\"20040131\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S0060692\",\"name\":\"中国:出口金额:热轧薄板\",\"unit\":\"亿美元\",\"source\":\"海关总署\",\"magnitude\":\"亿\",\"currency\":\"美元\",\"updateDate\":\"20260820\",\"beginDate\":\"20040131\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S0027493\",\"name\":\"中国:出口数量:钢材:当月值\",\"unit\":\"万吨\",\"source\":\"海关总署\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20030731\",\"endDate\":\"20260831\",\"freq\":\"月\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

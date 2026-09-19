@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国社会融资规模增量、社会融资规模存量同比、M1同比、M2同比"
+    }
+  },
+  "retrieved_at": "2026-09-19T15:58:04+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"M0001385\",\"name\":\"中国:M2:同比\",\"unit\":\"%\",\"source\":\"中国人民银行\",\"updateDate\":\"20260914\",\"beginDate\":\"19861231\",\"endDate\":\"20260831\",\"freq\":\"月\"},{\"code\":\"M0001383\",\"name\":\"中国:M1:同比\",\"unit\":\"%\",\"source\":\"中国人民银行\",\"updateDate\":\"20260914\",\"beginDate\":\"19861231\",\"endDate\":\"20260831\",\"freq\":\"月\"},{\"code\":\"M5206730\",\"name\":\"中国:社会融资规模:当月值\",\"unit\":\"亿元\",\"source\":\"中国人民银行\",\"magnitude\":\"亿\",\"currency\":\"人民币\",\"updateDate\":\"20260914\",\"beginDate\":\"20020131\",\"endDate\":\"20260831\",\"freq\":\"月\"},{\"code\":\"M5201607\",\"name\":\"中国:社会融资规模\",\"unit\":\"亿元\",\"source\":\"中国人民银行\",\"magnitude\":\"亿\",\"currency\":\"人民币\",\"updateDate\":\"20260508\",\"beginDate\":\"20021231\",\"endDate\":\"20251231\",\"freq\":\"年\"},{\"code\":\"M5525763\",\"name\":\"中国:社会融资规模存量:同比\",\"unit\":\"%\",\"source\":\"中国人民银行\",\"updateDate\":\"20260914\",\"beginDate\":\"20031231\",\"endDate\":\"20260831\",\"freq\":\"月\"},{\"code\":\"M5525755\",\"name\":\"中国:社会融资规模存量\",\"unit\":\"万亿元\",\"source\":\"中国人民银行\",\"magnitude\":\"万亿\",\"currency\":\"人民币\",\"updateDate\":\"20260914\",\"beginDate\":\"20021231\",\"endDate\":\"20260831\",\"freq\":\"月\"},{\"code\":\"M5522880\",\"name\":\"中国:社会融资规模存量\",\"unit\":\"亿元\",\"source\":\"中国人民银行\",\"magnitude\":\"亿\",\"currency\":\"人民币\",\"updateDate\":\"20260115\",\"beginDate\":\"20021231\",\"endDate\":\"20251231\",\"freq\":\"年\"},{\"code\":\"M5522881\",\"name\":\"中国:社会融资规模存量:同比\",\"unit\":\"%\",\"source\":\"中国人民银行\",\"updateDate\":\"20260115\",\"beginDate\":\"20031231\",\"endDate\":\"20251231\",\"freq\":\"年\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

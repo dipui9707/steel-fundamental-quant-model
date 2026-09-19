@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国焦炭库存量 焦化厂 钢厂 港口"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:09:53+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S5133852\",\"name\":\"中国:库存量:焦炭:国内样本钢厂(247家)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20170421\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"S9985905\",\"name\":\"中国:工厂库存量:焦炭\",\"unit\":\"吨\",\"source\":\"百川盈孚\",\"updateDate\":\"20260918\",\"beginDate\":\"20170106\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"S5133392\",\"name\":\"中国:库存量:焦炭:产能(<100万吨):焦化企业(230家)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20160722\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"S5716616\",\"name\":\"中国:主要港口:库存量:焦炭\",\"unit\":\"万吨\",\"source\":\"根据新闻整理\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20110401\",\"endDate\":\"20260918\",\"freq\":\"周\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

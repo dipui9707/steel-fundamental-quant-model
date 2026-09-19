@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "上海螺纹钢HRB400 20mm现货价格、上海热轧板卷4.75mm现货价格"
+    }
+  },
+  "retrieved_at": "2026-09-19T15:59:22+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S0033227\",\"name\":\"中国:上海:价格:螺纹钢(HRB400E,20mm)\",\"unit\":\"元/吨\",\"source\":\"Wind\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20070108\",\"endDate\":\"20260918\",\"freq\":\"日\"},{\"code\":\"S0033272\",\"name\":\"中国:上海:价格:热轧板卷(Q235B,4.75mm)\",\"unit\":\"元/吨\",\"source\":\"Wind\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20041029\",\"endDate\":\"20260918\",\"freq\":\"日\"},{\"code\":\"S5707471\",\"name\":\"中国:上海:价格:热轧板卷(Q235B,2.75mm):沙钢\",\"unit\":\"元/吨\",\"source\":\"钢之家\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20110328\",\"endDate\":\"20260918\",\"freq\":\"日\"},{\"code\":\"S5707467\",\"name\":\"中国:上海:价格:热轧板卷(Q235B,1.8mm):涟钢\",\"unit\":\"元/吨\",\"source\":\"Wind\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20110328\",\"endDate\":\"20260918\",\"freq\":\"日\"},{\"code\":\"S9979142\",\"name\":\"中国:上海:市场价:螺纹钢(HRB400,Φ16-25mm)\",\"unit\":\"元/吨\",\"source\":\"百川盈孚\",\"currency\":\"人民币\",\"updateDate\":\"20260919\",\"beginDate\":\"20170101\",\"endDate\":\"20260919\",\"freq\":\"日\"},{\"code\":\"O5168297\",\"name\":\"中国:上海:市场价:螺纹钢(HRB400,Φ16mm)\",\"unit\":\"元/吨\",\"source\":\"根据新闻整理\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20200214\",\"endDate\":\"20260918\",\"freq\":\"周\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

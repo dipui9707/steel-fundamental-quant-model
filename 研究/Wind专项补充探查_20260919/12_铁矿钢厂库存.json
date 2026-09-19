@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国钢厂进口铁矿石库存可用天数"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:09:20+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S5118222\",\"name\":\"中国:平均库存可用天数:进口铁矿石:大中型钢厂\",\"unit\":\"天\",\"source\":\"Wind\",\"updateDate\":\"20260917\",\"beginDate\":\"20110819\",\"endDate\":\"20260916\",\"freq\":\"周\"},{\"code\":\"S5716160\",\"name\":\"中国:平均可用天数:进口矿\",\"unit\":\"天\",\"source\":\"Wind\",\"updateDate\":\"20260917\",\"beginDate\":\"20140103\",\"endDate\":\"20260916\",\"freq\":\"日\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

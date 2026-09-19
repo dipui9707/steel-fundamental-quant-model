@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国炼焦煤产量"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:09:21+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S9989109\",\"name\":\"中国:产量:炼焦煤\",\"unit\":\"吨\",\"source\":\"百川盈孚\",\"updateDate\":\"20260217\",\"beginDate\":\"20171231\",\"endDate\":\"20251231\",\"freq\":\"年\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

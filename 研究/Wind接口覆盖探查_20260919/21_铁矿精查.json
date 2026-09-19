@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "青岛港PB粉61.5%铁矿石现货价格"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:01:02+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"R5003090\",\"name\":\"中国:现货领先价格:铁矿石\",\"unit\":\"元/吨\",\"source\":\"Wind\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20231106\",\"endDate\":\"20260918\",\"freq\":\"日\"},{\"code\":\"S9979214\",\"name\":\"中国:参考价:铁矿石\",\"unit\":\"元/吨\",\"source\":\"百川盈孚\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20170103\",\"endDate\":\"20260918\",\"freq\":\"日\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

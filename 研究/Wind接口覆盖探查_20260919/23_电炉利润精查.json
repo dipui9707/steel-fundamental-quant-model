@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "螺纹钢电炉短流程利润"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:01:16+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S9907010\",\"name\":\"富宝:中国:华东:吨钢利润:螺纹(独立电炉)\",\"unit\":\"元/吨\",\"source\":\"富宝资讯\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20170814\",\"endDate\":\"20260918\",\"freq\":\"日\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

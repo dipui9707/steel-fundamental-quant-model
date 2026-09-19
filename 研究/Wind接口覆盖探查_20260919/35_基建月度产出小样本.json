@@ -1,0 +1,29 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "F0540563,M5440435,S0027370,S0027378",
+      "beginDate": "2026-08-01",
+      "endDate": "2026-08-31"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:02:13+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"meta\":{\"code\":\"F0540563\",\"name\":\"中国:固定资产投资完成额:基础设施建设:累计同比\",\"unit\":\"%\",\"source\":\"国家统计局\",\"updateDate\":\"20260915\",\"beginDate\":\"20040229\",\"endDate\":\"20260831\",\"freq\":\"月\"},\"date\":[\"20260831\"],\"value\":[-4]},{\"meta\":{\"code\":\"M5440435\",\"name\":\"中国:固定资产投资完成额:基础设施建设(Wind衍生计算):累计同比\",\"unit\":\"%\",\"source\":\"Wind\",\"updateDate\":\"20260915\",\"beginDate\":\"20040229\",\"endDate\":\"20260831\",\"freq\":\"月\"},\"date\":[\"20260831\"],\"value\":[-5.37]},{\"meta\":{\"code\":\"S0027370\",\"name\":\"中国:产量:生铁:当月值\",\"unit\":\"万吨\",\"source\":\"国家统计局\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"19890228\",\"endDate\":\"20260831\",\"freq\":\"月\"},\"date\":[\"20260831\"],\"value\":[6765.4]},{\"meta\":{\"code\":\"S0027378\",\"name\":\"中国:产量:钢材:当月值\",\"unit\":\"万吨\",\"source\":\"国家统计局\",\"magnitude\":\"万\",\"updateDate\":\"20260915\",\"beginDate\":\"19890228\",\"endDate\":\"20260831\",\"freq\":\"月\"},\"date\":[\"20260831\"],\"value\":[11475]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

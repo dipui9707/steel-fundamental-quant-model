@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国热轧卷板出口订单指数"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:01:26+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"M5527688\",\"name\":\"中国:企业家问卷调查:出口订单指数\",\"unit\":\"%\",\"source\":\"中国人民银行\",\"updateDate\":\"20260127\",\"beginDate\":\"20080331\",\"endDate\":\"20251231\",\"freq\":\"季\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

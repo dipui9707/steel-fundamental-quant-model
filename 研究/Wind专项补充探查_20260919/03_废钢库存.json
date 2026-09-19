@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国钢厂废钢库存量 废钢库存可用天数"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:08:43+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S9906537\",\"name\":\"富宝:中国:库存量:废钢:147家钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20170714\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"N6395009\",\"name\":\"富宝:中国:库存量:废钢:255家钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20210107\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"S9907004\",\"name\":\"富宝:中国:库存量:废钢:70家长流程钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20170714\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"S9907005\",\"name\":\"富宝:中国:库存量:废钢:49家短流程钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20180601\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"Q2515679\",\"name\":\"富宝:中国:库存量:废钢:89家短流程钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20210107\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"H0339151\",\"name\":\"富宝:中国:库存量:废钢:29家全流程钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20210107\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"A5167175\",\"name\":\"富宝:中国:库存量:废钢:320家钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20230105\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"A5613269\",\"name\":\"富宝:中国:库存量:废钢:35家全流程钢厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20230105\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"P8764428\",\"name\":\"富宝:中国:库存量:废钢:117家独立电炉厂\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20230105\",\"endDate\":\"20260917\",\"freq\":\"周\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

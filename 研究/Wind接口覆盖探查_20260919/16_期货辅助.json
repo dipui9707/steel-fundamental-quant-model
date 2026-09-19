@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "螺纹钢期货主力合约收盘价、成交量、持仓量、螺纹钢基差、热轧卷板期货主力合约收盘价"
+    }
+  },
+  "retrieved_at": "2026-09-19T15:59:59+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"M0067416\",\"name\":\"期货收盘价(活跃合约):螺纹钢\",\"unit\":\"元/吨\",\"source\":\"上海期货交易所\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20090327\",\"endDate\":\"20260918\",\"freq\":\"日\"},{\"code\":\"S0203425\",\"name\":\"期货收盘价(活跃合约):热轧卷板\",\"unit\":\"元/吨\",\"source\":\"上海期货交易所\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20140321\",\"endDate\":\"20260918\",\"freq\":\"日\"},{\"code\":\"S0181383\",\"name\":\"期货结算价(活跃合约):螺纹钢\",\"unit\":\"元/吨\",\"source\":\"上海期货交易所\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20090327\",\"endDate\":\"20260918\",\"freq\":\"日\"},{\"code\":\"M0096618\",\"name\":\"期货持仓量(活跃合约):螺纹钢\",\"unit\":\"手\",\"source\":\"上海期货交易所\",\"updateDate\":\"20260918\",\"beginDate\":\"20090327\",\"endDate\":\"20260918\",\"freq\":\"日\"},{\"code\":\"M0096585\",\"name\":\"期货成交量(活跃合约):螺纹钢\",\"unit\":\"手\",\"source\":\"上海期货交易所\",\"updateDate\":\"20260918\",\"beginDate\":\"20090327\",\"endDate\":\"20260918\",\"freq\":\"日\"},{\"code\":\"P6078190\",\"name\":\"螺纹钢:基差:主连\",\"unit\":\"元/吨\",\"source\":\"Wind\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20090327\",\"endDate\":\"20260918\",\"freq\":\"日\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

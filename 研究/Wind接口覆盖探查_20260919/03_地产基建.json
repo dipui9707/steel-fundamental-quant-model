@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国房地产开发投资累计同比、房屋新开工面积累计同比、房屋施工面积累计同比、基础设施建设投资不含电力累计同比"
+    }
+  },
+  "retrieved_at": "2026-09-19T15:58:13+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S0029657\",\"name\":\"中国:房地产开发投资完成额:累计同比\",\"unit\":\"%\",\"source\":\"国家统计局\",\"updateDate\":\"20260915\",\"beginDate\":\"19990228\",\"endDate\":\"20260831\",\"freq\":\"月\"},{\"code\":\"A7546569\",\"name\":\"中国:民间固定资产投资完成额(扣除房地产开发投资):累计同比\",\"unit\":\"%\",\"source\":\"国家统计局\",\"updateDate\":\"20260915\",\"beginDate\":\"20230430\",\"endDate\":\"20260831\",\"freq\":\"月\"},{\"code\":\"S0073293\",\"name\":\"中国:房屋新开工面积:累计同比\",\"unit\":\"%\",\"source\":\"国家统计局\",\"updateDate\":\"20260915\",\"beginDate\":\"19920229\",\"endDate\":\"20260831\",\"freq\":\"月\"},{\"code\":\"S0029740\",\"name\":\"中国:建筑业:新开工面积:累计同比\",\"unit\":\"%\",\"source\":\"国家统计局\",\"updateDate\":\"20260720\",\"beginDate\":\"20040331\",\"endDate\":\"20260630\",\"freq\":\"季\"},{\"code\":\"S0073290\",\"name\":\"中国:房屋施工面积:累计同比\",\"unit\":\"%\",\"source\":\"国家统计局\",\"updateDate\":\"20260915\",\"beginDate\":\"19920229\",\"endDate\":\"20260831\",\"freq\":\"月\"},{\"code\":\"S0073279\",\"name\":\"中国:房地产开发计划总投资:累计同比\",\"unit\":\"%\",\"source\":\"国家统计局\",\"updateDate\":\"20260122\",\"beginDate\":\"19980228\",\"endDate\":\"20251231\",\"freq\":\"月\"},{\"code\":\"D4896022\",\"name\":\"中国:固定资产投资完成额(扣除房地产开发投资):累计同比\",\"unit\":\"%\",\"source\":\"国家统计局\",\"updateDate\":\"20260915\",\"beginDate\":\"20240229\",\"endDate\":\"20260831\",\"freq\":\"月\"},{\"code\":\"M5686661\",\"name\":\"中国:基本建设投资:高等教育学校\",\"unit\":\"万元\",\"source\":\"教育部\",\"magnitude\":\"万\",\"currency\":\"人民币\",\"updateDate\":\"20260225\",\"beginDate\":\"20031231\",\"endDate\":\"20241231\",\"freq\":\"年\"},{\"code\":\"M5686673\",\"name\":\"中国:基本建设投资:中等职业学校\",\"unit\":\"万元\",\"source\":\"教育部\",\"magnitude\":\"万\",\"currency\":\"人民币\",\"updateDate\":\"20260225\",\"beginDate\":\"20111231\",\"endDate\":\"20241231\",\"freq\":\"年\"},{\"code\":\"M5686721\",\"name\":\"中国:基本建设投资:特殊教育学校\",\"unit\":\"万元\",\"source\":\"教育部\",\"magnitude\":\"万\",\"currency\":\"人民币\",\"updateDate\":\"20260225\",\"beginDate\":\"20031231\",\"endDate\":\"20241231\",\"freq\":\"年\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

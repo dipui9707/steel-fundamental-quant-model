@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "美元兑人民币即期汇率、中国PPI当月同比、中国CPI当月同比、中国10年期国债收益率"
+    }
+  },
+  "retrieved_at": "2026-09-19T15:59:52+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"M0000612\",\"name\":\"中国:CPI:当月同比\",\"unit\":\"%\",\"source\":\"国家统计局\",\"updateDate\":\"20260909\",\"beginDate\":\"19870131\",\"endDate\":\"20260831\",\"freq\":\"月\"},{\"code\":\"M0001227\",\"name\":\"中国:PPI:当月同比\",\"unit\":\"%\",\"source\":\"国家统计局\",\"updateDate\":\"20260909\",\"beginDate\":\"19961031\",\"endDate\":\"20260831\",\"freq\":\"月\"},{\"code\":\"S0059749\",\"name\":\"中债国债到期收益率:10年\",\"unit\":\"%\",\"source\":\"中债估值中心\",\"updateDate\":\"20260918\",\"beginDate\":\"20020104\",\"endDate\":\"20260918\",\"freq\":\"日\"},{\"code\":\"M0067855\",\"name\":\"CFETS:即期汇率:美元兑人民币\",\"source\":\"中国外汇交易中心(2009年后)\",\"updateDate\":\"20260919\",\"beginDate\":\"19810102\",\"endDate\":\"20260918\",\"freq\":\"日\"},{\"code\":\"G0145010\",\"name\":\"即期汇率:美元兑人民币\",\"source\":\"台湾央行\",\"updateDate\":\"20260918\",\"beginDate\":\"19930105\",\"endDate\":\"20260918\",\"freq\":\"日\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

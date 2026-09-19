@@ -1,0 +1,29 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "S5133418,S5133868,S5118160,S5133408,S5133852,S5716616,S5133392",
+      "beginDate": "2026-09-10",
+      "endDate": "2026-09-18"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:12:22+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"meta\":{\"code\":\"S5133418\",\"name\":\"中国:库存量:炼焦煤:国内独立焦化厂(230家)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20160624\",\"endDate\":\"20260918\",\"freq\":\"周\"},\"date\":[\"20260911\",\"20260918\"],\"value\":[810.82,828.41]},{\"meta\":{\"code\":\"S5133868\",\"name\":\"中国:库存量:炼焦煤:国内样本钢厂(247家)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20170421\",\"endDate\":\"20260918\",\"freq\":\"周\"},\"date\":[\"20260911\",\"20260918\"],\"value\":[738.44,747.82]},{\"meta\":{\"code\":\"S5118160\",\"name\":\"中国:连云港:库存量:炼焦煤\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20110701\",\"endDate\":\"20260918\",\"freq\":\"周\"},\"date\":[\"20260911\",\"20260918\"],\"value\":[0,0]},{\"meta\":{\"code\":\"S5133408\",\"name\":\"中国:生产率:焦炉:国内独立焦化厂(230家)\",\"unit\":\"%\",\"source\":\"Wind\",\"updateDate\":\"20260918\",\"beginDate\":\"20160701\",\"endDate\":\"20260918\",\"freq\":\"周\"},\"date\":[\"20260911\",\"20260918\"],\"value\":[66.23,67.49]},{\"meta\":{\"code\":\"S5133852\",\"name\":\"中国:库存量:焦炭:国内样本钢厂(247家)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20170421\",\"endDate\":\"20260918\",\"freq\":\"周\"},\"date\":[\"20260911\",\"20260918\"],\"value\":[592.42,567.21]},{\"meta\":{\"code\":\"S5716616\",\"name\":\"中国:主要港口:库存量:焦炭\",\"unit\":\"万吨\",\"source\":\"根据新闻整理\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20110401\",\"endDate\":\"20260918\",\"freq\":\"周\"},\"date\":[\"20260911\",\"20260918\"],\"value\":[194.2,184.18]},{\"meta\":{\"code\":\"S5133392\",\"name\":\"中国:库存量:焦炭:产能(<100万吨):焦化企业(230家)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20160722\",\"endDate\":\"20260918\",\"freq\":\"周\"},\"date\":[\"20260911\",\"20260918\"],\"value\":[3.32,3.45]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

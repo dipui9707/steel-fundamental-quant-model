@@ -1,0 +1,29 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "A1147914",
+      "beginDate": "2026-06-01",
+      "endDate": "2026-07-31"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:12:27+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"meta\":{\"code\":\"A1147914\",\"name\":\"中国:新承接订单量(修正总吨):船舶\",\"unit\":\"修正总吨\",\"source\":\"根据新闻整理\",\"updateDate\":\"20260824\",\"beginDate\":\"20180131\",\"endDate\":\"20260731\",\"freq\":\"月\"},\"date\":[\"20260630\",\"20260731\"],\"value\":[4786161,3552861]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

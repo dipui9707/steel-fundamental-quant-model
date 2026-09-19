@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国炼焦煤库存量 焦化厂 钢厂 港口"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:09:31+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S5133418\",\"name\":\"中国:库存量:炼焦煤:国内独立焦化厂(230家)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20160624\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"S5118160\",\"name\":\"中国:连云港:库存量:炼焦煤\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20110701\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"S5133868\",\"name\":\"中国:库存量:炼焦煤:国内样本钢厂(247家)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20170421\",\"endDate\":\"20260918\",\"freq\":\"周\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

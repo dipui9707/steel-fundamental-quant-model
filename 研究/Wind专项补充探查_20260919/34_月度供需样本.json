@@ -1,0 +1,29 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "S5715235,S5715234,S5715204,S5118233,A3008498,S0026997,S5118228,S0072018",
+      "beginDate": "2026-07-01",
+      "endDate": "2026-08-31"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:12:24+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"meta\":{\"code\":\"S5715235\",\"name\":\"巴西:发货量:铁矿石\",\"unit\":\"万吨\",\"source\":\"亿海蓝\",\"magnitude\":\"万\",\"updateDate\":\"20260914\",\"beginDate\":\"20140131\",\"endDate\":\"20260831\",\"freq\":\"月\"},\"date\":[\"20260731\",\"20260831\"],\"value\":[2719.8,2706.9]},{\"meta\":{\"code\":\"S5715234\",\"name\":\"澳大利亚:发货量:铁矿石\",\"unit\":\"万吨\",\"source\":\"亿海蓝\",\"magnitude\":\"万\",\"updateDate\":\"20260914\",\"beginDate\":\"20140131\",\"endDate\":\"20260831\",\"freq\":\"月\"},\"date\":[\"20260731\",\"20260831\"],\"value\":[5784.8,6291.5]},{\"meta\":{\"code\":\"S5715204\",\"name\":\"中国:到港量:铁矿石\",\"unit\":\"万吨\",\"source\":\"亿海蓝\",\"magnitude\":\"万\",\"updateDate\":\"20260914\",\"beginDate\":\"20140131\",\"endDate\":\"20260831\",\"freq\":\"月\"},\"date\":[\"20260731\",\"20260831\"],\"value\":[7603.8,7160.6]},{\"meta\":{\"code\":\"S5118233\",\"name\":\"中国:产量:炼焦煤\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260901\",\"beginDate\":\"20080930\",\"endDate\":\"20260731\",\"freq\":\"月\"},\"date\":[\"20260731\"],\"value\":[3020.18]},{\"meta\":{\"code\":\"A3008498\",\"name\":\"中国:进口数量:炼焦煤(27011210)\",\"unit\":\"千克\",\"source\":\"海关统计数据平台\",\"updateDate\":\"20260820\",\"beginDate\":\"19950131\",\"endDate\":\"20260731\",\"freq\":\"月\"},\"date\":[\"20260731\"],\"value\":[13615932211]},{\"meta\":{\"code\":\"S0026997\",\"name\":\"中国:产量:焦炭:当月值\",\"unit\":\"万吨\",\"source\":\"国家统计局\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"19900131\",\"endDate\":\"20260831\",\"freq\":\"月\"},\"date\":[\"20260731\",\"20260831\"],\"value\":[4134.8,3992.4]},{\"meta\":{\"code\":\"S5118228\",\"name\":\"中国:表观消费量:焦炭\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260820\",\"beginDate\":\"19950131\",\"endDate\":\"20260731\",\"freq\":\"月\"},\"date\":[\"20260731\"],\"value\":[4094.37]},{\"meta\":{\"code\":\"S0072018\",\"name\":\"中国:出口数量:空调:当月值\",\"unit\":\"台\",\"source\":\"海关总署\",\"updateDate\":\"20260918\",\"beginDate\":\"20050131\",\"endDate\":\"20260831\",\"freq\":\"月\"},\"date\":[\"20260731\",\"20260831\"],\"value\":[3810000.0000000005,3690000]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

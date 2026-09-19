@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "唐山准一级冶金焦到厂价"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:01:10+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"U5157465\",\"name\":\"中国:唐山:到厂价(含税):冶金焦(二级)\",\"unit\":\"元/吨\",\"source\":\"西本新干线\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20100413\",\"endDate\":\"20260918\",\"freq\":\"日\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

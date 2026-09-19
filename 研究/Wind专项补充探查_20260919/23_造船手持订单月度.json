@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国手持船舶订单量月度"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:10:58+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"A1147914\",\"name\":\"中国:新承接订单量(修正总吨):船舶\",\"unit\":\"修正总吨\",\"source\":\"根据新闻整理\",\"updateDate\":\"20260824\",\"beginDate\":\"20180131\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S6004444\",\"name\":\"中国:手持出口船舶订单量(艘)\",\"unit\":\"艘\",\"source\":\"中国船舶工业年鉴\",\"updateDate\":\"20250521\",\"beginDate\":\"20091231\",\"endDate\":\"20231231\",\"freq\":\"年\"},{\"code\":\"S6000029\",\"name\":\"中国:造船完工量:累计值\",\"unit\":\"万载重吨\",\"source\":\"中华人民共和国工业和信息化部\",\"magnitude\":\"万\",\"updateDate\":\"20260429\",\"beginDate\":\"20080229\",\"endDate\":\"20251231\",\"freq\":\"月\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

@@ -1,0 +1,342 @@
+[
+  {
+    "code": "S0143493",
+    "name": "唐山方坯现货价(Q235)",
+    "freq": "日",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 3000,
+    "unit": "元/吨",
+    "err_msg": null
+  },
+  {
+    "code": "S5707600",
+    "name": "唐山钢坯库存(钢之家)",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 121.32,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "S5707595",
+    "name": "唐山钢坯象屿正丰库库存",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 19.08,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "S5707596",
+    "name": "唐山钢坯京唐港库存",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 0.8,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "S0114053",
+    "name": "重点企业钢坯产量累计值",
+    "freq": "月",
+    "status": "SUCCESS",
+    "latest_date": "20260731",
+    "latest_val": 26001.064,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "Y7026272",
+    "name": "富宝唐山带钢开工率",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 25,
+    "unit": "%",
+    "err_msg": null
+  },
+  {
+    "code": "B2245442",
+    "name": "富宝唐山型材开工率",
+    "freq": "周",
+    "status": "PARSE_ERROR",
+    "latest_date": null,
+    "latest_val": null,
+    "unit": null,
+    "err_msg": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "code": "S5713307",
+    "name": "螺纹钢主要钢厂周产量",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 174.02,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "S5713331",
+    "name": "线材主要钢厂周产量",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 78.82,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "P5075301",
+    "name": "热轧板卷主要钢厂周产量",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 286.59,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "U9895886",
+    "name": "冷轧板卷主要钢厂周产量",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 86.09,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "D2626009",
+    "name": "中厚板主要钢厂周产量",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 168.42,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "D0194146",
+    "name": "中钢协重点企业钢材周产量",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260910",
+    "latest_val": 1794,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "H6924748",
+    "name": "螺纹钢社会库存量",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 476.4,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "N5497850",
+    "name": "线材社会库存量",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 62.51,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "X1924001",
+    "name": "热轧板卷社会库存量",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 362.06,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "W2000685",
+    "name": "冷轧板卷社会库存量",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 125.09,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "W6382677",
+    "name": "中厚板社会库存量",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 120.33,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "P7060164",
+    "name": "5大品种钢材社会库存(21城)",
+    "freq": "日",
+    "status": "SUCCESS",
+    "latest_date": "20260910",
+    "latest_val": 959,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "R8579706",
+    "name": "螺纹钢主要钢厂库存",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 159.26,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "N2859772",
+    "name": "线材主要钢厂库存",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 61.06,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "L2776415",
+    "name": "热轧板卷主要钢厂库存",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 67.25,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "V9343799",
+    "name": "冷轧板卷主要钢厂库存",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 37.86,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "C1585720",
+    "name": "中厚板主要钢厂库存",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 65.98,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "A5938607",
+    "name": "螺纹钢表观需求量",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 189.58,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "Y1232969",
+    "name": "线材表观需求量",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 82.03,
+    "unit": "万吨",
+    "err_msg": null
+  },
+  {
+    "code": "Q0185200",
+    "name": "富宝热轧带钢周产量",
+    "freq": "周",
+    "status": "PARSE_ERROR",
+    "latest_date": null,
+    "latest_val": null,
+    "unit": null,
+    "err_msg": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "code": "B9593444",
+    "name": "富宝唐山带钢仓储库存",
+    "freq": "周",
+    "status": "PARSE_ERROR",
+    "latest_date": null,
+    "latest_val": null,
+    "unit": null,
+    "err_msg": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "code": "T1512117",
+    "name": "富宝热轧带钢开工率",
+    "freq": "周",
+    "status": "PARSE_ERROR",
+    "latest_date": null,
+    "latest_val": null,
+    "unit": null,
+    "err_msg": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "code": "S5705485",
+    "name": "唐山热轧带钢价格(2.5mm*232)",
+    "freq": "日",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 3110,
+    "unit": "元/吨",
+    "err_msg": null
+  },
+  {
+    "code": "S9978946",
+    "name": "百川上海冷轧1.0mm市场价",
+    "freq": "日",
+    "status": "PARSE_ERROR",
+    "latest_date": null,
+    "latest_val": null,
+    "unit": null,
+    "err_msg": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "code": "S5707104",
+    "name": "上海高线8mm现货价",
+    "freq": "日",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 3470,
+    "unit": "元/吨",
+    "err_msg": null
+  },
+  {
+    "code": "W5281756",
+    "name": "上海中厚板20mm现货价(周)",
+    "freq": "周",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 3400,
+    "unit": "元/吨",
+    "err_msg": null
+  },
+  {
+    "code": "S9979064",
+    "name": "百川上海中厚板8mm现货价(日)",
+    "freq": "日",
+    "status": "PARSE_ERROR",
+    "latest_date": null,
+    "latest_val": null,
+    "unit": null,
+    "err_msg": "Expecting value: line 1 column 1 (char 0)"
+  }
+]

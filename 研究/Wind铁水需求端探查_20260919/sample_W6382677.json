@@ -1,0 +1,30 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "W6382677",
+      "observation": "2"
+    },
+    "target_code": "W6382677",
+    "target_name": "中厚板社会库存量"
+  },
+  "retrieved_at": "2026-09-19T17:05:47+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"meta\":{\"code\":\"W6382677\",\"name\":\"中国:社会库存量:中厚板\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20200120\",\"endDate\":\"20260917\",\"freq\":\"周\"},\"date\":[\"20260910\",\"20260917\"],\"value\":[117.96,120.33]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

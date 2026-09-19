@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中厚板 产能利用率"
+    }
+  },
+  "retrieved_at": "2026-09-19T17:01:58+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"D2626009\",\"name\":\"中国:产量:中厚板:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20200207\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"Q9487291\",\"name\":\"中国:产量:中厚板:当月值\",\"unit\":\"万吨\",\"source\":\"根据新闻整理\",\"magnitude\":\"万\",\"updateDate\":\"20260825\",\"beginDate\":\"20200229\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"P4726680\",\"name\":\"韩国:产量:中厚板\",\"unit\":\"千吨\",\"source\":\"根据新闻整理\",\"magnitude\":\"千\",\"updateDate\":\"20250513\",\"beginDate\":\"20190131\",\"endDate\":\"20241231\",\"freq\":\"月\"},{\"code\":\"W5412366\",\"name\":\"韩国:产量:中厚板\",\"unit\":\"千吨\",\"source\":\"根据新闻整理\",\"magnitude\":\"千\",\"updateDate\":\"20250513\",\"beginDate\":\"20191231\",\"endDate\":\"20241231\",\"freq\":\"年\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "钢材 五大品种 库存"
+    }
+  },
+  "retrieved_at": "2026-09-19T17:00:17+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S0110143\",\"name\":\"中国:库存量:热卷(板)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20060317\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"S0110142\",\"name\":\"中国:库存量:线材\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20060317\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"S5713338\",\"name\":\"中国:库存量:线材:主要建筑钢材生产企业\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20150227\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"C1585720\",\"name\":\"中国:库存量:中厚板:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20200207\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"N2859772\",\"name\":\"中国:库存量:线材:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20200207\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"W2000685\",\"name\":\"中国:社会库存量:冷轧板卷\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20200120\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"U1117002\",\"name\":\"中国:社会库存量:冷轧卷板\",\"unit\":\"万吨\",\"source\":\"根据新闻整理\",\"magnitude\":\"万\",\"updateDate\":\"20260914\",\"beginDate\":\"20150930\",\"endDate\":\"20260910\",\"freq\":\"周\"},{\"code\":\"S9985886\",\"name\":\"中国:工厂库存量:线材\",\"unit\":\"吨\",\"source\":\"百川盈孚\",\"updateDate\":\"20260918\",\"beginDate\":\"20170106\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"T7634873\",\"name\":\"中国:库存量:中厚板\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20200120\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"N4768978\",\"name\":\"富宝:中国:钢厂库存量:热卷\",\"unit\":\"万吨\",\"source\":\"富宝资讯\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20180302\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"S0247195\",\"name\":\"南山铝业:库存量:热轧卷\",\"unit\":\"万吨\",\"source\":\"上市公司公告\",\"magnitude\":\"万\",\"updateDate\":\"20260719\",\"beginDate\":\"20151231\",\"endDate\":\"20251231\",\"freq\":\"年\"},{\"code\":\"S0245873\",\"name\":\"南钢股份:库存量:线材\",\"unit\":\"万吨\",\"source\":\"上市公司公告\",\"magnitude\":\"万\",\"updateDate\":\"20260716\",\"beginDate\":\"20111231\",\"endDate\":\"20251231\",\"freq\":\"年\"},{\"code\":\"S0248592\",\"name\":\"勤上股份:库存量:线材\",\"unit\":\"千克\",\"source\":\"上市公司公告\",\"updateDate\":\"20190522\",\"beginDate\":\"20131231\",\"endDate\":\"20181231\",\"freq\":\"年\"},{\"code\":\"S0278252\",\"name\":\"富春环保:库存量:冷轧钢卷\",\"unit\":\"万吨\",\"source\":\"公司公告\",\"magnitude\":\"万\",\"updateDate\":\"20210506\",\"beginDate\":\"20111231\",\"endDate\":\"20201231\",\"freq\":\"年\"},{\"code\":\"S5708082\",\"name\":\"日本:库存量:线材:期末值\",\"unit\":\"千吨\",\"source\":\"日本钢铁工业协会\",\"magnitude\":\"千\",\"updateDate\":\"20260911\",\"beginDate\":\"20080430\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S0181750\",\"name\":\"中国:库存量:螺纹钢(含上海全部仓库)\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20100521\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"S5713337\",\"name\":\"中国:库存量:螺纹钢:主要建筑钢材生产企业\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20150227\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"R8579706\",\"name\":\"中国:库存量:螺纹钢:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20200207\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"H6924748\",\"name\":\"中国:社会库存量:螺纹钢\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20200120\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"S9985755\",\"name\":\"中国:工厂库存量:螺纹钢\",\"unit\":\"吨\",\"source\":\"百川盈孚\",\"updateDate\":\"20260918\",\"beginDate\":\"20170106\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"S9985710\",\"name\":\"中国:市场库存量:螺纹钢\",\"unit\":\"吨\",\"source\":\"百川盈孚\",\"updateDate\":\"20260918\",\"beginDate\":\"20170106\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"S0114168\",\"name\":\"库存小计:螺纹钢\",\"unit\":\"吨\",\"source\":\"上海期货交易所\",\"updateDate\":\"20260918\",\"beginDate\":\"20090703\",\"endDate\":\"20260918\",\"freq\":\"周\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

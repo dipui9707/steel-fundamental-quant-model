@@ -1,0 +1,31 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "S0143493",
+      "beginDate": "2026-09-10",
+      "endDate": "2026-09-18"
+    },
+    "target_code": "S0143493",
+    "target_name": "唐山方坯现货价(Q235)"
+  },
+  "retrieved_at": "2026-09-19T17:05:28+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"meta\":{\"code\":\"S0143493\",\"name\":\"中国:唐山:价格:方坯(Q235)\",\"unit\":\"元/吨\",\"source\":\"Wind\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20070131\",\"endDate\":\"20260918\",\"freq\":\"日\"},\"date\":[\"20260910\",\"20260911\",\"20260914\",\"20260915\",\"20260916\",\"20260917\",\"20260918\"],\"value\":[3030,3050,3010,2970,3020,3030,3000]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

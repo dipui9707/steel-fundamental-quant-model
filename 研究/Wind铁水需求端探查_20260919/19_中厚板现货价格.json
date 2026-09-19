@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "上海 价格 中厚板"
+    }
+  },
+  "retrieved_at": "2026-09-19T17:02:06+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S9979064\",\"name\":\"中国:上海:市场价:中厚板(Q235,8mm)\",\"unit\":\"元/吨\",\"source\":\"百川盈孚\",\"currency\":\"人民币\",\"updateDate\":\"20260919\",\"beginDate\":\"20170101\",\"endDate\":\"20260919\",\"freq\":\"日\"},{\"code\":\"W5281756\",\"name\":\"中国:上海:市场价:中厚板(Q235,20mm)\",\"unit\":\"元/吨\",\"source\":\"根据新闻整理\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20200214\",\"endDate\":\"20260918\",\"freq\":\"周\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

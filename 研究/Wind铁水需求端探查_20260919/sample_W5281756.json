@@ -1,0 +1,30 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "W5281756",
+      "observation": "2"
+    },
+    "target_code": "W5281756",
+    "target_name": "上海中厚板20mm现货价(周)"
+  },
+  "retrieved_at": "2026-09-19T17:06:05+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"meta\":{\"code\":\"W5281756\",\"name\":\"中国:上海:市场价:中厚板(Q235,20mm)\",\"unit\":\"元/吨\",\"source\":\"根据新闻整理\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20200214\",\"endDate\":\"20260918\",\"freq\":\"周\"},\"date\":[\"20260911\",\"20260918\"],\"value\":[3450,3400]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

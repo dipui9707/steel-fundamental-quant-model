@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "唐山 调坯 开工率"
+    }
+  },
+  "retrieved_at": "2026-09-19T16:59:52+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"Y7026272\",\"name\":\"富宝:唐山:开工率:带钢(232以上)\",\"unit\":\"%\",\"source\":\"富宝资讯\",\"updateDate\":\"20260917\",\"beginDate\":\"20180309\",\"endDate\":\"20260917\",\"freq\":\"周\"},{\"code\":\"B2245442\",\"name\":\"富宝:唐山:开工率:型材:34家钢厂\",\"unit\":\"%\",\"source\":\"富宝资讯\",\"updateDate\":\"20260917\",\"beginDate\":\"20180322\",\"endDate\":\"20260917\",\"freq\":\"周\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

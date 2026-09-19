@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "唐山 钢坯 价格"
+    }
+  },
+  "retrieved_at": "2026-09-19T17:00:03+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S0143493\",\"name\":\"中国:唐山:价格:方坯(Q235)\",\"unit\":\"元/吨\",\"source\":\"Wind\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20070131\",\"endDate\":\"20260918\",\"freq\":\"日\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

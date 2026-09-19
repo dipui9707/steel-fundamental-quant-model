@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "冷轧板卷 主要钢厂 产量"
+    }
+  },
+  "retrieved_at": "2026-09-19T17:00:32+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S0027418\",\"name\":\"中国:产量:冷轧薄板:当月值\",\"unit\":\"万吨\",\"source\":\"国家统计局\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20040131\",\"endDate\":\"20260831\",\"freq\":\"月\"},{\"code\":\"S0114072\",\"name\":\"中国:产量:冷轧薄板:重点企业:累计值\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260902\",\"beginDate\":\"20050131\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S0114075\",\"name\":\"中国:产量:冷轧薄宽钢带:重点企业:累计值\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260902\",\"beginDate\":\"20050131\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S5712426\",\"name\":\"中国:产量:冷扎薄板:重点优特钢企业:累计值\",\"unit\":\"吨\",\"source\":\"Wind\",\"updateDate\":\"20260826\",\"beginDate\":\"20040630\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"S5712415\",\"name\":\"中国:产量:冷轧钢材:重点优特钢企业:累计值\",\"unit\":\"吨\",\"source\":\"Wind\",\"updateDate\":\"20260826\",\"beginDate\":\"20040630\",\"endDate\":\"20260731\",\"freq\":\"月\"},{\"code\":\"U9895886\",\"name\":\"中国:产量:冷轧板卷:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20200207\",\"endDate\":\"20260918\",\"freq\":\"周\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "上海 价格 线材"
+    }
+  },
+  "retrieved_at": "2026-09-19T17:02:34+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S5714367\",\"name\":\"中国:上海:含税价:拉丝材(Q195,Φ6.5)\",\"unit\":\"元/吨\",\"source\":\"中国联合钢铁网\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20111231\",\"endDate\":\"20260918\",\"freq\":\"日\"},{\"code\":\"S0033227\",\"name\":\"中国:上海:价格:螺纹钢(HRB400E,20mm)\",\"unit\":\"元/吨\",\"source\":\"Wind\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20070108\",\"endDate\":\"20260918\",\"freq\":\"日\"},{\"code\":\"S5707104\",\"name\":\"中国:上海:价格:高线(8,HPB300)\",\"unit\":\"元/吨\",\"source\":\"Wind\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20130416\",\"endDate\":\"20260918\",\"freq\":\"日\"},{\"code\":\"S0117687\",\"name\":\"中国:上海:价格:拉丝(Φ6.5)\",\"unit\":\"元/吨\",\"source\":\"Wind\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20080606\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"S9979142\",\"name\":\"中国:上海:市场价:螺纹钢(HRB400,Φ16-25mm)\",\"unit\":\"元/吨\",\"source\":\"百川盈孚\",\"currency\":\"人民币\",\"updateDate\":\"20260919\",\"beginDate\":\"20170101\",\"endDate\":\"20260919\",\"freq\":\"日\"},{\"code\":\"O5042778\",\"name\":\"中国:上海:市场价:焊线(ER50-6E,φ5.5)\",\"unit\":\"元/吨\",\"source\":\"百川盈孚\",\"currency\":\"人民币\",\"updateDate\":\"20260919\",\"beginDate\":\"20170101\",\"endDate\":\"20260919\",\"freq\":\"日\"},{\"code\":\"S9978483\",\"name\":\"中国:上海:市场价:硬线(45-70#,Φ6.5)\",\"unit\":\"元/吨\",\"source\":\"百川盈孚\",\"currency\":\"人民币\",\"updateDate\":\"20260919\",\"beginDate\":\"20170101\",\"endDate\":\"20260919\",\"freq\":\"日\"},{\"code\":\"J0149682\",\"name\":\"中国:上海:市场价:拉丝材(Q235B,6.5mm)\",\"unit\":\"元/吨\",\"source\":\"百川盈孚\",\"currency\":\"人民币\",\"updateDate\":\"20260919\",\"beginDate\":\"20170101\",\"endDate\":\"20260919\",\"freq\":\"日\"},{\"code\":\"O5168297\",\"name\":\"中国:上海:市场价:螺纹钢(HRB400,Φ16mm)\",\"unit\":\"元/吨\",\"source\":\"根据新闻整理\",\"currency\":\"人民币\",\"updateDate\":\"20260918\",\"beginDate\":\"20200214\",\"endDate\":\"20260918\",\"freq\":\"周\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

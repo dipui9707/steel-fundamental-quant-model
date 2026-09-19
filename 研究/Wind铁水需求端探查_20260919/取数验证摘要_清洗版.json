@@ -1,0 +1,308 @@
+[
+  {
+    "code": "A5938607",
+    "name": "螺纹钢表观需求量",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 189.58,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"A5938607\",\"name\":\"中国:表观需求量:螺纹钢\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\""
+  },
+  {
+    "code": "B2245442",
+    "name": "富宝唐山型材开工率",
+    "status": "NO_PERMISSION",
+    "latest_date": null,
+    "latest_val": null,
+    "unit": null,
+    "raw_text": "受限指标已剔除：无权限：B2245442"
+  },
+  {
+    "code": "B9593444",
+    "name": "富宝唐山带钢仓储库存",
+    "status": "NO_PERMISSION",
+    "latest_date": null,
+    "latest_val": null,
+    "unit": null,
+    "raw_text": "受限指标已剔除：无权限：B9593444"
+  },
+  {
+    "code": "C1585720",
+    "name": "中厚板主要钢厂库存",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 65.98,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"C1585720\",\"name\":\"中国:库存量:中厚板:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitu"
+  },
+  {
+    "code": "D0194146",
+    "name": "中钢协重点企业钢材周产量",
+    "status": "SUCCESS",
+    "latest_date": "20260910",
+    "latest_val": 1794,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"D0194146\",\"name\":\"中国:产量:钢材:重点钢铁企业\",\"unit\":\"万吨\",\"source\":\"中国钢铁工业协会\",\"mag"
+  },
+  {
+    "code": "D2626009",
+    "name": "中厚板主要钢厂周产量",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 168.42,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"D2626009\",\"name\":\"中国:产量:中厚板:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitud"
+  },
+  {
+    "code": "H6924748",
+    "name": "螺纹钢社会库存量",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 476.4,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"H6924748\",\"name\":\"中国:社会库存量:螺纹钢\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\""
+  },
+  {
+    "code": "L2776415",
+    "name": "热轧板卷主要钢厂库存",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 67.25,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"L2776415\",\"name\":\"中国:库存量:热轧板卷:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnit"
+  },
+  {
+    "code": "N2859772",
+    "name": "线材主要钢厂库存",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 61.06,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"N2859772\",\"name\":\"中国:库存量:线材:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitud"
+  },
+  {
+    "code": "N5497850",
+    "name": "线材社会库存量",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 62.51,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"N5497850\",\"name\":\"中国:社会库存量:线材\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":"
+  },
+  {
+    "code": "P5075301",
+    "name": "热轧板卷主要钢厂周产量",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 286.59,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"P5075301\",\"name\":\"中国:产量:热轧板卷:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitu"
+  },
+  {
+    "code": "P7060164",
+    "name": "5大品种钢材社会库存(21城)",
+    "status": "SUCCESS",
+    "latest_date": "20260910",
+    "latest_val": 959,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"P7060164\",\"name\":\"中国:社会库存量:5大品种钢材(21个城市)\",\"unit\":\"万吨\",\"source\":\"根据新闻整理\""
+  },
+  {
+    "code": "Q0185200",
+    "name": "富宝热轧带钢周产量",
+    "status": "NO_PERMISSION",
+    "latest_date": null,
+    "latest_val": null,
+    "unit": null,
+    "raw_text": "受限指标已剔除：无权限：Q0185200"
+  },
+  {
+    "code": "R8579706",
+    "name": "螺纹钢主要钢厂库存",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 159.26,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"R8579706\",\"name\":\"中国:库存量:螺纹钢:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitu"
+  },
+  {
+    "code": "S0114053",
+    "name": "重点企业钢坯产量累计值",
+    "status": "SUCCESS",
+    "latest_date": "20260731",
+    "latest_val": 26001.064,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"S0114053\",\"name\":\"中国:产量:钢坯:重点企业:累计值\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magni"
+  },
+  {
+    "code": "S0143493",
+    "name": "唐山方坯现货价(Q235)",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 3000,
+    "unit": "元/吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"S0143493\",\"name\":\"中国:唐山:价格:方坯(Q235)\",\"unit\":\"元/吨\",\"source\":\"Wind\",\"curr"
+  },
+  {
+    "code": "S5705485",
+    "name": "唐山热轧带钢价格(2.5mm*232)",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 3110,
+    "unit": "元/吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"S5705485\",\"name\":\"中国:唐山:价格:热轧带钢(2.5mm*232)\",\"unit\":\"元/吨\",\"source\":\"Wind"
+  },
+  {
+    "code": "S5707104",
+    "name": "上海高线8mm现货价",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 3470,
+    "unit": "元/吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"S5707104\",\"name\":\"中国:上海:价格:高线(8,HPB300)\",\"unit\":\"元/吨\",\"source\":\"Wind\",\""
+  },
+  {
+    "code": "S5707595",
+    "name": "唐山钢坯象屿正丰库库存",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 19.08,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"S5707595\",\"name\":\"中国:唐山:库存量:钢坯:象屿正丰库\",\"unit\":\"万吨\",\"source\":\"钢之家\",\"magni"
+  },
+  {
+    "code": "S5707596",
+    "name": "唐山钢坯京唐港库存",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 0.8,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"S5707596\",\"name\":\"中国:唐山:库存量:钢坯:京唐港\",\"unit\":\"万吨\",\"source\":\"钢之家\",\"magnitu"
+  },
+  {
+    "code": "S5707600",
+    "name": "唐山钢坯库存(钢之家)",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 121.32,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"S5707600\",\"name\":\"中国:唐山:库存量:钢坯\",\"unit\":\"万吨\",\"source\":\"钢之家\",\"magnitude\":"
+  },
+  {
+    "code": "S5713307",
+    "name": "螺纹钢主要钢厂周产量",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 174.02,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"S5713307\",\"name\":\"中国:产量:螺纹钢:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitud"
+  },
+  {
+    "code": "S5713331",
+    "name": "线材主要钢厂周产量",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 78.82,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"S5713331\",\"name\":\"中国:产量:线材:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude"
+  },
+  {
+    "code": "S9978946",
+    "name": "百川上海冷轧1.0mm市场价",
+    "status": "NO_PERMISSION",
+    "latest_date": null,
+    "latest_val": null,
+    "unit": null,
+    "raw_text": "受限指标已剔除：无权限：S9978946"
+  },
+  {
+    "code": "S9979064",
+    "name": "百川上海中厚板8mm现货价(日)",
+    "status": "NO_PERMISSION",
+    "latest_date": null,
+    "latest_val": null,
+    "unit": null,
+    "raw_text": "受限指标已剔除：无权限：S9979064"
+  },
+  {
+    "code": "T1512117",
+    "name": "富宝热轧带钢开工率",
+    "status": "NO_PERMISSION",
+    "latest_date": null,
+    "latest_val": null,
+    "unit": null,
+    "raw_text": "受限指标已剔除：无权限：T1512117"
+  },
+  {
+    "code": "U9895886",
+    "name": "冷轧板卷主要钢厂周产量",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 86.09,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"U9895886\",\"name\":\"中国:产量:冷轧板卷:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitu"
+  },
+  {
+    "code": "V9343799",
+    "name": "冷轧板卷主要钢厂库存",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 37.86,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"V9343799\",\"name\":\"中国:库存量:冷轧板卷:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnit"
+  },
+  {
+    "code": "W2000685",
+    "name": "冷轧板卷社会库存量",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 125.09,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"W2000685\",\"name\":\"中国:社会库存量:冷轧板卷\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude"
+  },
+  {
+    "code": "W5281756",
+    "name": "上海中厚板20mm现货价(周)",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 3400,
+    "unit": "元/吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"W5281756\",\"name\":\"中国:上海:市场价:中厚板(Q235,20mm)\",\"unit\":\"元/吨\",\"source\":\"根据新闻"
+  },
+  {
+    "code": "W6382677",
+    "name": "中厚板社会库存量",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 120.33,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"W6382677\",\"name\":\"中国:社会库存量:中厚板\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\""
+  },
+  {
+    "code": "X1924001",
+    "name": "热轧板卷社会库存量",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 362.06,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"X1924001\",\"name\":\"中国:社会库存量:热轧板卷\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude"
+  },
+  {
+    "code": "Y1232969",
+    "name": "线材表观需求量",
+    "status": "SUCCESS",
+    "latest_date": "20260918",
+    "latest_val": 82.03,
+    "unit": "万吨",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"Y1232969\",\"name\":\"中国:表观需求量:线材\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":"
+  },
+  {
+    "code": "Y7026272",
+    "name": "富宝唐山带钢开工率",
+    "status": "SUCCESS",
+    "latest_date": "20260917",
+    "latest_val": 25,
+    "unit": "%",
+    "raw_text": "{\"metrics\":[{\"meta\":{\"code\":\"Y7026272\",\"name\":\"富宝:唐山:开工率:带钢(232以上)\",\"unit\":\"%\",\"source\":\"富宝资讯\",\"upda"
+  }
+]

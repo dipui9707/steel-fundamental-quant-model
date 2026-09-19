@@ -1,0 +1,30 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "P5075301",
+      "observation": "2"
+    },
+    "target_code": "P5075301",
+    "target_name": "热轧板卷主要钢厂周产量"
+  },
+  "retrieved_at": "2026-09-19T17:05:38+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"meta\":{\"code\":\"P5075301\",\"name\":\"中国:产量:热轧板卷:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20200207\",\"endDate\":\"20260918\",\"freq\":\"周\"},\"date\":[\"20260911\",\"20260918\"],\"value\":[290.48,286.59]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

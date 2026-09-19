@@ -1,0 +1,30 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "S0114053",
+      "observation": "2"
+    },
+    "target_code": "S0114053",
+    "target_name": "重点企业钢坯产量累计值"
+  },
+  "retrieved_at": "2026-09-19T17:05:33+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"meta\":{\"code\":\"S0114053\",\"name\":\"中国:产量:钢坯:重点企业:累计值\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260902\",\"beginDate\":\"20050131\",\"endDate\":\"20260731\",\"freq\":\"月\"},\"date\":[\"20260731\"],\"value\":[26001.064]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

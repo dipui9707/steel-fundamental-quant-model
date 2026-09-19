@@ -1,0 +1,27 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "search_economic_indicator",
+    "params": {
+      "question": "中国 钢厂库存量 线材"
+    }
+  },
+  "retrieved_at": "2026-09-19T17:02:22+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"code\":\"S0110142\",\"name\":\"中国:库存量:线材\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20060317\",\"endDate\":\"20260918\",\"freq\":\"周\"},{\"code\":\"N2859772\",\"name\":\"中国:库存量:线材:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20200207\",\"endDate\":\"20260918\",\"freq\":\"周\"}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "search_economic_indicator",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "C1585720",
+      "observation": "2"
+    },
+    "target_code": "C1585720",
+    "target_name": "中厚板主要钢厂库存"
+  },
+  "retrieved_at": "2026-09-19T17:05:54+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"meta\":{\"code\":\"C1585720\",\"name\":\"中国:库存量:中厚板:主要钢厂\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20200207\",\"endDate\":\"20260918\",\"freq\":\"周\"},\"date\":[\"20260911\",\"20260918\"],\"value\":[65.72,65.98]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

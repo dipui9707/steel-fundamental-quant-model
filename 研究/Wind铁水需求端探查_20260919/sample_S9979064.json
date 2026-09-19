@@ -1,0 +1,31 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "S9979064",
+      "beginDate": "2026-09-10",
+      "endDate": "2026-09-18"
+    },
+    "target_code": "S9979064",
+    "target_name": "百川上海中厚板8mm现货价(日)"
+  },
+  "retrieved_at": "2026-09-19T17:06:06+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "受限指标已剔除：无权限：S9979064"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

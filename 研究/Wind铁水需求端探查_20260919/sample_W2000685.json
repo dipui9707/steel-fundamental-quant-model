@@ -1,0 +1,30 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "W2000685",
+      "observation": "2"
+    },
+    "target_code": "W2000685",
+    "target_name": "冷轧板卷社会库存量"
+  },
+  "retrieved_at": "2026-09-19T17:05:46+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"meta\":{\"code\":\"W2000685\",\"name\":\"中国:社会库存量:冷轧板卷\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260917\",\"beginDate\":\"20200120\",\"endDate\":\"20260917\",\"freq\":\"周\"},\"date\":[\"20260910\",\"20260917\"],\"value\":[123.62,125.09]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

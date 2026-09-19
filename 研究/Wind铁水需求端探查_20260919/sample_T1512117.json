@@ -1,0 +1,30 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "T1512117",
+      "observation": "2"
+    },
+    "target_code": "T1512117",
+    "target_name": "富宝热轧带钢开工率"
+  },
+  "retrieved_at": "2026-09-19T17:06:00+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "受限指标已剔除：无权限：T1512117"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

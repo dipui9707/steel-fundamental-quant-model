@@ -1,0 +1,30 @@
+{
+  "request": {
+    "server_type": "economic_data",
+    "tool": "query_economic_indicator_data",
+    "params": {
+      "question": "Y1232969",
+      "observation": "2"
+    },
+    "target_code": "Y1232969",
+    "target_name": "线材表观需求量"
+  },
+  "retrieved_at": "2026-09-19T17:05:56+0800",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"metrics\":[{\"meta\":{\"code\":\"Y1232969\",\"name\":\"中国:表观需求量:线材\",\"unit\":\"万吨\",\"source\":\"Wind\",\"magnitude\":\"万\",\"updateDate\":\"20260918\",\"beginDate\":\"20210813\",\"endDate\":\"20260918\",\"freq\":\"周\"},\"date\":[\"20260911\",\"20260918\"],\"value\":[77.62,82.03]}]}"
+      }
+    ],
+    "isError": false,
+    "cli_meta": {
+      "schema_version": "1.0",
+      "server_type": "economic_data",
+      "tool_name": "query_economic_indicator_data",
+      "completeness": "not_asserted",
+      "tables": [],
+      "warnings": []
+    }
+  }
+}

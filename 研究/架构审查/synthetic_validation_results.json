@@ -1,0 +1,528 @@
+{
+  "status": "PASS",
+  "data_mode": "SYNTHETIC",
+  "assertions": 79,
+  "checks": [
+    {
+      "check": "FBS_0",
+      "passed": true,
+      "actual": 24.0,
+      "expected": 24.0
+    },
+    {
+      "check": "FBS_1",
+      "passed": true,
+      "actual": 7.999999999999999,
+      "expected": 8.0
+    },
+    {
+      "check": "FBS_2",
+      "passed": true,
+      "actual": 12.000000000000002,
+      "expected": 12.0
+    },
+    {
+      "check": "FBS_3",
+      "passed": true,
+      "actual": 21.0,
+      "expected": 21.0
+    },
+    {
+      "check": "data_change_1",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "check": "weight_change_1",
+      "passed": true,
+      "actual": -16.0,
+      "expected": -16.0
+    },
+    {
+      "check": "exact_decomposition_1",
+      "passed": true,
+      "actual": -16.0,
+      "expected": -16.0
+    },
+    {
+      "check": "data_change_2",
+      "passed": true,
+      "actual": 4.0,
+      "expected": 4.0
+    },
+    {
+      "check": "weight_change_2",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "check": "exact_decomposition_2",
+      "passed": true,
+      "actual": 4.0,
+      "expected": 4.000000000000003
+    },
+    {
+      "check": "data_change_3",
+      "passed": true,
+      "actual": 4.000000000000001,
+      "expected": 4.0
+    },
+    {
+      "check": "weight_change_3",
+      "passed": true,
+      "actual": 4.999999999999999,
+      "expected": 5.0
+    },
+    {
+      "check": "exact_decomposition_3",
+      "passed": true,
+      "actual": 9.0,
+      "expected": 8.999999999999998
+    },
+    {
+      "check": "missing_required_module",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "FV_path",
+      "passed": true,
+      "actual": [
+        null,
+        2.0,
+        4.0,
+        1.0,
+        -2.0
+      ],
+      "expected": [
+        null,
+        2.0,
+        4.0,
+        1.0,
+        -2.0
+      ]
+    },
+    {
+      "check": "FA_4",
+      "passed": true,
+      "actual": -0.5,
+      "expected": -0.5
+    },
+    {
+      "check": "FA_5",
+      "passed": true,
+      "actual": -3.0,
+      "expected": -3.0
+    },
+    {
+      "check": "unanimous_coverage",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "check": "unanimous_H3",
+      "passed": true,
+      "actual": -0.0,
+      "expected": 0.0
+    },
+    {
+      "check": "unanimous_CDE",
+      "passed": true,
+      "actual": -0.0,
+      "expected": 0.0
+    },
+    {
+      "check": "unanimous_direction_share",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "check": "conflict_coverage",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "check": "conflict_H3",
+      "passed": true,
+      "actual": 0.6309297535714574,
+      "expected": 0.6309297535714574
+    },
+    {
+      "check": "conflict_CDE",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "check": "conflict_direction_share",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "check": "neutral_coverage",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "check": "neutral_H3",
+      "passed": true,
+      "actual": -0.0,
+      "expected": 0.0
+    },
+    {
+      "check": "neutral_CDE",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "neutral_direction_share",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "check": "sparse_coverage",
+      "passed": true,
+      "actual": 0.25,
+      "expected": 0.25
+    },
+    {
+      "check": "sparse_H3",
+      "passed": true,
+      "actual": -0.0,
+      "expected": 0.0
+    },
+    {
+      "check": "sparse_CDE",
+      "passed": true,
+      "actual": -0.0,
+      "expected": 0.0
+    },
+    {
+      "check": "sparse_direction_share",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "check": "missing_coverage",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "check": "missing_H3",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "missing_CDE",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "missing_direction_share",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "mixed_neutral_H3",
+      "passed": true,
+      "actual": 0.946394630357186,
+      "expected": 0.946394630357186
+    },
+    {
+      "check": "ERR_down",
+      "passed": true,
+      "actual": 0.28500000000000003,
+      "expected": 0.285
+    },
+    {
+      "check": "ERR_up",
+      "passed": true,
+      "actual": 0.233,
+      "expected": 0.233
+    },
+    {
+      "check": "no_restart_capacity",
+      "passed": true,
+      "actual": 0.085,
+      "expected": 0.085
+    },
+    {
+      "check": "cash_cost_arithmetic",
+      "passed": true,
+      "actual": 3000.0,
+      "expected": 3000.0
+    },
+    {
+      "check": "cost_gap_not_fair_value",
+      "passed": true,
+      "actual": 0.1,
+      "expected": 0.1
+    },
+    {
+      "check": "PIT_2026-01-08T15:00:00+08:00",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "PIT_2026-01-08T18:03:00+08:00",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "PIT_2026-01-08T18:05:00+08:00",
+      "passed": true,
+      "actual": 100,
+      "expected": 100
+    },
+    {
+      "check": "PIT_2026-01-09T15:00:00+08:00",
+      "passed": true,
+      "actual": 100,
+      "expected": 100
+    },
+    {
+      "check": "PIT_2026-01-12T10:01:00+08:00",
+      "passed": true,
+      "actual": 100,
+      "expected": 100
+    },
+    {
+      "check": "PIT_2026-01-12T10:02:00+08:00",
+      "passed": true,
+      "actual": 110,
+      "expected": 110
+    },
+    {
+      "check": "reconstructed_archive_boundary",
+      "passed": true,
+      "actual": 100,
+      "expected": 100
+    },
+    {
+      "check": "unknown_release_not_eligible",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "unknown_mode_rejected",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "conflicting_revision_rejected",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "DA_no_extra_day_and_missing_reset",
+      "passed": true,
+      "actual": [
+        1.5,
+        2.5,
+        0,
+        0,
+        null,
+        1.0
+      ],
+      "expected": [
+        1.5,
+        2.5,
+        0,
+        0,
+        null,
+        1.0
+      ]
+    },
+    {
+      "check": "midrank_percentile",
+      "passed": true,
+      "actual": 0.625,
+      "expected": 0.625
+    },
+    {
+      "check": "seasonality_excludes_current",
+      "passed": true,
+      "actual": 1.5491933384829668,
+      "expected": 1.5491933384829668
+    },
+    {
+      "check": "constant_rank_IC",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "average_ties_rank_IC",
+      "passed": true,
+      "actual": -1.0,
+      "expected": -1.0
+    },
+    {
+      "check": "pairwise_missing_retained",
+      "passed": true,
+      "actual": -1.0,
+      "expected": -1.0
+    },
+    {
+      "check": "rank_IC_too_short",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "administrative_censor_median",
+      "passed": true,
+      "actual": 4,
+      "expected": 4
+    },
+    {
+      "check": "median_not_reached",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "fixed_contract_5_session_log_return",
+      "passed": true,
+      "actual": 0.04879016416943205,
+      "expected": 0.04879016416943205
+    },
+    {
+      "check": "roll_jump_is_not_fixed_contract_return",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "check": "purge_overlapping_label_intervals",
+      "passed": true,
+      "actual": [
+        [
+          1,
+          5
+        ]
+      ],
+      "expected": [
+        [
+          1,
+          5
+        ]
+      ]
+    },
+    {
+      "check": "censored_event_not_success",
+      "passed": true,
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "check": "AR1_centered_half_life",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "check": "AR1_halves_distance_to_mean",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "check": "AR1_does_not_halve_raw_level",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "check": "night_open_before_asof_rejected",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "check": "inventory_apparent_demand_previous",
+      "passed": true,
+      "actual": 120,
+      "expected": 120
+    },
+    {
+      "check": "inventory_apparent_demand_current",
+      "passed": true,
+      "actual": 90,
+      "expected": 90
+    },
+    {
+      "check": "CS_TNB_not_independent",
+      "passed": true,
+      "actual": 0.09999999999999998,
+      "expected": 0.1
+    },
+    {
+      "check": "unranked_is_not_zero",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "check": "native_release_decay",
+      "passed": true,
+      "actual": 0.75,
+      "expected": 0.75
+    },
+    {
+      "check": "uncalibrated_softmax_support",
+      "passed": true,
+      "actual": 0.7500000000000001,
+      "expected": 0.75
+    },
+    {
+      "check": "support_weight_smoothing",
+      "passed": true,
+      "actual": 0.625,
+      "expected": 0.625
+    },
+    {
+      "check": "allocation_identity",
+      "passed": true,
+      "actual": -7.0000000000000036,
+      "expected": -7.0
+    },
+    {
+      "check": "apparent_demand_boundary",
+      "passed": true,
+      "actual": 86,
+      "expected": 86
+    }
+  ],
+  "limits": {
+    "original_collector_runtime": "NOT_RUN",
+    "live_data": "NOT_RUN",
+    "market_backtest": "NOT_RUN",
+    "statistical_power": "NOT_TESTED"
+  },
+  "contract_sha256": {
+    "阶段A/A05.1_模型量化输出与指标设计规范.md": "9f840744b33fdfad94220a1e4cb176b46c0a72ecf7fbb441e3c139325a59df23",
+    "阶段A/A05.2_黑色五品种期货资金投机度与量化对比规范.md": "dfc5e2ac29334052049baedaff978755608824e5bd1f7150e1918927d327db0a",
+    "阶段A/A05.3_回测验证与预测快照协议.md": "7110d57e6d4f935a2510929b75d78f400ffcd3855f82acd42f47950ba4d765d7"
+  }
+}

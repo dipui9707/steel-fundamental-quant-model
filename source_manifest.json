@@ -1,0 +1,151 @@
+{
+  "archive_sha256": "edc6b65059981547376882ccab543337db7553672adf20379ec2a17545deb837",
+  "archive_name": "钢材产业量化系统_架构师协作包_V0.2.zip",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 6725,
+      "sha256": "2ec1d6640304ed6927702c14c0a2ebd95af9fa043948f9b32d27ce5071efa82a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6194,
+      "sha256": "48040933aec07d28c8c24b86af86998f234e0c110fb41bd883e12b7136d14dcc"
+    },
+    {
+      "path": "钢材产业基本面量化系统_项目指导与实施手册_V0.2.md",
+      "bytes": 31108,
+      "sha256": "29242b9a492c9a7d49a67e858fff1f273374ec7be0cdef9ffc0b1a03f7f81c9d"
+    },
+    {
+      "path": "交接/README.md",
+      "bytes": 3063,
+      "sha256": "c135c9b8359824f3717c0bdea828cc942bff72b2ebe4c27b83de6198b218b397"
+    },
+    {
+      "path": "交接/外部架构师Agent协作指导书.md",
+      "bytes": 16236,
+      "sha256": "3d852e5c0734b312dbef95530bfa79a8702c6bb0a105ea488cd18c2f0ae94799"
+    },
+    {
+      "path": "交接/任务队列.md",
+      "bytes": 3107,
+      "sha256": "0ab99822353c8cda10c3f090967db52cb7433b36759538e3bf169ca8a3b59627"
+    },
+    {
+      "path": "交接/变更日志.md",
+      "bytes": 6029,
+      "sha256": "80cb2a524878bba0dd22d66cd0beb1bc0969e42832389c30b9e104d7d5ef41ad"
+    },
+    {
+      "path": "交接/当前状态.md",
+      "bytes": 7598,
+      "sha256": "8a5a6ccf8d09f753a0dde573ac255ae1844758e7fa489b28abe67c5b290ecbfc"
+    },
+    {
+      "path": "阶段A/A01_策略总纲.md",
+      "bytes": 2494,
+      "sha256": "f0eca92bbe551867b084a64efc01eabc8ad3f1b95db38474bbe8551d62567c51"
+    },
+    {
+      "path": "阶段A/A02_产业因果模型.md",
+      "bytes": 1506,
+      "sha256": "70d24f6b85b020168ebdf7654d00291234ea80b27be71f907c992374a0766aab"
+    },
+    {
+      "path": "阶段A/A06_模型信任机制.md",
+      "bytes": 3331,
+      "sha256": "0d43aee99f5a7e63e5feb137c5c9cac6f60986753a8805ee5df45e50722d3607"
+    },
+    {
+      "path": "阶段A/A04_状态变量手册.md",
+      "bytes": 5793,
+      "sha256": "05773aed34fa0758391a4d56b35c07f4081a00fb492fcac02c7ca502dc6f67aa"
+    },
+    {
+      "path": "阶段A/A05.1_模型量化输出与指标设计规范.md",
+      "bytes": 11564,
+      "sha256": "4b0c444b2ffe72ff33977f1eed85dddb3c2c7961c1625082b40ba1b01d2404d4"
+    },
+    {
+      "path": "阶段A/A05_市场状态模型.md",
+      "bytes": 4972,
+      "sha256": "6ab427a43df00bea43f5a3b2cd5c4897bf5e22a8daf5a7cb12cd9f03fd959dda"
+    },
+    {
+      "path": "阶段A/A05.2_黑色五品种期货资金投机度与量化对比规范.md",
+      "bytes": 13500,
+      "sha256": "9f30f6c16e84aefbb5b038bb8ecb92fd939562bdef3dfe65f3c749836254f045"
+    },
+    {
+      "path": "阶段A/产业因果专题/A02.1_总钢材资源池.md",
+      "bytes": 1819,
+      "sha256": "25c115f7a9b393d28ceb8c698f9a947467ba123587bb122bcef815d14642712f"
+    },
+    {
+      "path": "阶段A/产业因果专题/A02.2_卷螺品种分配.md",
+      "bytes": 1654,
+      "sha256": "89895a1794a3a2dedd62619163e44b0de122aafe2b1771a442089b2601c64c47"
+    },
+    {
+      "path": "阶段A/产业因果专题/A02.3_热卷供需系统.md",
+      "bytes": 1628,
+      "sha256": "dfd4b0d9428c106c6660871790367ab32b465d2b20c0c7777e4af154e634b763"
+    },
+    {
+      "path": "阶段A/产业因果专题/A02.4_螺纹供需系统.md",
+      "bytes": 1647,
+      "sha256": "e9c5db192596c7ee69653901994e449ca7b73ae8a4042c0c21dbcebdc4b02770"
+    },
+    {
+      "path": "阶段A/产业因果专题/A02.5_跨品种反馈.md",
+      "bytes": 1591,
+      "sha256": "e17f4408232deaf2319ada759c5893e1c6ff1f04c0c582d2ab5ac9d651838cf9"
+    },
+    {
+      "path": "阶段A/产业因果专题/A02.6_利润生产库存闭环.md",
+      "bytes": 1619,
+      "sha256": "03eccbe9715ae9d9915b1e6a63a1ed2615744b7a20443f110a36c85819de5ec2"
+    },
+    {
+      "path": "outputs/阶段A_框架初版/A07_预测日志.xlsx",
+      "bytes": 9921,
+      "sha256": "39cfbca792fa8d14872a11da5dffa8dfe951ae9c4aa47ddc854f92bd3fe8ded8"
+    },
+    {
+      "path": "outputs/阶段A_框架初版/A08_错误归因.xlsx",
+      "bytes": 11991,
+      "sha256": "f5f1debab7bea4f65f5961632ffe2fdcd49bff4ca0e50327de081bcde7a5ae32"
+    },
+    {
+      "path": "outputs/阶段A_框架初版/A09_研究假设库.xlsx",
+      "bytes": 10156,
+      "sha256": "b72e6607b255f8fb0d1f90624fe6f81ff2452ae1fd350b4b090fea1944a72bcd"
+    },
+    {
+      "path": "outputs/阶段A_框架初版/A03_数据地图.xlsx",
+      "bytes": 34049,
+      "sha256": "16cbf0188e1e7f9d30a457b2934140058438b5d1c6eeee76999fec0e500200f2"
+    },
+    {
+      "path": "config/tqsdk_config.example.json",
+      "bytes": 355,
+      "sha256": "9bfba0704f059625b27c1000f4d288335689dbff4302e5b3d27790720848f349"
+    },
+    {
+      "path": "config/broker_classification.json",
+      "bytes": 1478,
+      "sha256": "6401d9a775dec777cf955ea1802908645fcb09db91bb73f179ff130f134c325f"
+    },
+    {
+      "path": "版本/模型版本记录.md",
+      "bytes": 1727,
+      "sha256": "a5a20e87a476241c5ca837f2e6498bda668fc4760ac73930c49f772676c36a0c"
+    },
+    {
+      "path": "scripts/fetch_futures_ranking.py",
+      "bytes": 19414,
+      "sha256": "bafc32c99c29db480e7eb20829c79f511c5231bfbf6ab3de5ebd360f075bbfa5"
+    }
+  ]
+}

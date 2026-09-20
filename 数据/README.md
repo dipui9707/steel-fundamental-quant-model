@@ -6,36 +6,37 @@
 
 原始事实保存在原始/；派生结果保存在加工/；当时状态保存在状态/；实际交易独立保存在交易/。原始表不得依赖下游判断或交易结果。
 
-## 原始记录字段
+## 原始记录字段与点时（PIT）数据契约
 
-| 字段 | 含义 |
+所有录入系统的原始记录严格执行点时数据契约（Point-In-Time Contract），杜绝未来函数与伪造可用时间：
+
+| 字段 | 含义与规范要求 |
 |---|---|
-| observation_id | 单条记录版本的唯一ID |
-| variable_id | A03中的稳定变量ID |
-| data_date | 数据归属日期，不等于发布日 |
-| period_start / period_end | 统计覆盖区间 |
-| available_date | 该版本实际可获得时间；未知留空并停止用于历史判断 |
-| recorded_at | 本项目获得并记录该版本的时间 |
-| value / unit | 原值与单位；缺失留空，真实零填0 |
-| source / source_ref | 提供方、文件或可追溯定位 |
-| frequency / scope | 原生频率、统计样本/地区/品种 |
-| contract | 期货具体合约；非期货可空 |
-| revision_id | 修订版本，修订新增一行，不覆盖初值 |
-| quality_flag / note | 未核实、缺失、异常及说明 |
+| `observation_id` | 单条记录版本的稳定唯一主键（格式如 `OBS_{SOURCE}_{YYYYMMDD}_{SEQ}`） |
+| `variable_id` | [A03 数据地图](../outputs/阶段A_框架初版/A03_数据地图.xlsx) 中的稳定变量代码 |
+| `data_date` | 统计归属日期（YYYY-MM-DD），代表事实所属的统计周期日，不等于发布日 |
+| `period_start / period_end` | 统计覆盖区间（日频即当天，周频如周五至下周四） |
+| `source_published_at` | 来源官方有凭据的公开披露时间戳（ISO 8601 带 Asia/Shanghai 时区，如 `2026-09-18T17:30:00+08:00`）；未知为 null，严禁假定固定 18:30 |
+| `first_seen_at` | 本系统实际首次接收或观测到该版本的真实时间戳 |
+| `available_date` | 该版本对模型判断可用的时点；无确切发布凭据时采用首次收到时间作为保守边界 |
+| `recorded_at` | 本项目实际解析并持久化落盘该版本的时间戳 |
+| `availability_basis` | 可用性依据：`OFFICIAL_RECEIPT`（官方发布回执）/ `FIRST_OBSERVED`（首次观测）/ `RECONSTRUCTED_SCHEDULE`（历史日历重建）/ `SYNTHETIC`（合成） |
+| `information_set_mode` | 信息集模式：`LIVE_RECORDED`（实盘盘后真实留存）/ `RECONSTRUCTED_PIT`（有发布依据的历史重建）/ `SYNTHETIC`（合成仿真，必须物理隔离） |
+| `value / unit` | 原值与原生单位；不可获得或缺失留空（NaN），严禁以 0 假设；真实零填 0 |
+| `source / source_ref` | 数据提供方、官方接口、表格定位或回执文件哈希 |
+| `frequency / scope` | 原生频率（日/周/月/季）、统计样本口径、区域、品种（如全国247家高炉/华东重废） |
+| `contract` | 实际交易合约代码（如 `SHFE.rb2501`）；严禁直接混入主连代码或无依据猜测合约 |
+| `revision_id / supersedes` | 修订版本标识；当发布修订值时**强制新增记录行**，记录 `supersedes=旧observation_id`，严禁物理覆盖旧版本 |
+| `quality_flag / note` | 质量标志：`VALID` / `PARTIAL` / `STALE` / `OUTSIDE_TOP_N` / `MOCK` 等及具体原因说明 |
 
-优先唯一键是observation_id；业务去重键为variable_id + data_date + source + scope + contract + revision_id。不同来源或样本不能合并成同一序列。
+业务去重键为：`variable_id + data_date + contract + revision_id + scope`。
 
-## 使用时点
+## 严格历史回放与使用时点
 
-快照仅引用判断时点之前可用且已记录的数据版本。仅有发布日期无具体时间时，保守设为当天23:59:59并备注“日期级，时刻假定”，不用于当日更早决策。市场数据与事后收益标签分开；历史修订版不得回填旧快照。
-
-日、周、月保持原生频率。前值沿用须保留原始可用时间及数据年龄；过期阈值由来源发布制度核实后写入A03。春节季节性、缺失与停更不能靠插值静默解决。
-
-## 人工工作流程
-
-核对A03口径 → 保存原始来源 → 录入原始记录 → 审查单位/重复/日期 → 生成有输入ID的加工记录 → 判断状态 → 保存预测快照。
-
-当前没有自动导入、计算或校验程序。CSV是交换与录入模板；A03是变量登记表；A07—A09是各自记录的唯一维护位置。
+1. **PIT 时点门禁**：在任何历史判断时点 $as\_of$，仅允许使用满足 $available\_date \le as\_of$ 的最新可得版本；对于 `LIVE_RECORDED` 模式，还必须满足 $recorded\_at \le as\_of$。
+2. **频率与新鲜度**：日、周、月数据保持原生频率。周报沿用前值时，标明原统计周与数据年龄（$is\_new\_release=false$），严禁把前值填充当作日度新信息；未到下一次计划发布时间前，上一份周报的新鲜度不机械衰减。
+3. **Mock 与正式数据物理隔离**：所有离线测试、仿真推演生成的 `SYNTHETIC` 数据**强制独立存放于 [研究/mock_data/](../研究/mock_data/)**，严禁写入 `数据/原始/` 与 `数据/加工/` 目录。
+4. **标准示范文件**：标准录入格式与示范记录见 [数据/原始/PIT数据录入规范与示例.csv](原始/PIT数据录入规范与示例.csv)。
 
 ## 数据源工具与落盘位置
 

@@ -1,0 +1,178 @@
+{
+  "s22804474": {
+    "indicator_id": "s22804474",
+    "name": "SMM: 热轧板卷: FOB 天津港, 中国: Q235B: 3.0*1250*C: 现货价格: 日度",
+    "frequency": "日",
+    "unit": "USD/tonne",
+    "category": "出口价格/热卷FOB"
+  },
+  "s22804484": {
+    "indicator_id": "s22804484",
+    "name": "SMM: 热轧板卷: FOB 京唐港, 中国: Q235B: 3.0*1250*C: 现货价格: 日度",
+    "frequency": "日",
+    "unit": "USD/tonne",
+    "category": "出口价格/热卷FOB"
+  },
+  "s22813839": {
+    "indicator_id": "s22813839",
+    "name": "SMM: 螺纹钢: FOB 天津港, 中国: Gr60: Φ16-20: 现货价格: 日度",
+    "frequency": "日",
+    "unit": "USD/tonne",
+    "category": "出口价格/螺纹FOB"
+  },
+  "s22813854": {
+    "indicator_id": "s22813854",
+    "name": "SMM: 中厚板: FOB 京唐港, 中国: Q235B: 14-30mm: 现货价格: 日度",
+    "frequency": "日",
+    "unit": "USD/tonne",
+    "category": "出口价格/中厚板FOB"
+  },
+  "s22813804": {
+    "indicator_id": "s22813804",
+    "name": "SMM: 方坯: FOB 天津港, 中国: 150*150: 3SP: 平均价: 日度",
+    "frequency": "日",
+    "unit": "USD/tonne",
+    "category": "出口价格/方坯FOB"
+  },
+  "a10148222": {
+    "indicator_id": "a10148222",
+    "name": "沸腾环贸: 钢材出港: 钢材国内主要港口出港汇总: 32港: 周度",
+    "frequency": "周",
+    "unit": "万吨",
+    "category": "港口发运/32港出港汇总"
+  },
+  "a10135358": {
+    "indicator_id": "a10135358",
+    "name": "沸腾环贸: 全球钢材分品种出港: 钢卷: 周度",
+    "frequency": "周",
+    "unit": "万吨",
+    "category": "港口发运/钢卷出港"
+  },
+  "a10135357": {
+    "indicator_id": "a10135357",
+    "name": "沸腾环贸: 全球钢材分品种出港: 钢棒: 周度",
+    "frequency": "周",
+    "unit": "万吨",
+    "category": "港口发运/钢棒出港"
+  },
+  "a10146512": {
+    "indicator_id": "a10146512",
+    "name": "沸腾环贸: 钢材内贸出港: 总量: 周度",
+    "unit": "万吨",
+    "frequency": "周",
+    "data_start": "2020-01-10",
+    "data_latest": "2026-09-18",
+    "source": "沸腾环贸",
+    "type_all": "黑色金属-钢材-港口数据-中国-沸腾环贸: 钢材内贸出港: 周度"
+  },
+  "a10102482": {
+    "indicator_id": "a10102482",
+    "name": "SMM: 热卷本月计划出口量: 26家: 月度",
+    "unit": "万吨",
+    "frequency": "月",
+    "data_start": "2017-01-31",
+    "data_latest": "2026-09-30",
+    "source": "SMM",
+    "type_all": "黑色金属-热轧板卷-产量-SMM: 排产计划: 26家: 月度"
+  },
+  "a12885073": {
+    "indicator_id": "a12885073",
+    "name": "SMM: 钢铁下游耗钢量: 汽车行业: 月度",
+    "unit": "百万吨",
+    "frequency": "月",
+    "data_start": "2024-01-31",
+    "data_latest": "2026-07-31",
+    "source": "SMM",
+    "type_all": "黑色金属-终端-需求-SMM: 钢铁下游耗钢量: 月度"
+  },
+  "a12885074": {
+    "indicator_id": "a12885074",
+    "name": "SMM: 钢铁下游耗钢量: 家电行业: 月度",
+    "unit": "百万吨",
+    "frequency": "月",
+    "data_start": "2024-01-31",
+    "data_latest": "2026-07-31",
+    "source": "SMM",
+    "type_all": "黑色金属-终端-需求-SMM: 钢铁下游耗钢量: 月度"
+  },
+  "a12885072": {
+    "indicator_id": "a12885072",
+    "name": "SMM: 钢铁下游耗钢量: 机械行业: 月度",
+    "unit": "百万吨",
+    "frequency": "月",
+    "data_start": "2024-01-31",
+    "data_latest": "2026-07-31",
+    "source": "SMM",
+    "type_all": "黑色金属-终端-需求-SMM: 钢铁下游耗钢量: 月度"
+  },
+  "a12885082": {
+    "indicator_id": "a12885082",
+    "name": "SMM: 钢铁下游耗钢量: 汽车行业-预测: 月度",
+    "unit": "百万吨",
+    "frequency": "月",
+    "data_start": "2026-07-31",
+    "data_latest": "2026-08-31",
+    "source": "SMM",
+    "type_all": "黑色金属-终端-需求-SMM: 钢铁下游耗钢量: 月度"
+  },
+  "a12885083": {
+    "indicator_id": "a12885083",
+    "name": "SMM: 钢铁下游耗钢量: 家电行业-预测: 月度",
+    "unit": "百万吨",
+    "frequency": "月",
+    "data_start": "2026-07-31",
+    "data_latest": "2026-08-31",
+    "source": "SMM",
+    "type_all": "黑色金属-终端-需求-SMM: 钢铁下游耗钢量: 月度"
+  },
+  "a12885081": {
+    "indicator_id": "a12885081",
+    "name": "SMM: 钢铁下游耗钢量: 机械行业-预测: 月度",
+    "unit": "百万吨",
+    "frequency": "月",
+    "data_start": "2026-07-31",
+    "data_latest": "2026-08-31",
+    "source": "SMM",
+    "type_all": "黑色金属-终端-需求-SMM: 钢铁下游耗钢量: 月度"
+  },
+  "a12796380": {
+    "indicator_id": "a12796380",
+    "name": "SMM: 冷轧本月计划产量: 月度",
+    "unit": "万吨",
+    "frequency": "月",
+    "data_start": "2024-09-30",
+    "data_latest": "2026-09-30",
+    "source": "SMM",
+    "type_all": "黑色金属-冷轧板卷-产量-SMM: 冷轧排产计划: 31家: 月度"
+  },
+  "a12750001": {
+    "indicator_id": "a12750001",
+    "name": "SMM: 热轧板卷表观需求: 大样本: 周度",
+    "unit": "万吨",
+    "frequency": "周",
+    "data_start": "2020-01-02",
+    "data_latest": "2026-09-17",
+    "source": "SMM",
+    "type_all": "黑色金属-热轧板卷-需求-SMM: 热卷表观需求: 周度"
+  },
+  "a12817930": {
+    "indicator_id": "a12817930",
+    "name": "中国海关: 钢材间接出口总量: 月度",
+    "unit": "万吨",
+    "frequency": "月",
+    "data_start": "2020-01-31",
+    "data_latest": "2026-07-31",
+    "source": "中国海关",
+    "type_all": "黑色金属-黑色隐藏-钢铁-钢铁综合-供需平衡-钢铁产业链平衡表-钢铁产业链平衡表（月度）"
+  },
+  "a12885068": {
+    "indicator_id": "a12885068",
+    "name": "SMM: 钢铁下游耗钢量: 综合: 月度",
+    "unit": "百万吨",
+    "frequency": "月",
+    "data_start": "2024-01-31",
+    "data_latest": "2026-07-31",
+    "source": "SMM",
+    "type_all": "黑色金属-终端-需求-SMM: 钢铁下游耗钢量: 月度"
+  }
+}

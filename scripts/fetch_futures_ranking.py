@@ -210,16 +210,26 @@ def fetch_and_merge_rankings(api, contract, target_date=None, days=1):
     if len(returned_dates_l) == 0 or len(returned_dates_s) == 0:
         raise RuntimeError(f"合约 {contract} 返回数据中缺少有效 datetime 字段。")
     
-    actual_date_str = str(returned_dates_l[-1])
-    if target_date and actual_date_str != target_date:
+    raw_date_str = str(returned_dates_l[-1])
+    norm_actual = f"{raw_date_str[:4]}-{raw_date_str[4:6]}-{raw_date_str[6:8]}" if (len(raw_date_str) == 8 and raw_date_str.isdigit()) else raw_date_str
+    
+    norm_target = target_date
+    if target_date and len(target_date) == 8 and target_date.isdigit():
+        norm_target = f"{target_date[:4]}-{target_date[4:6]}-{target_date[6:8]}"
+
+    if norm_target and norm_actual != norm_target:
         raise RuntimeError(
             f"【日期错配拒绝】合约 {contract} 请求日期为 {target_date}，"
-            f"但 TqSdk 实际返回日期为 {actual_date_str}。严禁以请求日硬重命名返回数据！"
+            f"但 TqSdk 实际返回日期为 {raw_date_str}。严禁以请求日硬重命名返回数据！"
         )
 
-    # 过滤出当前目标交易日
-    df_l = df_l[df_l["datetime"] == actual_date_str].copy()
-    df_s = df_s[df_s["datetime"] == actual_date_str].copy()
+    actual_date_str = norm_actual
+
+    # 过滤出当前目标交易日并规范为 YYYY-MM-DD
+    df_l = df_l[df_l["datetime"].astype(str) == raw_date_str].copy()
+    df_s = df_s[df_s["datetime"].astype(str) == raw_date_str].copy()
+    df_l["datetime"] = actual_date_str
+    df_s["datetime"] = actual_date_str
 
     # 外连接合并席位
     df_merged = pd.merge(df_l, df_s, on=["datetime", "symbol", "broker"], how="outer", suffixes=("_l", "_s"))

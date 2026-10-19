@@ -1,0 +1,11 @@
+{
+  "actual_cost_episodes": 2,
+  "closed_cost_episodes": 2,
+  "closed_loss_episodes": 2,
+  "old_gate_exceeding_closed_episodes": 1,
+  "old_gate_exceeding_loss_episodes": 1,
+  "old_gate_exceeding_net_pnl": -607552.6600000001,
+  "confirmation_timeouts": 0,
+  "price_failure_exits": 0,
+  "note": "零样本的损益为null；未平仓不计胜负。2.5%仅作原入场上限对照标签。"
+}

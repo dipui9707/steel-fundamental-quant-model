@@ -1,0 +1,22 @@
+"""候选框架公共约束；数值是冻结研究设定，未经参数寻优。"""
+FRAMEWORK_VERSION = "framework-0.5-candidate"
+MA_STOP_BUFFER = 0.015
+HIGH_VOL_THRESHOLD = 1.40
+HIGH_VOL_LEVERAGE_CAP = 2.0
+DEFAULT_RISK_FRACTION = 0.01
+RISK_DISTANCE_FLOOR = 0.015
+MECHANISM_MAX_WINDOWS = 2
+
+# 黑色五品种主力合约轮换规则
+# 成材端 (上期所螺纹 RB, 热卷 HC): 主力合约为 01 / 05 / 10
+# 原料端 (大商所铁矿 I, 焦煤 JM, 焦炭 J): 主力合约为 01 / 05 / 09
+STEEL_MAIN_MONTHS = ("01", "05", "10")
+RAW_MATERIAL_MAIN_MONTHS = ("01", "05", "09")
+
+MAIN_CONTRACT_MONTHS_MAP = {
+    "rb": STEEL_MAIN_MONTHS,
+    "hc": STEEL_MAIN_MONTHS,
+    "i": RAW_MATERIAL_MAIN_MONTHS,
+    "j": RAW_MATERIAL_MAIN_MONTHS,
+    "jm": RAW_MATERIAL_MAIN_MONTHS,
+}

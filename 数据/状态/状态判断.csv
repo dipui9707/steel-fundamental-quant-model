@@ -1,1 +1,25 @@
 ﻿snapshot_id,as_of,model_version,module,state_name,state_value,evidence_ids,assessment_method,limitations
+SNAP_20240119,2024-01-19T18:00:00+08:00,V0.2,Macro_Regime,Macro_Regime,Neutral_Weak,OBS_FUT_RB_20240119_CLOSE,宏观信用与节前政策窗口评估,岁末年初宏观处于信贷投放早春期，实物工作量尚未接受开工检验
+SNAP_20240119,2024-01-19T18:00:00+08:00,V0.2,Fundamental,Fundamental_State,Bearish,OBS_PROD_R01_20240119;OBS_INV_R02_20240119;OBS_INV_R03_20240119;FEAT_FBS_SCORE_20240119,周度表需测算与冬储累库斜率检验,冬季季节性停工导致表需失真，冬储真实意愿需通过贸易商拿货节奏侧面佐证
+SNAP_20240119,2024-01-19T18:00:00+08:00,V0.2,Spot,Spot_State,Weak,OBS_SPOT_RB_20240119;FEAT_BASIS_RB_20240119,现货冬储挂牌价与成交量跟踪,华东华北现货冬储出货缓慢，贸易商被动拿货为主
+SNAP_20240119,2024-01-19T18:00:00+08:00,V0.2,Sentiment,Sentiment_State,Bullish_Speculation,OBS_FUT_RB_20240119_CLOSE;OBS_FUT_RB_20240119_OI,期货盘面估值溢价与主力资金持仓博弈,多头资金利用春季开工预期维持盘面高估值
+SNAP_20240119,2024-01-19T18:00:00+08:00,V0.2,Divergence,Divergence_State,Bearish_Hidden_Divergence,FEAT_FBS_SCORE_20240119;OBS_FUT_RB_20240119_CLOSE,FBS得分持续负向走低与期货维持3900+高位背离,隐性背离在淡季预期主导阶段可能持续数周，需等待节后实物开工证伪
+SNAP_20240119,2024-01-19T18:00:00+08:00,V0.2,System,Model_Confidence,Medium,FEAT_FBS_W_20240119,淡季权重系数 W=0.6 调节置信度,冬储淡季信噪比一般，严禁左侧激进逆势摸顶加仓
+SNAP_20240308,2024-03-08T18:00:00+08:00,V0.2,Macro_Regime,Macro_Regime,Bearish,OBS_FUT_RB_20240308_CLOSE,两会定调与财政化债落地执行评估,化债约束下地方基建停缓建项目增多，地产销售持续探底
+SNAP_20240308,2024-03-08T18:00:00+08:00,V0.2,Fundamental,Fundamental_State,Extreme_Bearish,OBS_PROD_R01_20240308;OBS_INV_R02_20240308;OBS_INV_R03_20240308;FEAT_DAPP_RB_20240308;FEAT_FBS_SCORE_20240308,旺季开工表需检验与库存拐点判定,表需仅200万吨断崖式低于往年同期，厂库社库双爆仓，库存去化完全受阻
+SNAP_20240308,2024-03-08T18:00:00+08:00,V0.2,Spot,Spot_State,Severe_Distress,OBS_SPOT_RB_20240308;FEAT_BASIS_RB_20240308;OBS_PROFIT_C03_20240308,现货流动性枯竭与踩踏甩货监控,华东现货日均成交不足13万吨，现货贴水加剧，钢厂亏损突破200元/吨
+SNAP_20240308,2024-03-08T18:00:00+08:00,V0.2,Sentiment,Sentiment_State,Short_Panic,OBS_FUT_RB_20240308_OI;OBS_FUT_I_20240308_CLOSE,主力资金净空单扩张与多头踩踏斩仓,市场强预期彻底粉碎，资金由成材向铁矿双焦发动全产业链负反馈做空
+SNAP_20240308,2024-03-08T18:00:00+08:00,V0.2,Divergence,Divergence_State,Bearish_Convergence,FEAT_FBS_SCORE_20240308;OBS_FUT_RB_20240308_CLOSE;OBS_FUT_I_20240308_CLOSE,基本面极度恶化与盘面向下破位由背离走向全面共振杀跌,共振下跌速度极快，负反馈主跌浪具有踩踏与流动性冲击特征
+SNAP_20240308,2024-03-08T18:00:00+08:00,V0.2,System,Model_Confidence,High,FEAT_FBS_W_20240308,旺季验证期权重拉升至 W=0.9~1.0，证据链完全闭环,注意极端超跌后的钢厂联合减产自律与政策干预风险
+SNAP_20250704,2025-07-04T18:00:00+08:00,V0.2,Macro_Regime,Macro_Regime,Neutral_Policy_Expectation,OBS_WIND_F06_20250704,三季度宏观稳增长政策预期与重大改革窗口评估,政策落地节奏受财政发债节奏影响，短期以预期博弈为主
+SNAP_20250704,2025-07-04T18:00:00+08:00,V0.2,Fundamental,Fundamental_State,Bullish_Low_Inventory,OBS_WIND_R01_20250704;OBS_WIND_R02_20250704;OBS_WIND_R03_20250704;FEAT_FBS_SCORE_20250704,历史极低库存水平检验与供需边际评估,虽处夏季高温淡季，但螺纹总库存仅545万吨创多年极低水平，去库至极限形成强支撑
+SNAP_20250704,2025-07-04T18:00:00+08:00,V0.2,Spot,Spot_State,Strong_Backwardation,OBS_WIND_S01_20250704;FEAT_BASIS_RB_20250704,现货升水幅度与基差安全边际测算,现货报价坚挺在3170，期货贴水近100元/吨，现货端贸易商拒绝低价抛售
+SNAP_20250704,2025-07-04T18:00:00+08:00,V0.2,Sentiment,Sentiment_State,Short_Covering,OBS_WIND_F07_20250704;OBS_WIND_F08_20250704,盘面持仓异动与资金回补动向,空头主力开始大规模获利止盈平仓，多头低位增仓推升量能
+SNAP_20250704,2025-07-04T18:00:00+08:00,V0.2,Divergence,Divergence_State,Bullish_Oversold_Divergence,FEAT_FBS_SCORE_20250704;OBS_WIND_F06_20250704,价格过度破位下跌至3000整数关口与极低库存及高升水背离,超跌反弹驱动强劲，但需警惕高铁水压制下反弹高度受限
+SNAP_20250704,2025-07-04T18:00:00+08:00,V0.2,System,Model_Confidence,High,FEAT_FBS_W_20250704;FEAT_BASIS_RB_20250704,极低库存+现货高升水双重硬约束支撑模型高置信度,阶段性反弹目标关注 3300~3350 成本压力区间
+SNAP_20250725,2025-07-25T18:00:00+08:00,V0.2,Macro_Regime,Macro_Regime,Neutral_Wait_and_See,OBS_WIND_F06_20250725,政策利好充分定价后进入落地观察期,市场强预期被盘面在短期内完全提前计入，缺乏新政策催化剂
+SNAP_20250725,2025-07-25T18:00:00+08:00,V0.2,Fundamental,Fundamental_State,Bearish_Accumulation,OBS_WIND_TOTAL01_20250725;OBS_WIND_R03_20250724;FEAT_FBS_SCORE_20250725,高炉铁水持续高位与淡季累库检验,247家铁水维持在240万吨以上，高温多雨阻碍施工，螺纹社库出现连续累库拐点
+SNAP_20250725,2025-07-25T18:00:00+08:00,,Spot,Spot_State,Weakening_Contango,OBS_WIND_S01_20250725;FEAT_BASIS_RB_20250725,现货跟涨乏力与盘面转为升水监控,现货报价3330无法承接高价，盘面3356反超现货转为升水，基差转负透支估值
+SNAP_20250725,2025-07-25T18:00:00+08:00,,Sentiment,Sentiment_State,Bullish_Euphoria_Exhaustion,OBS_WIND_F07_20250725;OBS_WIND_F08_20250725,投机多头情绪达极值与套保盘进场打压,连续冲高后多头成交天量放量滞涨，钢厂在盘面大幅挂单套保锁定利润
+SNAP_20250725,2025-07-25T18:00:00+08:00,,Divergence,Divergence_State,Bearish_Overbought_Divergence,FEAT_FBS_SCORE_20250725;OBS_WIND_F06_20250725,期货盘面大幅升水冲高与实物累库和淡季现实形成隐性顶背离,预期透支后反弹衰竭，面临向基本面均值回归的回调压力
+SNAP_20250725,2025-07-25T18:00:00+08:00,,System,Model_Confidence,Medium_High,FEAT_FBS_W_20250725;FEAT_BASIS_RATE_RB_20250725,基差转负与淡季高铁水累库双重顶背离预警,回调下探目标关注 3050~3100 元/吨区间

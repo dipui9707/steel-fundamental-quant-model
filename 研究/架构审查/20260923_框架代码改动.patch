@@ -1,0 +1,1862 @@
+--- /dev/null
++++ b/framework_rules.py
+@@ -0,0 +1,8 @@
++"""候选框架公共约束；数值是冻结研究设定，未经参数寻优。"""
++FRAMEWORK_VERSION = "framework-0.3-candidate"
++MA_STOP_BUFFER = 0.015
++HIGH_VOL_THRESHOLD = 1.40
++HIGH_VOL_LEVERAGE_CAP = 2.0
++DEFAULT_RISK_FRACTION = 0.01
++RISK_DISTANCE_FLOOR = 0.015
++MECHANISM_MAX_WINDOWS = 2
+--- a/scripts/diagnose_model_defects.py
++++ b/scripts/diagnose_model_defects.py
+@@ -116,27 +116,9 @@
+         top_fund = sub_state["fundamental_direction"].mode().iloc[0]
+         top_macro = sub_state["macro_regime"].mode().iloc[0]
+ 
+-        # 评价
+-        if r["id"] in ["REGIME_01", "REGIME_06"]:
+-            sweet = "极高 (★★★★★)"
+-            blind = "低"
+-            verdict = "基本面主导，模型如鱼得水，方向与持续期高度吻合"
+-        elif r["id"] in ["REGIME_02"]:
+-            sweet = "中等 (★★★☆☆)"
+-            blind = "中"
+-            verdict = "跨品种异动引擎成功预警原料推升，避免了机械做多"
+-        elif r["id"] in ["REGIME_07"]:
+-            sweet = "极低 (★☆☆☆☆)"
+-            blind = "极高 (致命盲区)"
+-            verdict = "纯数据无法预知政治局会议，前2天严重受挫，靠波动率脉冲滞后止损"
+-        elif r["id"] in ["REGIME_04"]:
+-            sweet = "中等 (★★★☆☆)"
+-            blind = "高"
+-            verdict = "顶部高估值发出预警，但煤炭雷霆政策出台当周承受冲击"
+-        else:
+-            sweet = "良好 (★★★★☆)"
+-            blind = "中"
+-            verdict = "成本下轨反弹捕捉敏锐，低波震荡期产生少量磨损"
++        sweet = "未验证"
++        blind = "待核对成交与预测快照"
++        verdict = f"区间价格变化{p_ret:+.1f}%，主导状态{top_fund}；状态分布不能证明获利或避险"
+ 
+         report_lines.append(
+             f"| `{r['id']}` | {r['name']} | {n_days}d | {p_ret:+.1f}% | 供需多: {fund_dist.get('Bullish',0)*100:.0f}%, 空: {fund_dist.get('Bearish',0)*100:.0f}% | {sweet} | {blind} | {verdict} |"
+@@ -164,21 +146,12 @@
+         s_conf = row["spot_confirmation"]
+         conf = row["model_confidence"]
+ 
+-        if dt_str in ["2024-09-20", "2024-09-23"]:
+-            critique = "【缺陷暴露】此时表需仅210万吨，高炉铁水仅223万吨，纯基本面模型坚定判定为 Bearish，完全不知道次日有史诗级政策！"
+-        elif dt_str in ["2024-09-24"]:
+-            critique = "【暴跌/暴涨日】央行发布会当天螺纹暴涨+3.6%，盘面单日涨停，模型基本面依然滞后为 Neutral/Bearish，出现严重踩踏背离！"
+-        elif dt_str in ["2024-09-25", "2024-09-26"]:
+-            critique = "【被动感知】连续大涨后 5 日波动率暴增，盘面内生冲击触发 `vol_shock_ratio > 2.5`，系统被动将宏观状态切换为【宏观覆盖】，下调基本面决定权，启动防御！"
+-        elif dt_str in ["2024-09-30"]:
+-            critique = "【节前狂热】全板块涨停共振，盘面触碰 3550 元，模型置信度降至最低，坚决不再盲目做空。"
+-        else:
+-            critique = "节后高开低走，基本面反噬，价格重新向供需均值靠拢。"
++        critique = f"当日输出：{f_dir}，现货{s_conf}，置信评级{conf}；成交与损失须查独立实验流水"
+ 
+         report_lines.append(f"| `{dt_str}` | {c_p:.0f} 元 | {r_1d:+.2f}% | {m_regime} | {f_dir} | {s_conf} | {conf} | {critique} |")
+ 
+     report_lines.append("\n### 924 真实缺陷总结：\n")
+-    report_lines.append("1. **滞后性不可避免**：在政策出台的第 1~2 天（9-24 与 9-25），任何纯客观的基本面量化系统**必然遭遇严重亏损**！因为实物供需（库存、表需）都是周度滞后指标，根本不可能跑赢突发政策；\n")
++    report_lines.append("1. **滞后性不可避免**：在政策出台的第 1~2 天（9-24 与 9-25），持有反向头寸的策略可能亏损，具体损失取决于当时仓位与成交约束！因为实物供需（库存、表需）都是周度滞后指标，根本不可能跑赢突发政策；\n")
+     report_lines.append("2. **合规应对之道不是事后改代码，而是依靠风控止损**：\n")
+     report_lines.append("   - 价格突破均线通道上限时触发价格硬止损；\n")
+     report_lines.append("   - 波动率骤增触发模型置信度降级（由 High 降为 Low），停止信号输出；\n")
+@@ -189,20 +162,8 @@
+     # --------------------------------------------------------------------------
+     report_lines.append("\n---\n")
+     report_lines.append("## 三、模型核心能力边界清单 (优势区 vs 盲区)\n")
+-    report_lines.append("### 1. 优势区 (Sweet Spots: 胜率 > 75%, 建议放手让模型主导)\n")
+-    report_lines.append("- **成材需求证伪 + 钢厂亏损负反馈主跌浪**：实物库存爆仓、现货大幅贴水、长流程毛利跌破现金流成本线时（如 2024Q1、2023Q2），基本面驱动力具有压倒性胜率；\n")
+-    report_lines.append("- **深度亏损成本下轨的非对称筑底反弹**：当即期毛利跌至历史 5% 极低分位、短流程电炉全线停产时，成本下轨的反弹胜率高达 88.5%；\n")
+-    report_lines.append("- **同尺度严重背离的均值修复**：当现货价格与盘面出现大幅升水，而盘面因情绪打压滞涨时，现货基差对盘面的牵引修复率达 42.16%。\n")
+-
+-    report_lines.append("\n### 2. 致命盲区 (Blind Spots: 必须依靠硬风控而非模型)\n")
+-    report_lines.append("- **突发黑天鹅/超常宏观政策前夕**：基本面无能为力，必须依靠盘面波动率熔断与均线破位止损；\n")
+-    report_lines.append("- **低波窄幅震荡的垃圾时间 (证据熵 > 0.70)**：供需无大矛盾、基差在 0 轴徘徊时，模型易频繁换向磨损，必须主动关停策略，保持 Neutral；\n")
+-    report_lines.append("- **极端挤仓逼仓行情**：原料端持仓异常扩张时，成材可能被动拉涨，必须依赖 `CrossCommodityShockDetector` 识别为外生供给逼仓，严禁机械开空。\n")
+-
+-    report_lines.append("\n---\n")
+-    report_lines.append("## 四、总结与阶段 E 准入建议\n")
+-    report_lines.append("本诊断报告证明：**现在的模型是一个没有经过任何化妆的、完全客观的工业级量化模型**。\n")
+-    report_lines.append("它在顺周期里非常犀利，在突发外生事件前有明确的滞后盲区。**知道了缺陷在哪里，交易系统才能针对性地设计风控与仓位预算（例如在低置信度时强制空仓、在均线破位时强制平仓）。**\n")
++    report_lines.append("本报告只提供状态与价格的观察记录。机制兑现、交易损益与执行风控需分别检验；不从情景名称推断胜率。\n")
++    report_lines.append("数据发布时点、历史修订、突发事件、涨跌停与成交约束仍需核实；当前资料不足以宣称工业级或实盘准入。\n")
+ 
+     report_path = BASE_DIR / "研究" / "测试报告" / "模型真实缺陷与失效场景全景诊断报告.md"
+     report_path.parent.mkdir(parents=True, exist_ok=True)
+--- /dev/null
++++ b/scripts/run_framework_experiment.py
+@@ -0,0 +1,128 @@
++#!/usr/bin/env python3
++"""候选框架验证入口：冻结设定、同条件对照、新建实验目录、不写真实交易台账。"""
++import argparse
++from datetime import datetime, timezone
++import hashlib
++import json
++from pathlib import Path
++import subprocess
++import sys
++import uuid
++import shutil
++import platform
++import pandas as pd
++import numpy as np
++ROOT = Path(__file__).resolve().parents[1]
++sys.path.insert(0, str(ROOT))
++from framework_rules import FRAMEWORK_VERSION, DEFAULT_RISK_FRACTION
++from stage_c.state_engine import StageCStateEngine
++from stage_e.backtest_engine import BacktestEngine
++from stage_e.comparison_signals import ComparisonSignals
++
++
++def sha(path):
++    return hashlib.sha256(path.read_bytes()).hexdigest()
++
++
++def run(start='2021-01-04', end=None, output=None):
++    stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
++    out = Path(output) if output else ROOT/'研究'/'回测实验'/f'{stamp}_{uuid.uuid4().hex[:8]}'
++    out.mkdir(parents=True, exist_ok=False)
++    paths = [ROOT/'数据/加工/阶段B_特征宽表.parquet', ROOT/'数据/原始/期货合约全量日线/standardized/rb_daily.parquet']
++    source = {str(p.relative_to(ROOT)): sha(p) for p in paths}
++    code_paths = sorted([*ROOT.glob('stage_[b-e]/*.py'),ROOT/'framework_rules.py',Path(__file__)])
++    code = {str(p.relative_to(ROOT)):sha(p) for p in code_paths}
++    for path in code_paths:
++        destination = out/'source_snapshot'/path.relative_to(ROOT)
++        destination.parent.mkdir(parents=True,exist_ok=True)
++        shutil.copy2(path,destination)
++    features = pd.read_parquet(paths[0]).sort_index()
++    features.index = features.index.astype(str)
++    features['ma_20'] = features.rb_close.rolling(20).mean()
++    state_engine = StageCStateEngine()
++    states = state_engine.synthesize_states(features)
++    experiment_features = features.loc[start:end].copy()
++    experiment_states = states.loc[experiment_features.index].copy()
++    if experiment_features.empty:
++        raise ValueError('实验区间为空')
++    states.to_parquet(out/'candidate_states.parquet')
++    events = state_engine.mechanism_events
++    predictions = events[events.event_type.eq('PREDICTION')].dropna(axis=1,how='all')
++    reviews = events[events.event_type.eq('REVIEW')].dropna(axis=1,how='all')
++    for name, data in [('predictions', predictions), ('reviews', reviews)]:
++        # 单次实验独立冻结；复核另存，禁止回写最初预测。
++        with (out/f'{name}.jsonl').open('x') as fh:
++            for rec in data.to_dict('records'):
++                clean = {k:v for k,v in rec.items() if not isinstance(v,float) or np.isfinite(v)}
++                fh.write(json.dumps(clean, ensure_ascii=False)+'\n')
++    common = dict(initial_capital=10_000_000,slippage_ticks=1.0,commission_rate=.0001,
++                  margin_rate=.10,max_base_leverage=1.0,max_margin_utilization=.50,
++                  scale_by_confidence=False,common_risk_controls=True)
++    manifest = dict(version=FRAMEWORK_VERSION, created_at=stamp,
++        experiment_start=str(experiment_features.index[0]),experiment_end=str(experiment_features.index[-1]),
++        data_hashes=source,code_hashes=code,git_head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
++        runtime={'python':platform.python_version(),'pandas':pd.__version__,'numpy':np.__version__},
++        settings=common, signal_settings=vars(ComparisonSignals('FULL').core), risk_budgets={'fixed_1x':None, 'risk_1pct':DEFAULT_RISK_FRACTION},
++        validation_status='EXPLORATORY_CURRENT_VINTAGE_NOT_OUT_OF_SAMPLE',
++        limitations=['历史已用于研发，不能重新命名为独立样本外','宽表发布时间与历史版本尚未逐条核实',
++                    '01/05/10候选池内按前日持仓量选约，早期实约覆盖不全；本次从2021年开始',
++                    '收盘信号下一日开盘撮合；没有涨跌停排队、盘中追加保证金及冲击成本模型',
++                    '不合格结算价使用收盘估值代理且逐日标注','连续主力仅用于信号特征，成交使用实约',
++                    '机制兑现率不代表因果识别；需求/供给候选仅覆盖多头，与双向策略范围不同'])
++    (out/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
++    metrics, years = [], []
++    for budget, fraction in manifest['risk_budgets'].items():
++        engine = BacktestEngine(experiment_features,experiment_states, risk_budget_fraction=fraction, **common)
++        engine.rollover_mgr.get_full_map().loc[start:end].to_csv(out/f'{budget}_contracts.csv')
++        for mode in ['PRICE','SUPPLY','PRICE_FUNDAMENTAL','FULL','FULL_WITH_DUPLICATE_PROXY','MECHANISM_CANDIDATE']:
++            label = budget+'_'+mode
++            result = engine.run_backtest(signal_generator=ComparisonSignals(mode), strategy_label=label, verbose=False)
++            result.equity_df.to_parquet(out/f'{label}_equity.parquet')
++            result.trades_df.to_csv(out/f'{label}_trades.csv',index=False)
++            result.vetted_signals_df.to_parquet(out/f'{label}_decisions.parquet')
++            eq = result.equity_df
++            if not np.allclose(eq.total_equity,eq.available_cash+eq.margin_occupied,atol=.02):
++                raise AssertionError(f'{label}: 权益恒等式未通过')
++            if not np.isfinite(eq.total_equity).all():
++                raise AssertionError(f'{label}: 权益非有限值')
++            p = {k:v for k,v in result.performance.items() if k != 'monthly_returns_table'}
++            signs = np.sign(eq.lots)
++            p['position_episodes'] = int(((signs != signs.shift(1).fillna(0)) & (signs != 0)).sum())
++            p['marking_close_proxy_days'] = int(eq.marking_basis.eq('CLOSE_PROXY').sum())
++            p['budget'] = budget
++            p['mode'] = mode
++            metrics.append(p)
++            for year,g in eq.groupby(eq.date.str[:4]):
++                years.append(dict(strategy=label,year=year,return_pct=((1+g.daily_return).prod()-1)*100,
++                                  days=len(g)))
++            print(label, 'CAGR',p['cagr_pct'],'MDD',p['max_drawdown_pct'],'Sharpe',p['sharpe_ratio'],flush=True)
++    pd.DataFrame(metrics).to_csv(out/'comparison.csv',index=False)
++    pd.DataFrame(years).to_csv(out/'year_blocks.csv',index=False)
++    # 无论盈亏方向如何，都由本次记录生成；不填写预设成功叙事。
++    lines = ['# 框架候选版本验证', '', f'版本：{FRAMEWORK_VERSION}。期间：{manifest["experiment_start"]} 至 {manifest["experiment_end"]}。',
++        '', '这是当前数据版本上的历史探索性比较，不能证明实盘收益或样本外有效性。', '',
++        '所有组共用初始资金、实约映射、价格风险过滤、手续费、滑点、最高1倍名义杠杆。第二组再加1%权益风险预算，距离为20日ATR的2倍、最低价格的1.5%。这些是固定研究设定，未作收益寻优。', '',
++        '|预算|策略|年化收益%|最大回撤%|夏普|平均杠杆|持仓段数|', '|---|---|---:|---:|---:|---:|---:|']
++    for p in metrics:
++        lines.append(f'|{p["budget"]}|{p["mode"]}|{p["cagr_pct"]:.2f}|{p["max_drawdown_pct"]:.2f}|{p["sharpe_ratio"]:.2f}|{p["average_leverage"]:.3f}|{p["position_episodes"]}|')
++    lines += ['', 'PRICE=价格趋势；SUPPLY=供给评分；PRICE_FUNDAMENTAL=价格与原基本面同向；FULL=现有完整规则；FULL_WITH_DUPLICATE_PROXY=恢复基差衍生Carry重复门禁/乘数；MECHANISM_CANDIDATE=需求或减产后库存预测兑现并且价格向上。', '',
++              '三类产业假设分别登记预测与复核。以下是全历史机制账本（含比较区间之前的预热观察），按独立预测编号计数，不把每日前值填充计为新增样本。', '']
++    if not reviews.empty:
++        for (family,status),n in reviews.groupby(['family','status']).size().items():
++            lines.append(f'- {family} / {status}：{n} 个已结束预测。')
++    lines += ['', '限制：'] + [f'- {x}。' for x in manifest['limitations']]
++    lines += ['', '通过工程核对：逐日权益恒等式、有限值；具体逻辑反例见 tests/test_framework_evolution.py。',
++              '下一步按冻结规则积累新增周度观察；不能依据本表挑最赚钱的参数后宣称独立验证。']
++    (out/'验证报告.md').write_text('\n'.join(lines)+'\n')
++    artifacts = {str(p.relative_to(out)):sha(p) for p in out.rglob('*') if p.is_file()}
++    (out/'artifact_hashes.json').write_text(json.dumps(artifacts,ensure_ascii=False,indent=2))
++    print('OUTPUT', out,flush=True)
++    return out
++
++if __name__ == '__main__':
++    parser = argparse.ArgumentParser()
++    parser.add_argument('--start',default='2021-01-04')
++    parser.add_argument('--end')
++    parser.add_argument('--output')
++    args=parser.parse_args()
++    run(args.start,args.end,args.output)
+--- a/scripts/run_parameter_robustness_test.py
++++ b/scripts/run_parameter_robustness_test.py
+@@ -374,109 +374,14 @@
+     summary: Dict[str, Any],
+     out_path: Path,
+ ):
+-    """生成详尽的参数敏感性与高原测试研报 Markdown"""
+-    lines = []
+-    lines.append("# 阶段 E 策略参数敏感性与防过拟合“高原”测试研报")
+-    lines.append("")
+-    lines.append(f"**模型版本**: `Stage-E-0.11-carry-regime-adaptive-sizing` | **测试时间**: {time.strftime('%Y-%m-%d %H:%M:%S')}  ")
+-    lines.append(f"**评估样本**: 2018-03-09 至 2026-09-21 (全历史 2,074 交易日) | **测试配置总量**: {summary['total_configurations_tested']} 组全历史连续回测  ")
+-    lines.append("**测试目标**: 严格排查参数孤立尖峰（Knife-edge Overfitting），检验收益是否来自宽阔连续的产业因果参数高原（Parameter Plateau）。  ")
+-    lines.append("")
+-    lines.append("---")
+-    lines.append("")
+-    lines.append("## 一、 执行摘要与核心裁定结论")
+-    lines.append("")
+-    lines.append(r"通过对近期落地的 **箱体空间门禁、盈亏比不对称门禁、实物流动性冰封门禁、Carry 逆风一票否决门禁、Carry 仓位自适应调节乘数以及资金利用率** 共 9 个核心参数进行单变量大跨度扫描（$\pm 20\% \sim \pm 50\%$）与 3 组关键交互双变量网格扫描，量化实证结论如下：")
+-    lines.append("")
+-    lines.append(f"1. **具备坚实的“参数稳定高原”，不存在刀锋式尖峰过拟合**：")
+-    lines.append(f"   - 在全部 **{summary['total_configurations_tested']} 组** 全历史连续回测中，累计净值均值达 **{summary['nav_mean']:.4f}** (中位数 **{summary['nav_median']:.4f}**)，变异系数 CV 仅为 **{summary['nav_cv']:.3f}**；")
+-    lines.append(f"   - 夏普比率全区间均值达 **{summary['sharpe_mean']:.2f}** (最低仍有 **{summary['sharpe_min']:.2f}**，最高 **{summary['sharpe_max']:.2f}**)，最大回撤严格稳定在 **{summary['maxdd_min']:.2f}% ~ {summary['maxdd_max']:.2f}%** 之间；没有任何参数微调导致回撤突然崩塌的断崖现象。")
+-    lines.append(f"2. **全历史 9 年全胜具备极高的参数容忍韧性**：")
+-    lines.append(f"   - 在全部测试配置中，**{summary['pos_9_ratio_pct']:.1f}%** 的参数组合录得 **2018–2026 年连续 9 个自然年全部正收益（9年9胜）**；")
+-    lines.append(f"   - **{summary['pos_8_plus_ratio_pct']:.1f}%** 的配置保持了 8 年以上正收益。无论门禁阈值适度放宽或收紧，2021 年与 2025 年的盈利成果均表现出极强的鲁棒性。")
+-    lines.append(f"3. **产业机制具有内生平滑性**：")
+-    lines.append(f"   - 箱体空间门禁与流动性门禁主要剔除假突破噪点，其有效区间呈平滑缓坡，在 1.0%~1.5% 范围内收益高度稳定；")
+-    lines.append(f"   - Carry 顺逆风调节器在 1.02x~1.08x 之间收益稳步增厚，高波动硬隔离确保了即使在仓位放大时也绝不放大黑天鹅风险。")
+-    lines.append("")
+-    lines.append("---")
+-    lines.append("")
+-    lines.append("## 二、 单参数 1D 大跨度敏感性扫描全貌")
+-    lines.append("")
+-
+-    for pkey, pdata in results_1d.items():
+-        meta = pdata["meta"]
+-        lines.append(f"### 2.{list(results_1d.keys()).index(pkey)+1} {meta['name']}")
+-        lines.append(f"- **基准参数**: `{meta['baseline']}` | **测试跨度**: `{pdata['records'][0]['param_value_str']}` 至 `{pdata['records'][-1]['param_value_str']}`")
+-        lines.append("")
+-        lines.append("| 参数取值 | 累计净值 (NAV) | 年化复合 (CAGR) | 最大回撤 (MaxDD) | 夏普比率 (Sharpe) | 胜率 | 交易笔数 | 正收益年数 | 2021收益 | 2025收益 | 状态评价 |")
+-        lines.append("| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |")
+-        for rec in pdata["records"]:
+-            m = rec["metrics"]
+-            is_b = "**" if rec["is_baseline"] else ""
+-            tag = "基准锚点" if rec["is_baseline"] else ("高原优势" if m["nav"] >= 7.0 and m["pos_years"] == 9 else "平稳过渡")
+-            val_disp = f"{rec['param_value_str']}"
+-            lines.append(
+-                f"| {is_b}{val_disp}{is_b} | {is_b}{m['nav']:.4f}{is_b} | {is_b}{m['cagr_pct']:.2f}%{is_b} | "
+-                f"{m['max_drawdown_pct']:.2f}% | {m['sharpe_ratio']:.2f} | {m['win_rate_pct']:.1f}% | "
+-                f"{m['total_trades']} | {m['pos_years']}/9 | {m['ret_2021']:+.2f}% | {m['ret_2025']:+.2f}% | {tag} |"
+-            )
+-        lines.append("")
+-
+-    lines.append("---")
+-    lines.append("")
+-    lines.append("## 三、 双参数 2D 交叉网格与参数高原矩阵")
+-    lines.append("")
+-
+-    for gkey, gdata in grids.items():
+-        lines.append(f"### {gdata['title']}")
+-        lines.append(f"横轴: `{gdata['param_x']}` | 纵轴: `{gdata['param_y']}`")
+-        lines.append("")
+-        # 组装表格
+-        x_vals = gdata["x_vals"]
+-        y_vals = gdata["y_vals"]
+-        rec_map = {}
+-        for r in gdata["records"]:
+-            k = (r[gdata["param_y"]], r[gdata["param_x"]])
+-            rec_map[k] = r
+-
+-        header = f"| {gdata['param_y']} \\ {gdata['param_x']} | " + " | ".join([f"{x}" for x in x_vals]) + " |"
+-        sep = "| :---: | " + " | ".join([":---:" for _ in x_vals]) + " |"
+-        lines.append(header)
+-        lines.append(sep)
+-
+-        for y in y_vals:
+-            row_cells = [f"**{y}**"]
+-            for x in x_vals:
+-                r = rec_map.get((y, x))
+-                if r:
+-                    row_cells.append(f"NAV {r['nav']:.2f}<br>Sh {r['sharpe']:.2f} ({r['pos_years']}y)")
+-                else:
+-                    row_cells.append("-")
+-            lines.append("| " + " | ".join(row_cells) + " |")
+-        lines.append("")
+-
+-    lines.append("---")
+-    lines.append("")
+-    lines.append("## 四、 高原统计与防过拟合检验结论")
+-    lines.append("")
+-    lines.append("| 检验维度 | 统计量指标 | 量化数值 | 判定门槛与行业标准 | 结论判定 |")
+-    lines.append("| :--- | :--- | :---: | :--- | :---: |")
+-    lines.append(f"| **净值集中度** | 净值变异系数 (CV) | **{summary['nav_cv']:.3f}** | 行业标准 < 0.35 判定为平坦高原 | **优异 (极平坦)** |")
+-    lines.append(f"| **收益稳健度** | 累计净值均值 / 中位数 | **{summary['nav_mean']:.4f} / {summary['nav_median']:.4f}** | 均值与中位数差异 < 5% 证明无偏斜尖峰 | **优异 (对称无偏)** |")
+-    lines.append(f"| **夏普底线** | 最低夏普比率 | **{summary['sharpe_min']:.2f}** | 任意扰动下最低夏普 > 0.50 | **通过 (底线极其扎实)** |")
+-    lines.append(f"| **回撤红线** | 最恶劣最大回撤 | **{summary['maxdd_min']:.2f}%** | 不发生超过 -45% 的断崖式回撤 | **通过 (安全边际充足)** |")
+-    lines.append(f"| **跨年全胜率** | 9年连续正收益覆盖率 | **{summary['pos_9_ratio_pct']:.1f}%** | 邻域内 > 60% 保持全胜 | **卓越 (大范围9年全胜)** |")
+-    lines.append(f"| **抗受损率** | 8年以上正收益覆盖率 | **{summary['pos_8_plus_ratio_pct']:.1f}%** | 绝大多数年份均保持稳健正收益 | **极度抗压** |")
+-    lines.append("")
+-    lines.append("### 总结陈词：")
+-    lines.append("> [!NOTE]")
+-    lines.append("> 本次参数敏感性与防过拟合测试证明：当前系统的优异表现绝非“特调参数”的偶然结果，而是来源于深刻的**产业微观物理因果**（实物现货真实利润、微观实物流动性、箱体盈亏比不对称性、期限结构 Carry 顺逆风）。当前基准参数位于一个非常宽广、平坦且安全的“产业因果参数高原”中心，具有强大的样本外泛化潜力与实战抗压能力。")
+-    lines.append("")
+-
+-    with open(out_path, "w", encoding="utf-8") as f:
+-        f.write("\n".join(lines))
+-
+-    print(f"\n[+] 详尽 Markdown 测试研报已生成落盘:\n  - {out_path}")
++    """仅报告实际统计量；参数敏感性不能排除回测过拟合。"""
++    lines = ["# 参数敏感性描述性统计", "",
++             "历史样本已参与开发。CV没有通用的0.35行业通过线，本报告不证明因果或样本外有效。", "",
++             "|指标|本次结果|", "|---|---:|"]
++    for key, value in summary.items():
++        lines.append(f"|{key}|{value}|")
++    lines += ["", "必须先审查同条件比较、数据时点与执行约束，再积累冻结规则后的新样本。"]
++    Path(out_path).write_text("\n".join(lines), encoding="utf-8")
+ 
+ 
+ def generate_html_dashboard(
+--- a/scripts/run_stage_e_backtest.py
++++ b/scripts/run_stage_e_backtest.py
+@@ -1,252 +1,6 @@
+ #!/usr/bin/env python3
+-# -*- coding: utf-8 -*-
+-"""
+-脚本: scripts/run_stage_e_backtest.py
+-功能: 阶段 E 回测与模拟交易全流程自动化调度执行器
+-职责:
+-  1. 载入阶段 B 194 维特征宽表与阶段 C 37 维状态矩阵 (2018-2026, 2,074 交易日);
+-  2. 驱动运行三大对照策略的全历史连续模拟:
+-     - 策略 A: 阶段 E 核心量化策略 (QUANT_CORE with Firewall, 现货微观确认 + 均线动量 + 五重防火墙绝对否决);
+-     - 策略 B: 纯基本面裸奔对照组 (RAW_FUNDAMENTAL No Firewall, 供需方向驱动, 无风控防护);
+-     - 策略 C: 螺纹主力买入持有基准组 (BENCHMARK_BUY_HOLD, 评估资产原生 Beta);
+-  3. 全量核对期货盯市会计恒等式 (动态权益 ≡ 可用资金 + 占用保证金);
+-  4. 导出全套连续数据资产:
+-     - 数据/加工/阶段E_回测每日账户净值明细.parquet & .csv;
+-     - 交易/交易记录.csv;
+-  5. 自动化生成投研报告与自包含交互式 HTML 全景看板:
+-     - 研究/阶段E_回测与模拟交易/阶段E_策略回测与模拟交易全景研报.md;
+-     - 研究/阶段E_回测与模拟交易/阶段E_回测与模拟交易全景看板.html;
+-  6. 格式化打印绩效对比摘要与重大危机解剖。
+-"""
++"""阶段E安全入口：每次创建独立实验，禁止覆盖旧回测或真实交易台账。"""
++from run_framework_experiment import run
+ 
+-import os
+-import sys
+-from pathlib import Path
+-import pandas as pd
+-import numpy as np
+-
+-# 将项目根目录加入模块搜索路径
+-BASE_DIR = Path(__file__).resolve().parent.parent
+-sys.path.insert(0, str(BASE_DIR))
+-
+-from stage_e.backtest_engine import BacktestEngine, BacktestResult
+-from stage_e.trade_recorder import TradeRecorder
+-from stage_e.dashboard import StageEDashboardGenerator
+-
+-
+-def generate_markdown_report(
+-    strat_res: BacktestResult,
+-    raw_res: BacktestResult,
+-    bench_res: BacktestResult,
+-    report_path: Path,
+-):
+-    """生成详尽的阶段 E 策略回测全景投研报告"""
+-    p_s = strat_res.performance
+-    p_r = raw_res.performance
+-    p_b = bench_res.performance
+-
+-    report_content = f"""# 阶段 E 策略回测与模拟交易全景研报
+-
+-**模型版本**: `Stage-E-0.1-backtest-sim` | **评估时段**: 2018-03-09 至 2026-09-21 (共 2,074 交易日)  
+-**执行基准**: 初始资金 10,000,000 元 (1,000 万元) | 螺纹期货单合约保证金率 10% | 滑点 1 tick (1.0 元/吨) | 手续费率 0.01%  
+-**契约规范**: 严格履行《A05.4 阶段 E 执行规范》与《A06.1 风控防火墙规范》，坚守 `State != Position` 与 Next-Bar Open 零未来函数撮合
+-
+----
+-
+-## 一、 执行摘要与核心量化结论
+-
+-在 2018 至 2026 年近 8.5 年的中国钢材市场全景宏观周期中（经历了 2018 供给侧去产能红利、2020 疫情断崖、2021 能耗双控与双焦暴涨暴跌、2022-2023 地产下行、以及 2024-0924 极端政策大反转），本报告实证检验了从“产业状态识别”到“策略执行与风控闭环”的全体系成效：
+-
+-1. **绝对否决权斩断黑天鹅亏损，最大回撤显著收敛**：
+-   - 纯基本面裸奔策略（无现货确认与无风控）在 8.5 年历史中的最大历史回撤高达 **{p_r['max_drawdown_pct']:.2f}%**；
+-   - 阶段 E 核心量化策略（引入现货微观确认、均线动量时机与五重风控防火墙）将全历史最大回撤大幅压制至 **{p_s['max_drawdown_pct']:.2f}%**（改善 **{abs(p_r['max_drawdown_pct']) - abs(p_s['max_drawdown_pct']):+.2f}** 个百分点）；
+-2. **夏普比率与盈亏比跃升**：
+-   - 年化夏普比率（扣除 2% 无风险利率）由裸奔策略的 **{p_r['sharpe_ratio']:.2f}** 提升至 **{p_s['sharpe_ratio']:.2f}**；
+-   - 胜率由 **{p_r['win_rate_pct']:.1f}%** 提升至 **{p_s['win_rate_pct']:.1f}%**，单笔交易盈亏比达到 **{p_s['profit_factor']:.2f}**，单笔赔率比达 **{p_s['payoff_ratio']:.2f}x**；
+-3. **彻底终结 2024-0924 暴涨踩踏惨剧**：
+-   - 在 2024-09-24 政策超级刺激暴涨当日，防火墙第三重（波动率脉冲）与第四重（突破 MA20 超过 1.5%）协同亮起，触发 `FORCED_LIQUIDATION`；
+-   - 策略在 3270~3300 附近无条件斩仓空头止血并进入 3 日冷却期，彻底规避了随后盘面单边暴涨超 600 点 (+18%) 的毁灭性爆仓风险！
+-
+----
+-
+-## 二、 三大策略综合绩效横向对照
+-
+-| 绩效评估指标 | 阶段 E 核心量化策略 (Quant Core + Firewall) | 纯基本面裸奔策略 (Raw Fundamental No Firewall) | 螺纹主力买入持有 (Benchmark Buy & Hold) | 优势与归因评价 |
+-| :--- | :--- | :--- | :--- | :--- |
+-| **累计净值 (NAV)** | **{p_s['final_equity']/p_s['initial_capital']:.4f}** | {p_r['final_equity']/p_r['initial_capital']:.4f} | {p_b['final_equity']/p_b['initial_capital']:.4f} | 穿越 8.5 年周期稳健增值 |
+-| **累计总收益率** | **+{p_s['total_return_pct']:.2f}%** | +{p_r['total_return_pct']:.2f}% | +{p_b['total_return_pct']:.2f}% | 显著跑赢基准与裸奔策略 |
+-| **年化收益率 (CAGR)** | **+{p_s['cagr_pct']:.2f}%** | +{p_r['cagr_pct']:.2f}% | +{p_b['cagr_pct']:.2f}% | 剔除无效交易后的高质量 Alpha |
+-| **年化波动率** | **{p_s['annualized_volatility_pct']:.2f}%** | {p_r['annualized_volatility_pct']:.2f}% | {p_b['annualized_volatility_pct']:.2f}% | 波动率受控，回撤平缓 |
+-| **最大历史回撤 (MaxDD)** | **{p_s['max_drawdown_pct']:.2f}%** | {p_r['max_drawdown_pct']:.2f}% | {p_b['max_drawdown_pct']:.2f}% | **大幅收敛 {abs(p_r['max_drawdown_pct']) - abs(p_s['max_drawdown_pct']):.2f}%** |
+-| **夏普比率 (Sharpe, Rf=2%)** | **{p_s['sharpe_ratio']:.2f}** | {p_r['sharpe_ratio']:.2f} | {p_b['sharpe_ratio']:.2f} | 风险调整后收益翻倍 |
+-| **卡玛比率 (Calmar)** | **{p_s['calmar_ratio']:.2f}** | {p_r['calmar_ratio']:.2f} | {p_b['calmar_ratio']:.2f} | 承受单位回撤的年化收益 |
+-| **交易胜率 (Win Rate)** | **{p_s['win_rate_pct']:.1f}%** | {p_r['win_rate_pct']:.1f}% | - | 现货微观确认显著提升胜率 |
+-| **盈亏比 (Profit Factor)** | **{p_s['profit_factor']:.2f}** | {p_r['profit_factor']:.2f} | - | 毛盈利远超毛亏损 |
+-| **总交易笔数** | **{p_s['total_trades']} 笔** | {p_r['total_trades']} 笔 | {p_b['total_trades']} 笔 | 避免过度交易 |
+-| **累计交易摩擦 (手续费+滑点)** | **{p_s['total_fees_cny']:,.0f} 元** | {p_r['total_fees_cny']:,.0f} 元 | {p_b['total_fees_cny']:,.0f} 元 | 真实考虑 1 tick 滑点与换月 |
+-
+----
+-
+-## 三、 极端危机场景白盒解剖实录
+-
+-### 3.1 2024-0924 政策超级刺激暴涨（空头斩仓止血）
+-- **客观事实**：9月中旬螺纹表需创历史新低，库存去化停滞，基本面模型持续判定为 `Bearish`；
+-- **9-24 突发大涨**：国新办发布会推出重磅刺激，成材开盘高开暴涨 +3.81%，有效冲破 MA20 达 2.47%，盘面波动率比率飙升至 2.65 倍；
+-- **防火墙执行**：
+-  - 9-24 收盘触发 **Layer 3 (波动率脉冲熔断)** 与 **Layer 4 (突破 MA20 超过 1.5% 硬止损)**；
+-  - 防火墙输出状态：`FORCED_LIQUIDATION`，动作：`LIQUIDATE_IMMEDIATELY`，目标仓位归零；
+-  - **实战价值**：在 9-24 收盘/9-25 开盘以 3270~3300 强制止损离场，彻底规避了随后国庆前后暴涨至 3900 元（+600点）的空头致命爆仓危机！
+-
+-### 3.2 2021-10 能耗双控见顶断崖暴跌（多头高位保护）
+-- **客观事实**：2021年10月上旬螺纹价格冲至 5700 元历史极值，长流程钢厂利润超过 1000 元/吨，基本面评分极高；
+-- **断崖见顶**：发改委干预煤炭，价格连续跌停跌穿 MA20；
+-- **防火墙执行**：10月18日价格有效跌破 MA20 超过 1.5% 时，防火墙硬止损立即输出 `FORCED_LIQUIDATION`，强制多头全额离场，锁定利润，杜绝了随后跌至 4100 点的 1600 点深度下挫。
+-
+-### 3.3 2023-11 焦煤逼仓行情（原料传染隔离禁空）
+-- **客观事实**：煤矿事故频发安监趋严，焦煤逼仓指数高达 3.8，成本剪刀差持续扩大；但成材地产端实际消耗疲弱；
+-- **防火墙执行**：第二重跨品种挤仓隔离墙激活，识别领头羊为原料外部冲击，将成材做空意图强制拦截为 `RESTRICT_CLOSE_ONLY`，杠杆压制至 0.5 以下，全面禁止做空螺纹，成功规避被原料端逼仓拉爆的惨剧。
+-
+----
+-
+-## 四、 螺纹主力 01-05-10 换月移仓与交易摩擦分析
+-
+-1. **主力换月规律实测**：
+-   - 每年 3 月下旬（如 2024-03-29）：2405 主力向 2410 换月；
+-   - 每年 8 月下旬（如 2024-08-30）：2410 主力向 2501 换月；
+-   - 每年 12 月初（如 2024-12-04）：2501 主力向 2505 换月；
+-   - 8.5 年全历史共发生 20 次主力轮换，系统换月识别率 100%，移仓价差（Roll Spread）与双倍滑点/手续费均精确结转入每日动态权益；
+-2. **交易摩擦可耐受度**：
+-   - 策略 8.5 年总摩擦损耗约 {p_s['total_fees_cny']:,.0f} 元（占 1000 万初始本金约 {p_s['total_fees_cny']/p_s['initial_capital']*100:.2f}%），年均摩擦成本不到 1.0%，完全在产业量化资金可承受范畴内。
+-
+----
+-
+-## 五、 总结与后续实盘运行建议
+-
+-1. **阶段 E 正式闭环**：至此，系统完成了从数据接入（B）、状态识别（C）、收益动力学研究（D）到完整回测与资金执行（E）的无缝全贯通；
+-2. **坚守四大铁律**：
+-   - `State != Position`：绝不把基本面多头等同于满仓多单；
+-   - **防火墙绝对否决权**：任何时候均不得人工干预或违规绕过防火墙止损指令；
+-   - **现货微观确认**：基差倒挂且杭州库销比恶化时，坚决不做多；
+-   - **零未来函数**：实盘与前向测试严格按收盘计算、次日开盘撮合执行。
+-
+-*(本报告全量基于 2018-2026 年 2,074 交易日连续 PIT 数据资产与阶段 E 回测调度引擎推算生成)*
+-"""
+-    with open(report_path, "w", encoding="utf-8") as f:
+-        f.write(report_content)
+-    print(f"[+] 策略全景研报已成功生成落盘: {report_path}")
+-
+-
+-def run_stage_e_pipeline():
+-    print("=" * 80)
+-    print("【开始运行】钢材产业量化系统 · 阶段 E 回测与模拟交易全流程调度流水线")
+-    print("=" * 80)
+-
+-    # 1. 载入核心数据资产
+-    feat_path = BASE_DIR / "数据" / "加工" / "阶段B_特征宽表.parquet"
+-    state_path = BASE_DIR / "数据" / "状态" / "阶段C_全景状态矩阵.parquet"
+-
+-    if not feat_path.exists() or not state_path.exists():
+-        print(f"[-] 错误: 数据文件缺失 {feat_path} 或 {state_path}")
+-        return
+-
+-    feat_df = pd.read_parquet(feat_path)
+-    state_df = pd.read_parquet(state_path)
+-    print(f"[+] 成功载入数据: {len(feat_df)} 交易日 ({feat_df.index[0]} 至 {feat_df.index[-1]})")
+-
+-    # 2. 构建回测调度引擎
+-    engine = BacktestEngine(
+-        features_df=feat_df,
+-        state_matrix=state_df,
+-        symbol="rb",
+-        initial_capital=10_000_000.0,
+-        slippage_ticks=1.0,
+-        commission_rate=0.0001,
+-        margin_rate=0.10,
+-        max_margin_utilization=0.50,  # 响应指令: 最高资金利用率设为 50% 左右
+-    )
+-
+-    # 3. 运行三大策略回测
+-    # 策略 1: 核心量化策略 (含风控防火墙)
+-    res_strat = engine.run_backtest(
+-        strategy_mode="QUANT_CORE",
+-        enable_firewall=True,
+-        strategy_label="Stage_E_Quant_Core_with_Firewall",
+-    )
+-
+-    # 策略 2: 纯基本面裸奔策略 (无风控防火墙)
+-    res_raw = engine.run_backtest(
+-        strategy_mode="RAW_FUNDAMENTAL",
+-        enable_firewall=False,
+-        strategy_label="Raw_Fundamental_No_Firewall",
+-    )
+-
+-    # 策略 3: 螺纹主力买入持有基准
+-    res_bench = engine.run_backtest(
+-        strategy_mode="BENCHMARK_BUY_HOLD",
+-        enable_firewall=False,
+-        strategy_label="Benchmark_Buy_and_Hold",
+-    )
+-
+-    # 4. 打印绩效横向对比表格
+-    p_s = res_strat.performance
+-    p_r = res_raw.performance
+-    p_b = res_bench.performance
+-
+-    print("\n" + "=" * 90)
+-    print("【三大策略全历史 2018-2026 (2,074 交易日) 综合绩效横向对照表】")
+-    print("=" * 90)
+-    header = f"{'指标维度':<22} | {'Stage E 核心量化':<20} | {'纯基本面裸奔':<18} | {'买入持有基准':<18} | {'优势改善':<12}"
+-    print(header)
+-    print("-" * 90)
+-
+-    rows = [
+-        ("累计净值 (NAV)", f"{p_s['final_equity']/p_s['initial_capital']:.4f}", f"{p_r['final_equity']/p_r['initial_capital']:.4f}", f"{p_b['final_equity']/p_b['initial_capital']:.4f}", f"+{p_s['final_equity']/p_s['initial_capital'] - p_r['final_equity']/p_r['initial_capital']:.4f}"),
+-        ("年化收益率 (CAGR)", f"{p_s['cagr_pct']:.2f}%", f"{p_r['cagr_pct']:.2f}%", f"{p_b['cagr_pct']:.2f}%", f"{p_s['cagr_pct'] - p_r['cagr_pct']:+.2f}%"),
+-        ("最大历史回撤 (MaxDD)", f"{p_s['max_drawdown_pct']:.2f}%", f"{p_r['max_drawdown_pct']:.2f}%", f"{p_b['max_drawdown_pct']:.2f}%", f"{abs(p_r['max_drawdown_pct']) - abs(p_s['max_drawdown_pct']):+.2f}% (大幅收敛!)"),
+-        ("年化夏普比率 (Sharpe)", f"{p_s['sharpe_ratio']:.2f}", f"{p_r['sharpe_ratio']:.2f}", f"{p_b['sharpe_ratio']:.2f}", f"{p_s['sharpe_ratio'] - p_r['sharpe_ratio']:+.2f}"),
+-        ("卡玛比率 (Calmar)", f"{p_s['calmar_ratio']:.2f}", f"{p_r['calmar_ratio']:.2f}", f"{p_b['calmar_ratio']:.2f}", f"{p_s['calmar_ratio'] - p_r['calmar_ratio']:+.2f}"),
+-        ("交易胜率 (Win Rate)", f"{p_s['win_rate_pct']:.1f}%", f"{p_r['win_rate_pct']:.1f}%", "-", f"{p_s['win_rate_pct'] - p_r['win_rate_pct']:+.1f}%"),
+-        ("盈亏比 (Profit Factor)", f"{p_s['profit_factor']:.2f}", f"{p_r['profit_factor']:.2f}", "-", f"{p_s['profit_factor'] - p_r['profit_factor']:+.2f}"),
+-        ("总交易笔数", f"{p_s['total_trades']} 笔", f"{p_r['total_trades']} 笔", f"{p_b['total_trades']} 笔", f"{p_s['total_trades'] - p_r['total_trades']:+d}"),
+-        ("摩擦总损耗 (元)", f"{p_s['total_fees_cny']:,.0f}", f"{p_r['total_fees_cny']:,.0f}", f"{p_b['total_fees_cny']:,.0f}", "-"),
+-    ]
+-
+-    for label, vs, vr, vb, improv in rows:
+-        print(f"{label:<24} | {vs:<22} | {vr:<20} | {vb:<20} | {improv}")
+-    print("=" * 90)
+-
+-    # 5. 导出核心数据资产
+-    data_out_dir = BASE_DIR / "数据" / "加工"
+-    data_out_dir.mkdir(parents=True, exist_ok=True)
+-
+-    equity_parquet = data_out_dir / "阶段E_回测每日账户净值明细.parquet"
+-    equity_csv = data_out_dir / "阶段E_回测每日账户净值明细.csv"
+-
+-    res_strat.equity_df.to_parquet(equity_parquet)
+-    res_strat.equity_df.to_csv(equity_csv, index=False, encoding="utf-8")
+-    print(f"\n[+] 阶段 E 每日账户净值时序资产已落盘:\n  - {equity_parquet}\n  - {equity_csv}")
+-
+-    # 6. 导出交易台账到 交易/交易记录.csv
+-    trade_recorder = TradeRecorder()
+-    trade_csv_path = trade_recorder.export_trade_records(res_strat.trades_df, overwrite=True)
+-    print(f"[+] 阶段 E 真实交易台账已导出 ({len(res_strat.trades_df)} 笔):\n  - {trade_csv_path}")
+-
+-    # 7. 导出研报与交互看板
+-    research_dir = BASE_DIR / "研究" / "阶段E_回测与模拟交易"
+-    research_dir.mkdir(parents=True, exist_ok=True)
+-
+-    report_path = research_dir / "阶段E_策略回测与模拟交易全景研报.md"
+-    generate_markdown_report(res_strat, res_raw, res_bench, report_path)
+-
+-    dashboard_gen = StageEDashboardGenerator(res_strat, res_raw, res_bench)
+-    dashboard_path = research_dir / "阶段E_回测与模拟交易全景看板.html"
+-    dashboard_gen.generate_html_dashboard(dashboard_path)
+-    print(f"[+] 阶段 E 交互看板已成功生成落盘: {dashboard_path}")
+-
+-    print("\n" + "=" * 80)
+-    print("【阶段 E 回测与模拟交易全流程执行圆满成功!】")
+-    print("=" * 80)
+-
+-
+-if __name__ == "__main__":
+-    run_stage_e_pipeline()
++if __name__ == '__main__':
++    run()
+--- a/stage_b/hypothesis_verifier.py
++++ b/stage_b/hypothesis_verifier.py
+@@ -73,7 +73,7 @@
+             "status": "历史验证通过" if passed else "历史验证未通过",
+             "metric_name": "FBS 20d Rank IC & 恒等分解最大误差",
+             "metric_value": f"Rank IC: {ic_fbs:.4f} (p={p_fbs:.4f}), Max Diff: {diff_err:.6f}",
+-            "conclusion": "恒等式精确闭环且实物动量保持高度显著性，证实物理供需能有效剥离价格污染与虚假动量。"
++            "conclusion": ("本样本满足预设描述性判据；不代表因果或样本外验证。" if passed else "本样本未满足预设判据，不能宣称假设成立。")
+         }
+ 
+     def _verify_arch_h003(self) -> Dict:
+@@ -104,7 +104,7 @@
+             "status": "历史验证通过" if passed else "历史验证未通过",
+             "metric_name": "深亏损反弹均值 vs 高利润承压均值",
+             "metric_value": f"深亏损均值: {loss_mean*100:+.2f}% (胜率 {loss_win_rate*100:.1f}%) vs 高利润均值: {profit_mean*100:+.2f}%",
+-            "conclusion": "实证证实双向成本区间对成材价格具有显著非对称反馈弹性：跌破现金成本线(-5%)后续20日强劲反弹(+4.40%)，而高利润(>+15%)由于复产压力涨幅受压(-0.44%)。"
++            "conclusion": ("本样本满足预设描述性判据；不代表因果或样本外验证。" if passed else "本样本未满足预设判据，不能宣称假设成立。")
+         }
+ 
+     def _verify_arch_h010(self) -> Dict:
+@@ -133,7 +133,7 @@
+             "status": "历史验证通过" if passed else "历史验证未通过",
+             "metric_name": "深度亏损期前瞻20日胜率与平均收益",
+             "metric_value": f"胜率: {deep_win_rate*100:.1f}%, 均值: {deep_mean_ret*100:.2f}% (对比常态 {normal_mean_ret*100:.2f}%)",
+-            "conclusion": "当价格跌破现金成本线 5% 以上时，后续 20 日反弹胜率超过 58%，显著优于常态，证实成本下轨具有硬约束不对称支撑。"
++            "conclusion": ("本样本满足预设描述性判据；不代表因果或样本外验证。" if passed else "本样本未满足预设判据，不能宣称假设成立。")
+         }
+ 
+     def _verify_arch_h014(self) -> Dict:
+@@ -156,7 +156,7 @@
+             "status": "历史验证通过" if passed else "历史验证未通过",
+             "metric_name": "CTD 基差 20d Rank IC",
+             "metric_value": f"Rank IC: {rank_ic:.4f}, p-value: {p_val:.4e}",
+-            "conclusion": "真实三类交割品基差展现出显著正相关(Rank IC=0.1141)，在深度贴水时做空风险极高，现货升水对多头提供坚实安全边际。"
++            "conclusion": ("本样本满足预设描述性判据；不代表因果或样本外验证。" if passed else "本样本未满足预设判据，不能宣称假设成立。")
+         }
+ 
+     def _verify_arch_h017(self) -> Dict:
+@@ -179,7 +179,7 @@
+             "status": "历史验证通过" if passed else "历史验证未通过",
+             "metric_name": "展期收益率 20d Rank IC",
+             "metric_value": f"Rank IC: {rank_ic:.4f}, p-value: {p_val:.4e}",
+-            "conclusion": "年化展期收益率能够有效前瞻反映现货供需蓄水池压力，Backwardation(近月升水)结构显著优于 Contango 结构。"
++            "conclusion": ("本样本满足预设描述性判据；不代表因果或样本外验证。" if passed else "本样本未满足预设判据，不能宣称假设成立。")
+         }
+ 
+     def _verify_arch_h018(self) -> Dict:
+@@ -208,7 +208,7 @@
+             "status": "历史验证通过" if passed else "历史验证未通过",
+             "metric_name": "毛利<-100时铁矿前瞻20日下跌概率与均值",
+             "metric_value": f"铁矿下跌概率: {i_down_rate*100:.1f}%, 平均收益: {deep_i_mean*100:.2f}%",
+-            "conclusion": "实证支持虚拟毛利跌破 -100 元/吨时，钢厂减产检修压力将传导至原料端，铁矿下行概率显著上升，验证负反馈踩踏假说。"
++            "conclusion": ("本样本满足预设描述性判据；不代表因果或样本外验证。" if passed else "本样本未满足预设判据，不能宣称假设成立。")
+         }
+ 
+     def _generate_hypothesis_report(self, results: Dict[str, Dict]):
+--- /dev/null
++++ b/stage_c/mechanism_engine.py
+@@ -0,0 +1,107 @@
++"""轻量候选机制账本：周度观察、冻结预测、独立后验评价；不把价格领先称为原因。
++
++宽表缺少逐条发布版本，周窗口只是观察节奏，不能充当 available_date。
++CONFIRMED 表示预设物理结果兑现，不表示因果识别成功或预测价格必涨。
++"""
++import hashlib
++import json
++import numpy as np
++import pandas as pd
++from framework_rules import FRAMEWORK_VERSION, MECHANISM_MAX_WINDOWS
++
++
++class MechanismEngine:
++    families = {
++        'DEMAND': ('building_deal_volume', 'rebar_total_inv', -1, '成交改善后库存下降'),
++        'SUPPLY': ('rebar_weekly_prod', 'rebar_total_inv', -1, '减产后库存下降'),
++        'COST': ('profit_bf', 'hot_metal_247', -1, '亏损后铁水下降'),
++    }
++
++    def evaluate(self, features):
++        """返回每日状态与追加式事件日志；逐日计算只访问当前及以前行。"""
++        df = features.sort_index().copy()
++        if 'rebar_total_inv' not in df and {'rebar_soc_inv','rebar_mill_inv'} <= set(df):
++            df['rebar_total_inv'] = df.rebar_soc_inv + df.rebar_mill_inv
++        last_week, prior_observation, last_row = None, None, None
++        pending, statuses, events, rows = {}, {}, [], []
++        active_ids = {}
++        inventory_change = inventory_acceleration = np.nan
++        inventory_trajectory = "Unknown"
++        for dt, row in df.iterrows():
++            week = str(pd.Timestamp(dt).to_period('W-FRI'))
++            # 新周开始，上一完整观察周的事实才进入验证；不利用本周后续数据。
++            if last_week is not None and week != last_week:
++                obs = last_row
++                old_inv = prior_observation.get('rebar_total_inv', np.nan) if prior_observation is not None else np.nan
++                inv = obs.get('rebar_total_inv', np.nan)
++                delta = inv - old_inv
++                inventory_acceleration = delta - inventory_change
++                inventory_change = delta
++                inventory_trajectory = ('Unknown' if pd.isna(delta) else
++                    'Accelerating Destock' if delta < 0 and inventory_acceleration < 0 else
++                    'Normal Destock' if delta < 0 else
++                    'Accelerating Accumulate' if delta > 0 and inventory_acceleration > 0 else
++                    'Accumulating' if delta > 0 else 'Unchanged Observation')
++                for family, (trigger_col, outcome_col, sign, prediction) in self.families.items():
++                    ticket = pending.get(family)
++                    outcome = obs.get(outcome_col, np.nan)
++                    if ticket:
++                        ticket['windows'] += 1
++                        status = 'PENDING'
++                        if pd.notna(outcome) and outcome != ticket['baseline']:
++                            status = 'CONFIRMED' if sign * (outcome-ticket['baseline']) > 0 else 'FAILED'
++                        elif ticket['windows'] >= MECHANISM_MAX_WINDOWS:
++                            status = 'EXPIRED'
++                        if status != 'PENDING':
++                            events.append(dict(event_type='REVIEW', hypothesis_id=ticket['id'],
++                                observed_at=str(dt), family=family, status=status,
++                                outcome_value=float(outcome) if pd.notna(outcome) else None,
++                                baseline=ticket['baseline'], windows=ticket['windows'],
++                                error_attribution='OUTCOME_MISMATCH_CAUSE_UNRESOLVED' if status=='FAILED' else 'INSUFFICIENT_NEW_EVIDENCE' if status=='EXPIRED' else 'EXPECTED_FACT_OBSERVED',
++                                next_action='复核需求/供给变化与口径，禁止据单例调参' if status=='FAILED' else '保留记录，等待独立新观察'))
++                            statuses[family] = status
++                            del pending[family]
++                        continue  # 同一窗口不重开刚结束的假设
++                    value = obs.get(trigger_col, np.nan)
++                    previous = prior_observation.get(trigger_col, np.nan) if prior_observation is not None else np.nan
++                    active_ids[family] = ''
++                    statuses[family] = 'UNKNOWN' if pd.isna(value) or pd.isna(outcome) or pd.isna(previous) else 'INACTIVE'
++                    if statuses[family] == 'UNKNOWN':
++                        continue
++                    triggered = (value > previous if family == 'DEMAND' else
++                                 value < previous if family == 'SUPPLY' else value < 0)
++                    if triggered:
++                        payload = dict(rule_version=FRAMEWORK_VERSION, family=family,
++                            issued_at=str(dt), trigger_column=trigger_col, trigger_value=float(value),
++                            previous_value=float(previous), outcome_column=outcome_col,
++                            expected_change='DECREASE', baseline=float(outcome),
++                            max_observation_windows=MECHANISM_MAX_WINDOWS,
++                            invalidation='下一观察窗口结果反向即失效；无变化最多等待两窗口',
++                            prediction=prediction, evidence_group='PHYSICAL_BALANCE' if family=='SUPPLY' else family,
++                            availability_status='UNVERIFIED_CURRENT_VINTAGE',
++                            price_direction='UNSPECIFIED')
++                        hid = hashlib.sha256(json.dumps(payload,sort_keys=True,ensure_ascii=False).encode()).hexdigest()[:20]
++                        events.append(dict(event_type='PREDICTION', hypothesis_id=hid, **payload))
++                        active_ids[family] = hid
++                        pending[family] = dict(id=hid, baseline=float(outcome), windows=0)
++                        statuses[family] = 'PENDING'
++                prior_observation = obs.copy()
++            rec = {}
++            for family in self.families:
++                rec[f'mechanism_{family.lower()}'] = statuses.get(family, 'UNKNOWN')
++                rec[f'hypothesis_{family.lower()}_id'] = active_ids.get(family, '')
++            rec['physical_inventory_trajectory'] = inventory_trajectory
++            rec['observed_week_inventory_change'] = inventory_change
++            rec['observed_week_inventory_acceleration'] = inventory_acceleration
++            rec['mechanism_external'] = 'UNKNOWN'  # 无外部事件证据不能用价格涨跌代替。
++            required = ['rebar_weekly_prod','rebar_total_inv','building_deal_volume','profit_bf','hot_metal_247']
++            rec['evidence_coverage'] = sum(pd.notna(row.get(c, np.nan)) for c in required)/len(required)
++            rec['data_quality_status'] = 'UNVERIFIED_PIT'
++            rec['mechanism_confirmation'] = 'CONFIRMED' if 'CONFIRMED' in statuses.values() else ('PENDING' if pending else 'UNKNOWN')
++            price, ma = row.get('rb_close', np.nan), row.get('ma_20', np.nan)
++            rec['trade_confirmation'] = 'UNKNOWN' if pd.isna(price) or pd.isna(ma) else ('UPTREND' if price > ma else 'DOWNTREND' if price < ma else 'NEUTRAL')
++            rec['expected_holding_period_validated'] = 'UNKNOWN'
++            rec['causal_identification_status'] = 'UNCONFIRMED'
++            rows.append(rec)
++            last_row, last_week = row, week
++        return pd.DataFrame(rows, index=df.index), pd.DataFrame(events)
+--- a/stage_c/regime_macro.py
++++ b/stage_c/regime_macro.py
+@@ -58,16 +58,16 @@
+         # 判定外生冲击信号
+         if is_raw_squeeze:
+             is_shock = True
+-            shock_event = "RAW_MATERIAL_SUPPLY_SQUEEZE"
+-            shock_bias = "Supply_Shock"
++            shock_event = "RAW_MATERIAL_PRICE_SQUEEZE"
++            shock_bias = "Unconfirmed_Raw_Shock"
+         elif is_tape_shock:
+             is_shock = True
+             if ret_5d > 0:
+                 shock_event = "MARKET_VOLATILITY_EXPANSION_UP"
+-                shock_bias = "Stimulus"
++                shock_bias = "Market_Rally"
+             else:
+                 shock_event = "MARKET_VOLATILITY_EXPANSION_DOWN"
+-                shock_bias = "Contraction"
++                shock_bias = "Market_Decline"
+         elif is_fiscal_shock:
+             is_shock = True
+             if fiscal_pulse > 0:
+--- a/stage_c/risk_firewall.py
++++ b/stage_c/risk_firewall.py
+@@ -19,6 +19,7 @@
+ from typing import Dict, Any, List, Optional
+ import pandas as pd
+ import numpy as np
++from framework_rules import MA_STOP_BUFFER
+ 
+ 
+ @dataclass(frozen=True)
+@@ -43,7 +44,7 @@
+         vol_shock_threshold: float = 2.5,
+         extreme_ret_1d_threshold: float = 0.030,
+         extreme_ret_5d_threshold: float = 0.050,
+-        ma_stop_buffer_pct: float = 0.015,
++        ma_stop_buffer_pct: float = MA_STOP_BUFFER,
+         severe_div_days: int = 8,
+         severe_div_area: float = 15.0,
+         moderate_div_days: int = 4,
+@@ -145,7 +146,7 @@
+         # ---------------------------------------------------------
+         # 第三重: 内生极端波动率与脉冲熔断器
+         # ---------------------------------------------------------
+-        vol_ratio = float(feature_row.get("vol_shock_ratio", 1.0))
++        vol_ratio = float(feature_row.get("vol_shock_ratio", feature_row.get("rb_vol_shock_ratio", 1.0)))
+         ret_1d = float(feature_row.get("rb_ret_1d", 0.0))
+         ret_5d = float(feature_row.get("rb_ret_5d", feature_row.get("ret_5d", 0.0)))
+         
+@@ -191,7 +192,7 @@
+         ma60 = float(feature_row.get("ma_60", feature_row.get("ma60", np.nan)))
+ 
+         if not np.isnan(close_p) and not np.isnan(ma20):
+-            buffer_pct = self.ma_stop_buffer_pct if not is_pilot_squeeze else 0.035
++            buffer_pct = self.ma_stop_buffer_pct
+             if position_intent == "long":
+                 # 多头破位: 跌破 MA20 超过 1.5% 缓冲，或在多头均线顺势排列 (MA20 >= MA60) 时彻底跌破 MA60
+                 is_break_ma20 = close_p < ma20 * (1.0 - self.ma_stop_buffer_pct)
+@@ -207,7 +208,7 @@
+             elif position_intent == "short":
+                 # 空头破位: 突破 MA20 超过缓冲 (常规 1.5%，逼空侦察轻仓放宽至 3.5% 防震仓)
+                 is_break_ma20 = close_p > ma20 * (1.0 + buffer_pct)
+-                is_break_ma60 = not np.isnan(ma60) and (ma20 <= ma60) and (close_p > ma60 * (1.0 + (0.015 if is_pilot_squeeze else 0.0)))
++                is_break_ma60 = not np.isnan(ma60) and (ma20 <= ma60) and (close_p > ma60)
+                 if is_break_ma20 or is_break_ma60:
+                     breached_layers.append("Layer 4: Technical Hard Stop Boundary")
+                     break_reason = f"突破MA20 {buffer_pct*100:.1f}%缓冲 (Close={close_p:.1f}, MA20={ma20:.1f})" if is_break_ma20 else f"突破MA60生命线 (Close={close_p:.1f}, MA60={ma60:.1f})"
+@@ -222,7 +223,7 @@
+         # 第五重: 同尺度背离阶梯惩罚与强制防守
+         # ---------------------------------------------------------
+         div_days = int(state_row.get("divergence_days", feature_row.get("divergence_days", 0)))
+-        div_area = float(state_row.get("divergence_area", feature_row.get("divergence_area", 0.0)))
++        div_area = abs(float(state_row.get("divergence_area", feature_row.get("divergence_area", 0.0))))
+         div_sev = str(state_row.get("divergence_severity", "None"))
+ 
+         # 判断持仓是否正是导致背离的方向 (例如基本面看空但价格上涨，若持有空头则属于背离死扛)
+--- a/stage_c/state_engine.py
++++ b/stage_c/state_engine.py
+@@ -25,6 +25,7 @@
+ from stage_c.state_sentiment import SentimentStateClassifier
+ from stage_c.market_structure import MarketStructureClassifier
+ from stage_c.model_confidence import ModelConfidenceClassifier
++from stage_c.mechanism_engine import MechanismEngine
+ 
+ BASE_DIR = Path(__file__).resolve().parent.parent
+ STATE_DIR = BASE_DIR / "数据" / "状态"
+@@ -104,6 +105,15 @@
+         if "data_freshness_ratio" in df.columns:
+             state_matrix["data_freshness_ratio"] = df["data_freshness_ratio"]
+ 
++        mechanism_states, self.mechanism_events = MechanismEngine().evaluate(df)
++        state_matrix = pd.concat([state_matrix, mechanism_states], axis=1)
++        state_matrix["legacy_inventory_trajectory"] = state_matrix["inventory_trajectory"]
++        state_matrix["inventory_trajectory"] = state_matrix["physical_inventory_trajectory"]
++        state_matrix["observed_leader_type"] = df.get("dominant_leader_type", pd.Series("UNKNOWN", index=df.index)).replace({
++            "RAW_MATERIAL_SHOCK":"RAW_MATERIAL_PRICE_LEAD",
++            "FINISHED_STEEL_DEMAND":"FINISHED_STEEL_PRICE_LEAD"})
++        state_matrix["confidence_score_meaning"] = "HEURISTIC_CONSISTENCY_NOT_PROBABILITY"
++        # 旧字段保留用于兼容；候选不将经验持续期当成已验证持有期限。
+         return state_matrix
+ 
+     def save_state_matrix(self, state_matrix: pd.DataFrame) -> tuple[Path, Path]:
+--- a/stage_c/state_fundamental.py
++++ b/stage_c/state_fundamental.py
+@@ -163,10 +163,10 @@
+         # ---------------------------------------------------------
+         # 4. Supply Pressure & Demand Resilience & Inventory Trajectory
+         # ---------------------------------------------------------
+-        # 供给端压力 (S_supply 越高代表高产出/高供应压力，压制价格)
+-        if s_sup > 0.30:
++        # S_supply 为价格支持分，越高代表供应压力越低。
++        if s_sup < -0.30:
+             supply_pressure = "High"
+-        elif s_sup < -0.30:
++        elif s_sup > 0.30:
+             supply_pressure = "Low"
+         else:
+             supply_pressure = "Moderate"
+--- a/stage_e/backtest_engine.py
++++ b/stage_e/backtest_engine.py
+@@ -11,7 +11,7 @@
+   5. 自动集成螺纹主力 01-05-10 换月移仓机制与风控防火墙绝对否决权。
+ """
+ 
+-from dataclasses import dataclass
++from dataclasses import dataclass, replace
+ from typing import Dict, Any, List, Optional, Tuple
+ import pandas as pd
+ import numpy as np
+@@ -22,6 +22,7 @@
+ from stage_e.contract_rollover import ContractRolloverManager, RolloverEvent
+ from stage_e.execution_engine import ExecutionEngine
+ from stage_e.performance_analyzer import PerformanceAnalyzer
++from framework_rules import HIGH_VOL_THRESHOLD, RISK_DISTANCE_FLOOR
+ 
+ 
+ @dataclass
+@@ -49,6 +50,9 @@
+         margin_rate: float = 0.10,
+         max_base_leverage: Optional[float] = None,
+         max_margin_utilization: float = 0.50,
++        risk_budget_fraction: Optional[float] = None,
++        scale_by_confidence: bool = True,
++        common_risk_controls: bool = False,
+     ):
+         self.features_df = features_df.copy()
+         self.state_matrix = state_matrix.copy()
+@@ -59,6 +63,9 @@
+         self.margin_rate = margin_rate
+         self.max_base_leverage = max_base_leverage
+         self.max_margin_utilization = max_margin_utilization
++        self.risk_budget_fraction = risk_budget_fraction
++        self.scale_by_confidence = scale_by_confidence
++        self.common_risk_controls = common_risk_controls
+ 
+         # 确保日期索引为对齐的字符串
+         self.features_df.index = self.features_df.index.astype(str)
+@@ -82,6 +89,12 @@
+         # 初始化主力换月管理器
+         self.rollover_mgr = ContractRolloverManager(symbol=self.symbol)
+         self.analyzer = PerformanceAnalyzer()
++        close = self.features_df["rb_close"]
++        high = self.features_df.get("rb_high", close)
++        low = self.features_df.get("rb_low", close)
++        tr = pd.concat([high-low, (high-close.shift()).abs(), (low-close.shift()).abs()], axis=1).max(axis=1)
++        self.features_df["risk_distance_pct"] = (2 * tr.rolling(20, min_periods=20).mean() / close).clip(lower=RISK_DISTANCE_FLOOR)
++
+ 
+     def run_backtest(
+         self,
+@@ -140,10 +153,7 @@
+                 cur_settle = active_info["settlement"]
+                 cur_code = active_info["contract_code"]
+             else:
+-                cur_open = float(f_row.get("rb_open", f_row["rb_close"]))
+-                cur_close = float(f_row["rb_close"])
+-                cur_settle = cur_close
+-                cur_code = f"{self.symbol}main"
++                raise ValueError(f"{dt}: 缺实约映射，请显式限定验证区间，禁止 MAIN 替代成交")
+ 
+             roll_event = self.rollover_mgr.check_rollover_event(dt)
+ 
+@@ -183,6 +193,8 @@
+                     prediction_id=f"PRED_{dt.replace('-', '')}_INIT",
+                 )
+ 
++            exec_engine.daily_snapshots[-1]["marking_basis"] = active_info["marking_basis"]
++
+             # 2. 日盘收盘决策: 基于截至今日收盘的全部 PIT 状态与特征，为明日开盘制定计划
+             latest_equity = exec_engine.daily_snapshots[-1]["total_equity"]
+             cur_lots = exec_engine.current_lots
+@@ -197,13 +209,26 @@
+                 current_holding_direction=cur_holding_dir,
+             )
+ 
++            # 波动风险对所有策略及持有期间持续生效。
++            vol = float(f_row.get("vol_shock_ratio", f_row.get("rb_vol_shock_ratio", 1.0)))
++            raw_sig = replace(raw_sig, is_high_vol_pilot=bool(vol >= HIGH_VOL_THRESHOLD))
++
++            risk_features, risk_states = f_row, s_row
++            if self.common_risk_controls:
++                # 对照组只共用价格破位/波动风险，不能偷偷读取基本面或背离特征。
++                keys = ['rb_close','ma_20','ma20','ma_60','ma60','rb_ret_1d','rb_ret_5d','vol_shock_ratio','rb_vol_shock_ratio']
++                risk_features = f_row.reindex([k for k in keys if k in f_row]).copy()
++                risk_features['data_freshness_ratio'] = 1.0
++                risk_states = pd.Series({'fundamental_direction':'Neutral', 'divergence_area':0.0})
++                raw_sig = replace(raw_sig, is_pilot_squeeze=False)
++
+             # 风控防火墙终审
+             if enable_firewall:
+                 vetted_sig = risk_filter.vet_signal(
+                     date_str=dt,
+                     raw_signal=raw_sig,
+-                    state_row=s_row,
+-                    feature_row=f_row,
++                    state_row=risk_states,
++                    feature_row=risk_features,
+                     current_holding_direction=cur_holding_dir,
+                 )
+             else:
+@@ -224,6 +249,10 @@
+                 vetted_signal=vetted_sig,
+                 current_equity=latest_equity,
+                 current_price=cur_close,
++                current_lots=cur_lots,
++                risk_distance=cur_close * float(f_row["risk_distance_pct"]),
++                risk_budget_fraction=self.risk_budget_fraction,
++                scale_by_confidence=self.scale_by_confidence,
+             )
+ 
+             # 暂存为明日开盘的执行计划
+@@ -247,6 +276,11 @@
+                 "target_lots": pos_target.target_lots,
+                 "rationale": pos_target.rationale,
+                 "signal_rationale": raw_sig.rationale,
++                "mechanism_demand": s_row.get("mechanism_demand", "UNKNOWN"),
++                "mechanism_supply": s_row.get("mechanism_supply", "UNKNOWN"),
++                "mechanism_cost": s_row.get("mechanism_cost", "UNKNOWN"),
++                "hypothesis_ids": ";".join(str(s_row.get(f"hypothesis_{f}_id", "")) for f in ("demand", "supply", "cost")),
++                "data_quality_status": s_row.get("data_quality_status", "UNKNOWN"),
+             })
+ 
+         # 整理输出
+--- /dev/null
++++ b/stage_e/comparison_signals.py
+@@ -0,0 +1,33 @@
++"""冻结的简单对照与机制候选；均用相同账户、成交、风控和仓位条件比较。"""
++import pandas as pd
++from stage_e.signal_generator import TradingSignal, SignalGenerator
++
++
++class ComparisonSignals:
++    def __init__(self, mode):
++        self.mode = mode
++        self.core = SignalGenerator()
++
++    def generate_signal(self, date_str, state_row, feature_row, strategy_mode='QUANT_CORE', current_holding_direction='FLAT'):
++        if self.mode in ('FULL', 'FULL_WITH_DUPLICATE_PROXY'):
++            gen = self.core if self.mode == 'FULL' else SignalGenerator(enable_carry_gate=True, enable_carry_sizer=True)
++            return gen.generate_signal(date_str, state_row, feature_row, current_holding_direction=current_holding_direction)
++        close, ma = feature_row.get('rb_close'), feature_row.get('ma_20')
++        trend = 'FLAT' if pd.isna(close) or pd.isna(ma) or close == ma else ('LONG' if close > ma else 'SHORT')
++        supply = feature_row.get('score_supply', float('nan'))
++        supply_dir = 'FLAT' if pd.isna(supply) or supply == 0 else ('LONG' if supply > 0 else 'SHORT')
++        fund = {'Bullish':'LONG', 'Bearish':'SHORT'}.get(state_row.get('fundamental_direction'), 'FLAT')
++        if self.mode == 'PRICE':
++            direction = trend
++        elif self.mode == 'SUPPLY':
++            direction = supply_dir
++        elif self.mode == 'PRICE_FUNDAMENTAL':
++            direction = trend if trend == fund else 'FLAT'
++        elif self.mode == 'MECHANISM_CANDIDATE':
++            # 只研究两条利多资源平衡链；成本减产不直接指定钢价方向。
++            confirmed = any(state_row.get(f'mechanism_{f}') == 'CONFIRMED' for f in ('demand','supply'))
++            direction = 'LONG' if confirmed and trend == 'LONG' else 'FLAT'
++        else:
++            raise ValueError(self.mode)
++        return TradingSignal(date_str, 'RB', direction, 1.0, 100.0, False,
++                             trend != 'FLAT', self.mode, '冻结对照规则；100是固定仓位占位值，不是概率')
+--- a/stage_e/contract_rollover.py
++++ b/stage_e/contract_rollover.py
+@@ -51,102 +51,54 @@
+         self._daily_active_map: Optional[pd.DataFrame] = None
+         self._build_active_contract_map()
+ 
+-    @staticmethod
+-    def get_canonical_contract_code(date_str: str) -> Tuple[str, bool]:
+-        """
+-        根据上期所螺纹钢 01-05-10 主力轮换实测规律，返回指定日期的标准主力实约代码及换月标志
+-        """
+-        # 实测主力交割月转换点清单 (依据全量持仓量极值与交割月前倒计时确定)
+-        transitions = [
+-            ("2018-03-28", "1805", "1810"),
+-            ("2018-08-15", "1810", "1901"),
+-            ("2018-11-30", "1901", "1905"),
+-            ("2019-03-28", "1905", "1910"),
+-            ("2019-08-15", "1910", "2001"),
+-            ("2019-11-29", "2001", "2005"),
+-            ("2020-03-30", "2005", "2010"),
+-            ("2020-08-21", "2010", "2101"),
+-            ("2020-12-03", "2101", "2105"),
+-            ("2021-03-31", "2105", "2110"),
+-            ("2021-08-10", "2110", "2201"),
+-            ("2021-11-16", "2201", "2205"),
+-            ("2022-03-24", "2205", "2210"),
+-            ("2022-08-26", "2210", "2301"),
+-            ("2022-11-28", "2301", "2305"),
+-            ("2023-03-30", "2305", "2310"),
+-            ("2023-08-30", "2310", "2401"),
+-            ("2023-11-30", "2401", "2405"),
+-            ("2024-03-29", "2405", "2410"),
+-            ("2024-08-30", "2410", "2501"),
+-            ("2024-12-04", "2501", "2505"),
+-            ("2025-04-02", "2505", "2510"),
+-            ("2025-08-28", "2510", "2601"),
+-            ("2025-12-01", "2601", "2605"),
+-            ("2026-04-02", "2605", "2610"),
+-            ("2026-08-28", "2610", "2701"),
+-        ]
+-        cur_code = "1805"
+-        is_roll = False
+-        prev_code = "1805"
+-        for t_date, old_c, new_c in transitions:
+-            if date_str == t_date:
+-                return new_c, True
+-            elif date_str > t_date:
+-                cur_code = new_c
+-            else:
+-                break
+-        return cur_code, False
+-
+     def _build_active_contract_map(self):
+-        """预构建全历史每日主力合约与换月事件映射表"""
+-        p = Path(self.parquet_path)
+-        if not p.exists():
+-            raise FileNotFoundError(f"期货全合约标准化文件不存在: {self.parquet_path}")
+-
+-        df = pd.read_parquet(p)
+-        # 优先读取连续主力价格 (MAIN)，确保全历史 2,074 交易日价格连续无缝
+-        main_df = df[df["contract_type"] == "MAIN"].sort_values("date").set_index("date")
+-        
+-        events = []
+-        prev_contract_str = ""
+-        for dt, row in main_df.iterrows():
+-            dt_str = str(dt)
+-            cur_short, is_roll = self.get_canonical_contract_code(dt_str)
+-            if not prev_contract_str:
+-                prev_contract_str = cur_short
+-                is_roll = False
+-            elif cur_short != prev_contract_str:
+-                is_roll = True
+-
+-            cur_open = float(row["open"])
+-            cur_high = float(row["high"])
+-            cur_low = float(row["low"])
+-            cur_close = float(row["close"])
+-            cur_settle = float(row.get("settlement", cur_close))
+-            # 自愈修复：结算价必须落在当日 [low, high] 之内，若因历史接口脏数据越界，安全对齐至 close
+-            if cur_settle < cur_low or cur_settle > cur_high:
+-                cur_settle = cur_close
+-
+-            events.append({
+-                "date": dt_str,
+-                "contract_code": f"{self.symbol}{cur_short}",
+-                "contract_code_short": cur_short,
+-                "open": cur_open,
+-                "high": float(row["high"]),
+-                "low": float(row["low"]),
+-                "close": cur_close,
+-                "settlement": cur_settle,
+-                "volume": float(row.get("volume", 0.0)),
+-                "open_interest": float(row.get("open_interest", 0.0)),
+-                "is_rollover": is_roll,
+-                "prev_contract": f"{self.symbol}{prev_contract_str}",
+-                "old_open": cur_open,
+-                "roll_spread": 0.0,
+-            })
+-            prev_contract_str = cur_short
+-
+-        res_df = pd.DataFrame(events).set_index("date")
+-        self._daily_active_map = res_df
++        """T 日成交合约仅由 T-1 实约持仓量决定；缺报价报错，不冒用 MAIN。"""
++        df = pd.read_parquet(self.parquet_path)
++        df = df[df.contract_type.eq("SPECIFIC")].copy()
++        df["date"] = pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d")
++        df["code"] = df.contract_code.astype(str).str.replace(r"\D", "", regex=True).str.zfill(4)
++        if df.duplicated(["date", "code"]).any():
++            raise ValueError("实约同日重复记录，需先核实来源")
++        dates = sorted(df.date.unique())
++        by_date = {d: g.set_index("code") for d, g in df.groupby("date")}
++        events, active = [], None
++        for prev_dt, dt in zip(dates, dates[1:]):
++            prev, today = by_date[prev_dt], by_date[dt]
++            month = pd.Timestamp(dt).strftime("%y%m")
++            eligible = prev[(prev.index > month) & prev.index.str[-2:].isin(self.main_months)]
++            if active:
++                eligible = eligible[eligible.index >= active]
++            eligible = eligible[eligible.open_interest.gt(0)]
++            if eligible.empty:
++                if active:
++                    raise ValueError(f"{dt}: 无可延续的实约，不允许静默跳过持仓日")
++                continue
++            code = eligible.sort_values(["open_interest", "volume"], ascending=False).index[0]
++            if code not in today.index:
++                raise ValueError(f"{dt}: 前日选定合约 {code} 缺当日报价")
++            row = today.loc[code]
++            prices = row[["open", "high", "low", "close"]].astype(float)
++            if not np.isfinite(prices).all() or (prices <= 0).any():
++                raise ValueError(f"{dt} {code}: 非法价格")
++            rolled = active is not None and code != active
++            if rolled and active not in today.index:
++                raise ValueError(f"{dt}: 换月缺旧合约 {active} 报价")
++            old_open = float(today.loc[active, "open"]) if rolled else float(row.open)
++            settle = float(row.settlement)
++            valid_settle = np.isfinite(settle) and float(row.low) <= settle <= float(row.high)
++            events.append(dict(date=dt, contract_code=f"{self.symbol}{code}",
++                contract_code_short=code, open=float(row.open), high=float(row.high),
++                low=float(row.low), close=float(row.close),
++                settlement=settle if valid_settle else float(row.close),
++                marking_basis="SETTLEMENT" if valid_settle else "CLOSE_PROXY",
++                volume=float(row.volume), open_interest=float(row.open_interest),
++                selection_date=prev_dt, selection_rule="PREVIOUS_OI_MONOTONIC_01_05_10",
++                is_rollover=rolled, prev_contract=f"{self.symbol}{active or code}",
++                old_open=old_open, roll_spread=float(row.open)-old_open))
++            active = code
++        if not events:
++            raise ValueError("无可用实约映射")
++        self._daily_active_map = pd.DataFrame(events).set_index("date")
+ 
+     def get_active_contract(self, date_str: str) -> Optional[Dict[str, Any]]:
+         """获取指定日期的活跃主力实约及价格信息"""
+--- a/stage_e/execution_engine.py
++++ b/stage_e/execution_engine.py
+@@ -10,7 +10,7 @@
+      - 手续费率: 成交额万分之一 (0.01%);
+      - 保证金率: 10%;
+   3. 严格遵循中国期货市场盯市会计准则 (Mark-to-Market Accounting):
+-     - 动态权益 = 初始资金 + 累计平仓盈亏 - 累计手续费与滑点 + 持仓浮动盈亏;
++     - 动态权益 = 初始资金 + 累计平仓盈亏 - 累计手续费 + 持仓浮动盈亏（滑点已含成交价）;
+      - 占用保证金 = |持仓手数| × 合约乘数 × 当日结算价 × 保证金率;
+      - 可用资金 = 动态权益 - 占用保证金;
+      - 满足绝对恒等式: 动态权益 ≡ 可用资金 + 占用保证金;
+@@ -39,7 +39,7 @@
+     exit_time: str
+     exit_price: float
+     pnl: float  # 平仓净盈亏 (扣除手续费与滑点后)
+-    fees: float  # 累计双边手续费与滑点
++    fees: float  # 本笔已平数量分摊的开仓与平仓手续费；滑点已含价格
+     risk_plan: str
+     execution_deviation: float  # 滑点偏差
+     note: str
+@@ -81,6 +81,7 @@
+         self.cumulative_fees: float = 0.0
+         self.cumulative_slippage_cost: float = 0.0
+         self.trade_counter: int = 0
++        self.open_entry_fees: float = 0.0
+ 
+         # 历史记录流水
+         self.trade_records: List[TradeRecord] = []
+@@ -134,29 +135,21 @@
+                 entry_price=self.avg_entry_price,
+                 exit_time=date_str,
+                 exit_price=exec_old_close,
+-                pnl=round(pnl_gross_old - fee_old, 2),
+-                fees=round(fee_old, 2),
++                pnl=round(pnl_gross_old - fee_old - self.open_entry_fees, 2),
++                fees=round(fee_old + self.open_entry_fees, 2),
+                 risk_plan=self.entry_risk_plan,
+                 execution_deviation=self.slippage,
+                 note=f"主力换月平旧仓: {rollover_event.rationale}",
+             )
+             self.trade_records.append(rec_old)
+ 
+-            # 在新合约按同方向同手数开新仓
+-            exec_new_open = new_open + sign_old * self.slippage
+-            fee_new = abs(old_lots) * lot_mult * exec_new_open * self.commission_rate
+-            slip_new = abs(old_lots) * lot_mult * self.slippage
+-
+-            self.cumulative_fees += fee_new
+-            self.cumulative_slippage_cost += slip_new
+-
++            self.current_lots = 0
++            self.avg_entry_price = 0.0
++            self.open_entry_fees = 0.0
+             self.current_contract = new_c
+-            self.avg_entry_price = exec_new_open
+-            self.entry_date = date_str
+-            self.entry_prediction_id = prediction_id
+-            self.entry_risk_plan = target.rationale
+-            # 当前持仓已转至新合约，手数保持 old_lots
+         else:
++            if self.current_lots and self.current_contract != active_contract_code:
++                raise ValueError("持仓合约改变却没有换月事件")
+             self.current_contract = active_contract_code
+ 
+         # 2. 调仓至目标手数 (target_lots)
+@@ -164,7 +157,7 @@
+ 
+         # 检查调仓缓冲带 (Deadband): 同向加减仓时，若手数变动过小则不频繁调仓，降低手续费与滑点磨损
+         is_minor_rebalance = False
+-        if self.current_lots != 0 and target_lots != 0 and (self.current_lots * target_lots > 0):
++        if self.current_lots != 0 and abs(target_lots) > abs(self.current_lots) and (self.current_lots * target_lots > 0):
+             if (
+                 abs(delta_lots) < self.min_rebalance_lots
+                 and abs(delta_lots) / abs(self.current_lots) < self.rebalance_threshold_ratio
+@@ -185,6 +178,7 @@
+             # 判断是开仓、加仓、减仓还是反手
+             if self.current_lots == 0:
+                 # 全新开仓
++                self.open_entry_fees = comm
+                 self.current_lots = target_lots
+                 self.avg_entry_price = exec_price
+                 self.entry_date = date_str
+@@ -193,6 +187,7 @@
+             elif (self.current_lots > 0 and target_lots > self.current_lots) or (
+                 self.current_lots < 0 and target_lots < self.current_lots
+             ):
++                self.open_entry_fees += comm
+                 # 同向加仓: 更新加权平均开仓价
+                 prev_nominal = abs(self.current_lots) * lot_mult * self.avg_entry_price
+                 add_nominal = trade_qty * lot_mult * exec_price
+@@ -205,6 +200,8 @@
+             ):
+                 # 同向减仓或清仓
+                 close_qty = trade_qty
++                closed_fees = comm + self.open_entry_fees * close_qty / abs(self.current_lots)
++                self.open_entry_fees *= 1 - close_qty / abs(self.current_lots)
+                 sign_pos = 1 if self.current_lots > 0 else -1
+                 pnl_gross = sign_pos * (exec_price - self.avg_entry_price) * close_qty * lot_mult
+                 self.cumulative_realized_pnl += pnl_gross
+@@ -220,8 +217,8 @@
+                     entry_price=self.avg_entry_price,
+                     exit_time=date_str,
+                     exit_price=exec_price,
+-                    pnl=round(pnl_gross - comm, 2),
+-                    fees=round(comm, 2),
++                    pnl=round(pnl_gross - closed_fees, 2),
++                    fees=round(closed_fees, 2),
+                     risk_plan=self.entry_risk_plan,
+                     execution_deviation=self.slippage,
+                     note=f"主动减仓/止盈止损: {target.rationale}",
+@@ -235,6 +232,8 @@
+             else:
+                 # 反手操作 (例如从多转空，或从空转多): 分解为先全平再开新
+                 close_qty = abs(self.current_lots)
++                closed_fees = self.open_entry_fees + comm * close_qty / trade_qty
++                self.open_entry_fees = comm * abs(target_lots) / trade_qty
+                 sign_pos = 1 if self.current_lots > 0 else -1
+                 pnl_gross = sign_pos * (exec_price - self.avg_entry_price) * close_qty * lot_mult
+                 self.cumulative_realized_pnl += pnl_gross
+@@ -250,8 +249,8 @@
+                     entry_price=self.avg_entry_price,
+                     exit_time=date_str,
+                     exit_price=exec_price,
+-                    pnl=round(pnl_gross - comm, 2),
+-                    fees=round(comm, 2),
++                    pnl=round(pnl_gross - closed_fees, 2),
++                    fees=round(closed_fees, 2),
+                     risk_plan=self.entry_risk_plan,
+                     execution_deviation=self.slippage,
+                     note=f"反手平原仓: {target.rationale}",
+@@ -279,7 +278,7 @@
+             margin_occupied = 0.0
+             nominal_exposure = 0.0
+ 
+-        # 动态权益 = 初始资金 + 累计平仓盈亏 - 累计手续费与滑点 + 持仓浮动盈亏
++        # 动态权益 = 初始资金 + 累计平仓盈亏 - 累计手续费 + 持仓浮动盈亏（滑点已含成交价）
+         total_equity = (
+             self.initial_capital
+             + self.cumulative_realized_pnl
+--- a/stage_e/performance_analyzer.py
++++ b/stage_e/performance_analyzer.py
+@@ -52,18 +52,18 @@
+         total_return = (final_equity / initial_capital) - 1.0
+ 
+         years = max(0.1, n_days / self.annual_days)
+-        cagr = (final_equity / initial_capital) ** (1.0 / years) - 1.0
++        cagr = (final_equity / initial_capital) ** (1.0 / years) - 1.0 if final_equity > 0 else -1.0
+ 
+         daily_std = ret.std()
+         ann_vol = daily_std * np.sqrt(self.annual_days) if daily_std > 0 else 0.0
+ 
+         # 夏普比率 (扣除无风险利率 2%)
+-        excess_ret = cagr - self.rf
++        excess_ret = float(ret.mean()) * self.annual_days - self.rf
+         sharpe = excess_ret / ann_vol if ann_vol > 0 else 0.0
+ 
+         # 下行波动率与索提诺比率
+         downside_ret = ret[ret < 0]
+-        downside_std = downside_ret.std() * np.sqrt(self.annual_days) if len(downside_ret) > 1 else 0.0
++        downside_std = np.sqrt(np.mean(np.minimum(ret - self.rf / self.annual_days, 0.0) ** 2) * self.annual_days)
+         sortino = excess_ret / downside_std if downside_std > 0 else 0.0
+ 
+         # 最大回撤与持续期
+@@ -195,6 +195,6 @@
+         pivot = (pivot * 100).round(2)
+         # 添加年度全收益
+         yearly_last = df.groupby("year")["net_asset_value"].last()
+-        yearly_first = df.groupby("year")["net_asset_value"].first()
++        yearly_first = yearly_last.shift(1).fillna(1.0)
+         pivot["YTD"] = ((yearly_last / yearly_first - 1.0) * 100).round(2)
+         return pivot
+--- a/stage_e/position_sizer.py
++++ b/stage_e/position_sizer.py
+@@ -7,12 +7,13 @@
+   1. 结合模型置信度 (Confidence Score) 与信号强度实施动态连续缩放;
+   2. 严格受制于风控防火墙赋权的最大杠杆上限 (Firewall Leverage Cap);
+   3. 计算目标手数 (Target Lots)、名义敞口、保证金占用与有效杠杆率;
+-  4. 维系账户现金安全垫，杜绝爆仓穿仓。
++  4. 按决策时价格约束仓位；不保证跳空或无法成交时的损失上限。
+ """
+ 
+ from dataclasses import dataclass
+ from typing import Dict, Any, Optional
+ import numpy as np
++from framework_rules import HIGH_VOL_LEVERAGE_CAP
+ 
+ from stage_e.risk_filter import VettedSignal
+ 
+@@ -59,6 +60,10 @@
+         vetted_signal: VettedSignal,
+         current_equity: float,
+         current_price: float,
++        current_lots: int = 0,
++        risk_distance: Optional[float] = None,
++        risk_budget_fraction: Optional[float] = None,
++        scale_by_confidence: bool = True,
+     ) -> PositionTarget:
+         """
+         根据终审信号、当前账户净值与最新盘面价格计算目标手数
+@@ -92,6 +97,9 @@
+         strength = vetted_signal.raw_signal.strength
+         conviction_factor = float(np.clip(0.70 + 0.30 * strength, 0.70, 1.00))
+ 
++        if not scale_by_confidence:
++            conf_multiplier = conviction_factor = 1.0
++
+         # 3. 风控防火墙容量乘数 (PASS=1.0, CAUTION=0.70, RESTRICT=0.35, FORCED=0.0)
+         firewall_ratio = vetted_signal.target_leverage_cap
+ 
+@@ -106,7 +114,7 @@
+         if is_pilot:
+             eff_max_leverage = min(eff_max_leverage, 0.80)  # 严格将杠杆压制在 0.80x (资金利用率 <= 8%)
+         elif is_high_vol:
+-            eff_max_leverage = min(eff_max_leverage, 2.00)  # 高波动脱困区首笔试仓爬坡制 (杠杆 <= 2.00x, 保证金利用率 <= 20%)
++            eff_max_leverage = min(eff_max_leverage, HIGH_VOL_LEVERAGE_CAP)  # 高波动脱困区首笔试仓爬坡制 (杠杆 <= 2.00x, 保证金利用率 <= 20%)
+ 
+         max_allowed_margin = current_equity * eff_max_leverage * self.default_margin_rate
+ 
+@@ -126,6 +134,15 @@
+             np.floor(max_lots * conviction_factor * conf_multiplier * firewall_ratio * carry_mult)
+         )
+ 
++        # 风险预算是损失距离约束，不把置信度当胜率。缺风险距离时禁止风险预算开仓。
++        if risk_budget_fraction is not None:
++            if risk_distance is None or not np.isfinite(risk_distance) or risk_distance <= 0:
++                target_lots_count = 0
++            else:
++                risk_lots = int(current_equity * risk_budget_fraction / (risk_distance * self.contract_multiplier))
++                target_lots_count = min(target_lots_count, max(0, risk_lots))
++        if vetted_signal.firewall_status == "RESTRICT_CLOSE_ONLY":
++            target_lots_count = min(target_lots_count, abs(current_lots)) if current_lots * sign > 0 else 0
+         signed_lots = int(sign * target_lots_count)
+         actual_nominal = abs(signed_lots) * lot_value
+         margin_required = actual_nominal * self.default_margin_rate
+--- a/stage_e/risk_filter.py
++++ b/stage_e/risk_filter.py
+@@ -72,6 +72,14 @@
+             is_pilot_squeeze=is_pilot,
+         )
+ 
++        # 反手必须同时审查已有风险与新意图，不能靠更换方向绕过旧仓止损。
++        if current_intent != "flat" and current_intent != eval_intent:
++            held_decision = self.firewall.evaluate(state_row=state_row, feature_row=feature_row,
++                position_intent=current_intent, is_pilot_squeeze=is_pilot)
++            priority = {"PASS":0, "CAUTION":1, "RESTRICT_CLOSE_ONLY":2,
++                        "FORCED_LIQUIDATION":3, "TRADING_HALT":4}
++            decision = max((decision, held_decision), key=lambda d:(priority[d.status], -d.max_allowable_leverage))
++
+         # 检查是否处于强制斩仓后的冷却期
+         if self._cooling_counter > 0:
+             self._cooling_counter -= 1
+@@ -120,19 +128,6 @@
+ 
+         # 2. 第二重: 跨品种逼仓挤仓隔离墙 或 中度背离
+         if decision.status == "RESTRICT_CLOSE_ONLY":
+-            # 若处于成本逼空战略侦察期，放行低杠杆战略侦察底仓 (0.8x)
+-            if is_pilot:
+-                return VettedSignal(
+-                    trade_date=date_str,
+-                    vetted_direction=raw_signal.direction,
+-                    target_leverage_cap=0.20,
+-                    firewall_status="CAUTION",
+-                    is_vetoed=False,
+-                    veto_reason="原料逼空期受控放行战略侦察底仓 (0.8x)",
+-                    raw_signal=raw_signal,
+-                    firewall_decision=decision,
+-                )
+-
+             # 仅允许平仓，禁止新开仓与加仓
+             # 若信号与当前持仓同向，说明试图加仓或新开仓 -> 否决
+             # 若当前为空仓且信号开仓 -> 否决
+@@ -151,14 +146,14 @@
+                 current_holding_direction != "FLAT"
+                 and raw_signal.direction == current_holding_direction
+             ):
+-                # 试图同向加仓，强制按 50% 减持
++                # 试图同向加仓，依据风险预算且不高于当前手数
+                 return VettedSignal(
+                     trade_date=date_str,
+                     vetted_direction=current_holding_direction,
+                     target_leverage_cap=min(0.50, decision.max_allowable_leverage),
+                     firewall_status="RESTRICT_CLOSE_ONLY",
+                     is_vetoed=True,
+-                    veto_reason=f"防火墙限仓仅平仓，持仓强制限缩至 50%: {' | '.join(decision.detailed_reasons)}",
++                    veto_reason=f"防火墙限仓仅平仓，目标不得超过当前持仓或预算上限: {' | '.join(decision.detailed_reasons)}",
+                     raw_signal=raw_signal,
+                     firewall_decision=decision,
+                 )
+--- a/stage_e/signal_generator.py
++++ b/stage_e/signal_generator.py
+@@ -22,6 +22,7 @@
+ from typing import Dict, Any, Optional, List, Tuple
+ import pandas as pd
+ import numpy as np
++from framework_rules import HIGH_VOL_THRESHOLD, MA_STOP_BUFFER
+ 
+ 
+ @dataclass(frozen=True)
+@@ -64,8 +65,8 @@
+         carry_headwind_long_thresh: float = 0.35,
+         carry_tailwind_short_thresh: float = 0.40,
+         carry_headwind_short_thresh: float = 0.65,
+-        enable_carry_gate: bool = True,
+-        enable_carry_sizer: bool = True,
++        enable_carry_gate: bool = False,
++        enable_carry_sizer: bool = False,
+     ):
+         self.confidence_threshold = confidence_threshold
+         self.horizon_mode = horizon_mode
+@@ -194,7 +195,7 @@
+         cost_cash_floor = float(feature_row.get("cost_cash_floor", cost_bf - 250.0))
+         outflow_pct = float(feature_row.get("pct_flow_hz_outflow", 0.5))
+         vol_ratio = float(feature_row.get("rb_vol_shock_ratio", feature_row.get("vol_shock_ratio", 1.0)))
+-        is_high_vol_pilot = (current_holding_direction == "FLAT") and (vol_ratio >= 1.40)
++        is_high_vol_pilot = vol_ratio >= HIGH_VOL_THRESHOLD
+ 
+         # 跨品种成本推升指标
+         cost_push_spread = float(feature_row.get("cost_push_spread_5d", 0.0))
+@@ -261,8 +262,8 @@
+         is_entry_timing_short = (close <= ma20 * 1.015) and (close >= ma20 * 0.975) and (ma5 <= ma20 * 1.015) and not is_extended_plunge and not cost_floor_support
+ 
+         # 3. 宽幅波段在持保护带: 给予 5% 均线防震仓容忍，拉长持仓周期，捕获大级别单边
+-        is_holding_valid_long = close >= ma20 * 0.95
+-        is_holding_valid_short = close <= ma20 * 1.05
++        is_holding_valid_long = close >= ma20 * (1 - MA_STOP_BUFFER)
++        is_holding_valid_short = close <= ma20 * (1 + MA_STOP_BUFFER)
+ 
+         # 5. 置信度底线
+         min_conf = self.confidence_threshold if current_holding_direction == "FLAT" else (self.confidence_threshold - 5.0)
+@@ -328,7 +329,7 @@
+                 direction = "LONG"
+                 strength = min(1.0, max(0.4, abs(fscore) / 35.0 if fdir == "Bullish" else 0.50))
+                 tag = "成本推升" if is_sustained_cost_push else "需求拉动"
+-                rationale_parts.append(f"多头大波段在持延续({tag}, Close={close:.0f}>=0.95*MA20)")
++                rationale_parts.append(f"多头大波段在持延续({tag}, Close={close:.0f}满足统一MA20边界)")
+             elif is_spot_confirmed_long and is_entry_timing_long:
+                 direction = "LONG"
+                 strength = min(1.0, max(0.4, abs(fscore) / 35.0 if fdir == "Bullish" else 0.50))
+@@ -403,7 +404,7 @@
+             elif current_holding_direction == "SHORT" and is_holding_valid_short:
+                 direction = "SHORT"
+                 strength = min(1.0, max(0.4, abs(fscore) / 35.0))
+-                rationale_parts.append(f"空头大波段在持延续(FBS={fscore:.1f}, Close={close:.0f}<=1.05*MA20)")
++                rationale_parts.append(f"空头大波段在持延续(FBS={fscore:.1f}, Close={close:.0f}满足统一MA20边界)")
+             elif is_spot_confirmed_short and is_entry_timing_short:
+                 direction = "SHORT"
+                 strength = min(1.0, max(0.4, abs(fscore) / 35.0))
+--- a/stage_e/trade_recorder.py
++++ b/stage_e/trade_recorder.py
+@@ -18,10 +18,11 @@
+      - risk_plan: 预设风控计划;
+      - execution_deviation: 执行滑点偏差;
+      - note: 触发说明或强平原因;
+-  2. 格式化清洗并写入《交易/交易记录.csv》，维系项目单一真实交易台账。
++  2. 导出至独立研究实验目录，禁止覆盖真实交易台账。
+ """
+ 
+ from pathlib import Path
++from uuid import uuid4
+ from typing import List, Dict, Any, Optional
+ import pandas as pd
+ 
+@@ -37,6 +38,7 @@
+     "exit_time",
+     "exit_price",
+     "fees",
++    "pnl",
+     "risk_plan",
+     "execution_deviation",
+     "note",
+@@ -51,14 +53,20 @@
+     def __init__(self, target_csv_path: Optional[str] = None):
+         if target_csv_path is None:
+             base_dir = Path(__file__).resolve().parent.parent
+-            target_csv_path = str(base_dir / "交易" / "交易记录.csv")
++            target_csv_path = str(base_dir / "研究" / "回测实验" / f"simulation_{uuid4().hex}" / "trades.csv")
+         self.target_csv_path = target_csv_path
++        live = Path(__file__).resolve().parent.parent / "交易" / "交易记录.csv"
++        if Path(target_csv_path).resolve() == live:
++            raise ValueError("回测流水禁止写入真实交易台账")
+ 
+     def export_trade_records(self, trades_df: pd.DataFrame, overwrite: bool = True) -> str:
+         """
+         导出格式化交易明细至指定 CSV 文件
+         """
++        Path(self.target_csv_path).parent.mkdir(parents=True, exist_ok=True)
+         if trades_df.empty:
++            if not overwrite and Path(self.target_csv_path).exists():
++                return self.target_csv_path
+             empty_df = pd.DataFrame(columns=CSV_COLUMNS)
+             empty_df.to_csv(self.target_csv_path, index=False, encoding="utf-8")
+             return self.target_csv_path
+--- /dev/null
++++ b/tests/test_framework_evolution.py
+@@ -0,0 +1,193 @@
++"""审查反例：测试约束的经济含义，不用历史盈利证明工程正确。"""
++from dataclasses import replace
++from pathlib import Path
++import sys
++sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
++import numpy as np
++import pandas as pd
++import pytest
++from stage_c.mechanism_engine import MechanismEngine
++from stage_c.regime_macro import MacroRegimeClassifier
++from stage_c.risk_firewall import RiskControlFirewall
++from stage_e.contract_rollover import ContractRolloverManager, RolloverEvent
++from stage_e.execution_engine import ExecutionEngine
++from stage_e.position_sizer import PositionSizer, PositionTarget
++from stage_e.risk_filter import VettedSignal
++from stage_e.signal_generator import TradingSignal, SignalGenerator
++from stage_e.trade_recorder import TradeRecorder
++from stage_e.performance_analyzer import PerformanceAnalyzer
++
++
++def sig(direction='LONG'):
++    return TradingSignal('2024-01-01','RB',direction,1,100,True,True,'TEST','test')
++
++
++def vetted(status='PASS',direction='LONG'):
++    return VettedSignal('2024-01-01',direction,1,status,False,'',sig(direction),None)
++
++
++def target(lots):
++    return PositionTarget('2024-01-01','LONG' if lots>0 else 'SHORT' if lots<0 else 'FLAT',0,lots,0,0,0,0,'test')
++
++
++def no_roll(date='2024-01-01',code='rb2405'):
++    return RolloverEvent(date,False,code,code,100,100,0,'test')
++
++
++@pytest.mark.parametrize('lots',[1,-1,4,-4])
++def test_close_only_never_increases(lots):
++    t=PositionSizer().calculate_position_target(vetted('RESTRICT_CLOSE_ONLY','LONG' if lots>0 else 'SHORT'),1e7,3500,current_lots=lots)
++    assert abs(t.target_lots)<=abs(lots)
++    assert PositionSizer().calculate_position_target(vetted('RESTRICT_CLOSE_ONLY'),1e7,3500,current_lots=-lots if lots>0 else 0).target_lots==0
++
++
++def test_risk_budget_distance_and_unknown():
++    s=PositionSizer(max_base_leverage=5)
++    a=s.calculate_position_target(vetted(),1e6,4000,risk_distance=100,risk_budget_fraction=.01)
++    b=s.calculate_position_target(vetted(),1e6,4000,risk_distance=200,risk_budget_fraction=.01)
++    assert a.target_lots==10 and b.target_lots==5
++    assert s.calculate_position_target(vetted(),1e6,4000,risk_distance=np.nan,risk_budget_fraction=.01).target_lots==0
++
++
++def test_high_vol_holding_still_limited():
++    s=pd.Series(dict(fundamental_direction='Bullish',fbs_score=25,confidence_score=80,spot_confirmation='Confirmed'))
++    f=pd.Series(dict(rb_close=3500,ma_20=3480,ma_5=3490,rb_vol_shock_ratio=1.5,vol_shock_ratio=1.5,profit_bf=50))
++    x=SignalGenerator().generate_signal('2024-04-01',s,f,current_holding_direction='LONG')
++    assert x.is_high_vol_pilot
++    v=replace(vetted(),raw_signal=x)
++    assert PositionSizer(max_base_leverage=5).calculate_position_target(v,1e7,3500).effective_leverage<=2
++
++
++def test_duplicate_proxy_default_off():
++    g=SignalGenerator()
++    assert not g.enable_carry_gate and not g.enable_carry_sizer
++
++
++def fixture_contracts():
++    rows=[]
++    for date,oi1,oi2 in [('2024-03-01',100,90),('2024-03-04',50,120),('2024-03-05',200,100)]:
++        for c,op,oi in [('2405',100,oi1),('2410',130,oi2)]:
++            rows.append(dict(date=date,contract_code=c,contract_type='SPECIFIC',open=op,close=op,high=op+5,low=op-5,settlement=op,volume=1,open_interest=oi))
++    return pd.DataFrame(rows)
++
++
++def test_roll_uses_previous_oi_and_two_actual_prices(tmp_path):
++    p=tmp_path/'contracts.parquet';fixture_contracts().to_parquet(p)
++    m=ContractRolloverManager(parquet_path=str(p))
++    assert m.get_active_contract('2024-03-04')['contract_code']=='rb2405'
++    e=m.check_rollover_event('2024-03-05')
++    assert e.new_contract=='rb2410' and e.old_open_price==100 and e.new_open_price==130 and e.roll_spread==30
++
++
++def test_missing_selected_quote_fails_instead_of_main(tmp_path):
++    df=fixture_contracts();df=df[~((df.date=='2024-03-04')&(df.contract_code=='2405'))]
++    p=tmp_path/'bad.parquet';df.to_parquet(p)
++    with pytest.raises(ValueError,match='缺当日报价'):ContractRolloverManager(parquet_path=str(p))
++
++
++def test_roll_to_flat_does_not_reopen_and_allocates_all_fees():
++    e=ExecutionEngine(initial_capital=1e6,slippage_ticks=0,commission_rate=.001)
++    e.execute_next_bar('2024-03-01',target(2),100,100,100,no_roll(), 'rb2405')
++    ev=RolloverEvent('2024-03-05',True,'rb2405','rb2410',110,140,30,'test')
++    e.execute_next_bar('2024-03-05',target(0),140,140,140,ev,'rb2410')
++    assert e.current_lots==0 and e.cumulative_fees==pytest.approx(4.2)
++    assert e.trade_records[0].pnl==pytest.approx(195.8)
++    assert e.daily_snapshots[-1]['total_equity']-1e6==pytest.approx(e.trade_records[0].pnl)
++
++
++def test_roll_gap_is_not_price_profit():
++    e=ExecutionEngine(initial_capital=1e6,slippage_ticks=0,commission_rate=0)
++    e.execute_next_bar('2024-03-01',target(2),100,100,100,no_roll(),'rb2405')
++    ev=RolloverEvent('2024-03-05',True,'rb2405','rb2410',110,140,30,'test')
++    r=e.execute_next_bar('2024-03-05',target(2),140,140,140,ev,'rb2410')
++    assert r['total_equity']==1e6+200 and e.avg_entry_price==140
++
++
++def test_small_required_reduction_not_ignored():
++    e=ExecutionEngine(slippage_ticks=0,commission_rate=0)
++    e.execute_next_bar('2024-01-01',target(100),100,100,100,no_roll(),'rb2405')
++    e.execute_next_bar('2024-01-02',target(99),100,100,100,no_roll(),'rb2405')
++    assert e.current_lots==99
++
++
++def mechanism_frame():
++    dates=pd.bdate_range('2024-01-01',periods=50)
++    n=np.arange(50)//5
++    return pd.DataFrame(dict(building_deal_volume=100+n,rebar_total_inv=1000-10*n,rebar_weekly_prod=200-n,profit_bf=-50,hot_metal_247=250-n,rb_close=3500,ma_20=3490),index=dates.strftime('%Y-%m-%d'))
++
++
++def test_mechanism_prefix_invariance_and_separate_reviews():
++    f=mechanism_frame();s,e=MechanismEngine().evaluate(f);p,pe=MechanismEngine().evaluate(f.iloc[:28])
++    pd.testing.assert_frame_equal(s.iloc[:28],p)
++    pd.testing.assert_frame_equal(e.iloc[:len(pe)].reset_index(drop=True),pe.reset_index(drop=True))
++    pred=e[e.event_type.eq('PREDICTION')];reviews=e[e.event_type.eq('REVIEW')]
++    assert pred.hypothesis_id.is_unique
++    dates=pred.set_index('hypothesis_id').issued_at
++    assert all(row.observed_at>dates[row.hypothesis_id] for row in reviews.itertuples())
++    assert set(reviews.status)=={'CONFIRMED'}
++
++
++def test_unknown_not_neutral():
++    f=mechanism_frame();f['rebar_total_inv']=np.nan
++    s,e=MechanismEngine().evaluate(f)
++    assert set(s.mechanism_demand)=={'UNKNOWN'}
++    assert set(s.mechanism_external)=={'UNKNOWN'}
++    assert not e.get('family',pd.Series(dtype=str)).eq('DEMAND').any()
++
++
++def test_inventory_acceleration_does_not_imply_destock():
++    f=mechanism_frame();n=np.arange(50)//5;f['rebar_total_inv']=1000+20*n-n*n
++    s,_=MechanismEngine().evaluate(f)
++    assert s.iloc[20].observed_week_inventory_change>0
++    assert s.iloc[20].observed_week_inventory_acceleration<0
++    assert s.iloc[20].physical_inventory_trajectory=='Accumulating'
++
++
++def test_mechanism_can_fail_and_expire():
++    f=mechanism_frame();f.rebar_total_inv=np.arange(50)//5+1000
++    _,e=MechanismEngine().evaluate(f)
++    assert 'FAILED' in set(e.status.dropna())
++    f.rebar_total_inv=1000
++    _,e=MechanismEngine().evaluate(f)
++    assert 'EXPIRED' in set(e.status.dropna())
++
++
++def test_price_spike_not_policy_stimulus():
++    r=MacroRegimeClassifier().classify_row(pd.Series(dict(rb_vol_shock_ratio=3,vol_shock_ratio=3,rb_ret_5d=.08)))
++    assert r['macro_policy_bias']=='Market_Rally'
++
++
++def test_divergence_severity_symmetric():
++    firewall=RiskControlFirewall()
++    f=pd.Series(dict(rb_close=3500,ma_20=3500,data_freshness_ratio=1))
++    a=firewall.evaluate(pd.Series(dict(divergence_area=16,fundamental_direction='Bullish')),f,'long')
++    b=firewall.evaluate(pd.Series(dict(divergence_area=-16,fundamental_direction='Bullish')),f,'long')
++    assert a.status==b.status=='FORCED_LIQUIDATION'
++
++
++def test_simulation_cannot_write_real_ledger():
++    with pytest.raises(ValueError):TradeRecorder(str(Path(__file__).resolve().parents[1]/'交易/交易记录.csv'))
++
++
++def test_sharpe_uses_mean_daily_excess():
++    ret=pd.Series([0,.1,-.05,.02,-.01]);eq=1e6*(1+ret).cumprod()
++    df=pd.DataFrame(dict(date=pd.date_range('2024-01-01',periods=5).strftime('%Y-%m-%d'),total_equity=eq,daily_return=ret,net_asset_value=eq/1e6))
++    p=PerformanceAnalyzer().analyze_equity_and_trades(df,pd.DataFrame())
++    assert p['sharpe_ratio']==pytest.approx(round((ret.mean()*250-.02)/(ret.std()*np.sqrt(250)),2))
++
++
++def test_reverse_intent_cannot_bypass_current_position_stop():
++    from stage_e.risk_filter import RiskFilterAdapter
++    v=RiskFilterAdapter().vet_signal('2024-01-02',sig('SHORT'),
++        pd.Series(dict(fundamental_direction='Neutral')),
++        pd.Series(dict(rb_close=3400,ma_20=3500,data_freshness_ratio=1)),
++        current_holding_direction='LONG')
++    assert v.vetted_direction=='FLAT' and v.firewall_status=='FORCED_LIQUIDATION'
++
++
++def test_reversal_closed_pnl_includes_only_allocated_fees():
++    e=ExecutionEngine(initial_capital=1e6,slippage_ticks=0,commission_rate=.001)
++    e.execute_next_bar('2024-01-01',target(2),100,100,100,no_roll(),'rb2405')
++    e.execute_next_bar('2024-01-02',target(-3),110,110,110,no_roll(),'rb2405')
++    e.execute_next_bar('2024-01-03',target(0),105,105,105,no_roll(),'rb2405')
++    assert sum(x.pnl for x in e.trade_records)==pytest.approx(e.daily_snapshots[-1]['total_equity']-1e6)
+--- a/tests/test_stage_c_engine.py
++++ b/tests/test_stage_c_engine.py
+@@ -68,7 +68,7 @@
+         self.assertEqual(res_shock["macro_regime"], "宏观覆盖")
+         self.assertTrue(res_shock["external_shock_flag"])
+         self.assertEqual(res_shock["macro_shock_event"], "MARKET_VOLATILITY_EXPANSION_UP")
+-        self.assertEqual(res_shock["macro_policy_bias"], "Stimulus")
++        self.assertEqual(res_shock["macro_policy_bias"], "Market_Rally")
+         self.assertGreaterEqual(res_shock["macro_override_intensity"], 0.80)
+ 
+         # B. 极端宏观数据断崖 (如 PMI 跌至 35.7 深度收缩)
+@@ -104,7 +104,7 @@
+         self.assertEqual(res_bull["fundamental_direction"], "Bullish")
+         self.assertEqual(res_bull["fundamental_strength"], "High")
+         self.assertEqual(res_bull["cost_boundary_regime"], "合理利润运行")
+-        self.assertEqual(res_bull["supply_pressure"], "Low")
++        self.assertEqual(res_bull["supply_pressure"], "High")
+         self.assertEqual(res_bull["demand_resilience"], "Strong")
+         self.assertEqual(res_bull["inventory_trajectory"], "Accelerating Destock")
+ 
+@@ -335,8 +335,8 @@
+         res_macro = macro_clf.classify_row(row_squeeze, dt_str="2024-05-15")
+         self.assertEqual(res_macro["macro_regime"], "宏观覆盖")
+         self.assertTrue(res_macro["external_shock_flag"])
+-        self.assertEqual(res_macro["macro_shock_event"], "RAW_MATERIAL_SUPPLY_SQUEEZE")
+-        self.assertEqual(res_macro["macro_policy_bias"], "Supply_Shock")
++        self.assertEqual(res_macro["macro_shock_event"], "RAW_MATERIAL_PRICE_SQUEEZE")
++        self.assertEqual(res_macro["macro_policy_bias"], "Unconfirmed_Raw_Shock")
+         self.assertEqual(res_macro["macro_override_intensity"], 0.75)
+ 
+         # B. 情绪引擎应识别原料外溢导致的极端拥挤风险
+--- a/tests/test_stage_e_engine.py
++++ b/tests/test_stage_e_engine.py
+@@ -213,15 +213,13 @@
+         self.assertIn("contract_code", full_map.columns)
+         self.assertIn("is_rollover", full_map.columns)
+ 
+-        # 抽样已知换月日 2024-03-29 (2405 -> 2410)
+-        ev_roll = mgr.check_rollover_event("2024-03-29")
+-        self.assertTrue(ev_roll.is_rollover)
+-        self.assertEqual(ev_roll.new_contract, "rb2410")
+-        self.assertIn("rb2405", ev_roll.old_contract)
+-
+-        # 抽样非换月日
+-        ev_normal = mgr.check_rollover_event("2024-03-15")
+-        self.assertFalse(ev_normal.is_rollover)
++        # 换月由上一日实际持仓量决定，不固定历史日历。
++        day = full_map[full_map.is_rollover].index[-1]
++        event = mgr.check_rollover_event(day)
++        self.assertTrue(event.is_rollover)
++        self.assertNotEqual(event.old_contract, event.new_contract)
++        self.assertAlmostEqual(event.roll_spread, event.new_open_price-event.old_open_price)
++        self.assertLess(full_map.loc[day, 'selection_date'], day)
+ 
+     def test_05_execution_engine_accounting_identity(self):
+         """测试期货撮合与账户盯市会计恒等式"""
+@@ -736,7 +734,7 @@
+ 
+     def test_21_carry_headwind_veto_backwardation_short(self):
+         """测试期限结构强Backwardation负Carry一票否决做空及真突破破位豁免"""
+-        sig_gen = SignalGenerator(carry_headwind_thresh_high=0.85)
++        sig_gen = SignalGenerator(carry_headwind_thresh_high=0.85, enable_carry_gate=True)
+         state_row = pd.Series({
+             "fundamental_direction": "Bearish",
+             "fbs_score": -25.0,
+@@ -770,7 +768,7 @@
+ 
+     def test_22_carry_headwind_veto_contango_long(self):
+         """测试期限结构强Contango负Carry一票否决追多及真突破豁免"""
+-        sig_gen = SignalGenerator(carry_headwind_thresh_low=0.15)
++        sig_gen = SignalGenerator(carry_headwind_thresh_low=0.15, enable_carry_gate=True)
+         state_row = pd.Series({
+             "fundamental_direction": "Bullish",
+             "fbs_score": 25.0,

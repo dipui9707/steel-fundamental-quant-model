@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钢材量化系统 · 阶段 E 参数敏感性与高原分析全景看板</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --border-color: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-green: #34d399;
+            --accent-amber: #fbbf24;
+            --accent-rose: #fb7185;
+            --accent-purple: #c084fc;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: var(--bg-main); color: var(--text-primary); padding: 24px; line-height: 1.5; }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 24px; }
+        .header h1 { font-size: 24px; color: var(--text-primary); font-weight: 700; }
+        .header .subtitle { font-size: 14px; color: var(--accent-blue); margin-top: 4px; }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 9999px; font-size: 12px; font-weight: 600; background-color: rgba(56, 189, 248, 0.15); color: var(--accent-blue); border: 1px solid var(--accent-blue); }
+        
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+        .kpi-card { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px; }
+        .kpi-title { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; }
+        .kpi-val { font-size: 24px; font-weight: 700; color: var(--text-primary); }
+        .kpi-sub { font-size: 12px; color: var(--accent-green); margin-top: 4px; }
+
+        .card { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; margin-bottom: 24px; }
+        .card-header { font-size: 16px; font-weight: 600; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+        
+        .btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .btn { background-color: #334155; color: var(--text-primary); border: none; padding: 6px 14px; border-radius: 6px; font-size: 12px; cursor: pointer; transition: all 0.2s; }
+        .btn.active { background-color: var(--accent-blue); color: #0f172a; font-weight: 600; }
+        .btn:hover { opacity: 0.85; }
+
+        .chart-container { position: relative; height: 360px; width: 100%; }
+        
+        table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 12px; }
+        th, td { padding: 8px 12px; text-align: center; border: 1px solid var(--border-color); }
+        th { background-color: #24344d; color: var(--accent-blue); font-weight: 600; }
+        tr:hover { background-color: rgba(255, 255, 255, 0.03); }
+        .heat-cell { font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>钢材产业量化系统 · 阶段 E 参数敏感性与高原分析全景看板</h1>
+            <div class="subtitle">Parameter Plateau & Anti-Overfitting Stress Test | 2018–2026 全历史连续 2,074 交易日实证</div>
+        </div>
+        <div>
+            <span class="badge">测试组数: 121 组</span>
+            <span class="badge" style="border-color: var(--accent-green); color: var(--accent-green);">9年全胜率: 86.0%</span>
+        </div>
+    </div>
+
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-title">累计净值均值 / 中位数</div>
+            <div class="kpi-val">7.1973 <span style="font-size: 14px; color: var(--text-secondary);">/ 7.80</span></div>
+            <div class="kpi-sub">变异系数 CV=0.189 (极平坦)</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">年化夏普比率区间</div>
+            <div class="kpi-val">0.74 <span style="font-size: 14px; color: var(--text-secondary);">[0.54 ~ 0.81]</span></div>
+            <div class="kpi-sub">全部测试最低仍超 0.54</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">最大历史回撤区间</div>
+            <div class="kpi-val">-36.68% <span style="font-size: 14px; color: var(--text-secondary);">[-43.45% ~ -17.33%]</span></div>
+            <div class="kpi-sub">绝对零回撤恶化断崖</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">9年连续正收益覆盖率</div>
+            <div class="kpi-val" style="color: var(--accent-green);">86.0%</div>
+            <div class="kpi-sub">104/121 组保持 9 年全胜</div>
+        </div>
+    </div>
+
+    <!-- 1D 参数扫描动态图表 -->
+    <div class="card">
+        <div class="card-header">
+            <span>【维度 1】单参数大跨度扫描敏感性曲线 (1D Sensitivity Curves)</span>
+            <span style="font-size: 12px; color: var(--text-secondary);">点击切换观察不同核心参数的绩效高原</span>
+        </div>
+        <div class="btn-group" id="btnGroup1D"></div>
+        <div class="chart-container">
+            <canvas id="chart1D"></canvas>
+        </div>
+    </div>
+
+    <!-- 2D 交互热力网格 -->
+    <div class="card">
+        <div class="card-header">
+            <span>【维度 2】双参数交叉热力矩阵 (2D Parameter Interaction Plateau)</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <h4 style="color: var(--accent-blue); margin-bottom: 8px; font-size: 14px;">网格 A: 箱体空间阈值 × 盈亏比门槛 (NAV / Sharpe)</h4>
+                <div id="gridTableA"></div>
+            </div>
+            <div>
+                <h4 style="color: var(--accent-green); margin-bottom: 8px; font-size: 14px;">网格 B: Carry强Back否决 × 强Contango否决 (NAV / Sharpe)</h4>
+                <div id="gridTableB"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chartData1D = {"space_thresh": {"name": "箱体空间门禁阈值 (space_thresh)", "baseline": "0.012", "labels": ["0.5%", "0.8%", "1.0%", "1.2%", "1.5%", "1.8%", "2.0%", "2.5%"], "nav": [6.3521, 6.9794, 7.4145, 7.7954, 7.3397, 4.7214, 4.7858, 4.4643], "cagr": [24.96, 26.39, 27.32, 28.09, 27.16, 20.57, 20.77, 19.76], "sharpe": [0.67, 0.71, 0.74, 0.76, 0.74, 0.56, 0.57, 0.54], "maxdd": [-37.53, -37.53, -37.53, -37.53, -39.75, -39.36, -38.54, -38.54], "pos_years": [8, 9, 9, 9, 9, 8, 8, 8]}, "risk_reward_ratio": {"name": "盈亏比不对称门槛 (risk_reward_ratio)", "baseline": "2.0", "labels": ["1.2", "1.5", "1.8", "2.0", "2.2", "2.5", "3.0"], "nav": [7.6411, 7.6411, 7.6411, 7.7954, 7.7954, 7.7954, 7.7954], "cagr": [27.78, 27.78, 27.78, 28.09, 28.09, 28.09, 28.09], "sharpe": [0.75, 0.75, 0.75, 0.76, 0.76, 0.76, 0.76], "maxdd": [-37.53, -37.53, -37.53, -37.53, -37.53, -37.53, -37.53], "pos_years": [9, 9, 9, 9, 9, 9, 9]}, "liquidity_thresh": {"name": "实物流动性冰封分位 (liquidity_thresh)", "baseline": "0.1", "labels": ["5.0%", "8.0%", "10.0%", "12.0%", "15.0%", "20.0%"], "nav": [7.3668, 8.5796, 7.7954, 7.9429, 7.9429, 8.2648], "cagr": [27.22, 29.57, 28.09, 28.38, 28.38, 28.99], "sharpe": [0.73, 0.81, 0.76, 0.77, 0.77, 0.79], "maxdd": [-37.53, -37.53, -37.53, -37.53, -37.53, -37.53], "pos_years": [8, 9, 9, 9, 9, 9]}, "cny_week_window": {"name": "春节实物保护窗口 (cny_week_window)", "baseline": "(-4, 3)", "labels": ["-3~2", "-4~2", "-4~3", "-5~3", "-4~4"], "nav": [8.43, 7.7954, 7.7954, 7.9189, 7.7954], "cagr": [29.3, 28.09, 28.09, 28.33, 28.09], "sharpe": [0.8, 0.76, 0.76, 0.77, 0.76], "maxdd": [-37.53, -37.53, -37.53, -37.53, -37.53], "pos_years": [9, 9, 9, 9, 9]}, "carry_headwind_thresh_high": {"name": "强Backwardation做空否决阈值 (carry_headwind_thresh_high)", "baseline": "0.85", "labels": ["75.0%", "80.0%", "85.0%", "90.0%", "95.0%"], "nav": [7.7954, 7.7954, 7.7954, 7.7954, 7.7954], "cagr": [28.09, 28.09, 28.09, 28.09, 28.09], "sharpe": [0.76, 0.76, 0.76, 0.76, 0.76], "maxdd": [-37.53, -37.53, -37.53, -37.53, -37.53], "pos_years": [9, 9, 9, 9, 9]}, "carry_headwind_thresh_low": {"name": "强Contango做多否决阈值 (carry_headwind_thresh_low)", "baseline": "0.15", "labels": ["5.0%", "10.0%", "15.0%", "20.0%", "25.0%"], "nav": [7.7167, 7.7954, 7.7954, 7.7954, 7.9189], "cagr": [27.93, 28.09, 28.09, 28.09, 28.33], "sharpe": [0.76, 0.76, 0.76, 0.76, 0.77], "maxdd": [-37.53, -37.53, -37.53, -37.53, -37.53], "pos_years": [9, 9, 9, 9, 9]}, "carry_mult_up": {"name": "Carry顺风仓位放大乘数 (carry_mult_up)", "baseline": "1.05", "labels": ["1.0", "1.02", "1.05", "1.08", "1.1"], "nav": [7.5318, 7.6459, 7.7954, 7.9093, 8.0077], "cagr": [27.56, 27.79, 28.09, 28.31, 28.5], "sharpe": [0.76, 0.76, 0.76, 0.77, 0.77], "maxdd": [-37.53, -37.53, -37.53, -37.53, -37.53], "pos_years": [9, 9, 9, 9, 9]}, "carry_mult_down": {"name": "Carry逆风仓位削减乘数 (carry_mult_down)", "baseline": "0.85", "labels": ["0.75", "0.8", "0.85", "0.9", "1.0"], "nav": [7.7234, 7.7599, 7.7954, 7.828, 7.8824], "cagr": [27.94, 28.02, 28.09, 28.15, 28.26], "sharpe": [0.76, 0.76, 0.76, 0.76, 0.76], "maxdd": [-37.53, -37.53, -37.53, -37.53, -37.53], "pos_years": [9, 9, 9, 9, 9]}, "max_margin_utilization": {"name": "最高资金利用率 (max_margin_utilization)", "baseline": "0.5", "labels": ["20.0%", "25.0%", "30.0%", "35.0%", "40.0%", "45.0%", "50.0%", "55.0%", "60.0%"], "nav": [2.4901, 3.108, 3.8255, 4.6521, 5.5926, 6.6438, 7.7954, 9.0471, 10.3711], "cagr": [11.62, 14.65, 17.55, 20.36, 23.06, 25.64, 28.09, 30.41, 32.57], "sharpe": [0.69, 0.73, 0.75, 0.76, 0.77, 0.77, 0.76, 0.76, 0.75], "maxdd": [-17.33, -20.93, -24.46, -27.87, -31.19, -34.4, -37.53, -40.53, -43.45], "pos_years": [8, 8, 8, 9, 9, 9, 9, 9, 9]}};
+        let activeParam = Object.keys(chartData1D)[0];
+        let currentChart = null;
+
+        function initButtons() {
+            const btnGroup = document.getElementById("btnGroup1D");
+            btnGroup.innerHTML = "";
+            Object.keys(chartData1D).forEach((k, idx) => {
+                const btn = document.createElement("button");
+                btn.className = "btn" + (k === activeParam ? " active" : "");
+                btn.innerText = chartData1D[k].name.split("(")[0].trim();
+                btn.onclick = () => {
+                    document.querySelectorAll(".btn").forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    activeParam = k;
+                    renderChart();
+                };
+                btnGroup.appendChild(btn);
+            });
+        }
+
+        function renderChart() {
+            const data = chartData1D[activeParam];
+            const ctx = document.getElementById("chart1D").getContext("2d");
+            if (currentChart) currentChart.destroy();
+
+            currentChart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: data.labels,
+                    datasets: [
+                        {
+                            label: "累计净值 NAV",
+                            data: data.nav,
+                            borderColor: "#38bdf8",
+                            backgroundColor: "rgba(56, 189, 248, 0.1)",
+                            yAxisID: "y",
+                            tension: 0.2,
+                            fill: true,
+                            pointRadius: 5,
+                            pointHoverRadius: 7
+                        },
+                        {
+                            label: "夏普比率 Sharpe",
+                            data: data.sharpe,
+                            borderColor: "#34d399",
+                            yAxisID: "y1",
+                            tension: 0.2,
+                            borderDash: [5, 5],
+                            pointRadius: 4
+                        },
+                        {
+                            label: "最大回撤 MaxDD (%)",
+                            data: data.maxdd,
+                            borderColor: "#fb7185",
+                            yAxisID: "y2",
+                            tension: 0.2,
+                            pointRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    scales: {
+                        x: { grid: { color: "#334155" }, ticks: { color: "#94a3b8" } },
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: { display: true, text: 'NAV', color: '#38bdf8' },
+                            grid: { color: "#334155" },
+                            ticks: { color: "#38bdf8" }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: { display: true, text: 'Sharpe', color: '#34d399' },
+                            grid: { drawOnChartArea: false },
+                            ticks: { color: "#34d399" }
+                        },
+                        y2: {
+                            type: 'linear',
+                            display: false,
+                            min: -50,
+                            max: 0
+                        }
+                    },
+                    plugins: {
+                        legend: { labels: { color: "#f8fafc" } }
+                    }
+                }
+            });
+        }
+
+        // 渲染表格
+        const gridA = {"title": "网格 A: 箱体空间阈值 × 盈亏比不对称倍数", "param_x": "risk_reward_ratio", "param_y": "space_thresh", "x_vals": [1.5, 1.8, 2.0, 2.2, 2.5], "y_vals": [0.008, 0.01, 0.012, 0.015, 0.018], "records": [{"space_thresh": 0.008, "risk_reward_ratio": 1.5, "nav": 6.979429176000001, "cagr_pct": 26.39, "sharpe": 0.71, "maxdd": -37.53, "pos_years": 9, "ret_2025": 1.7168918067833507}, {"space_thresh": 0.008, "risk_reward_ratio": 1.8, "nav": 6.979429176000001, "cagr_pct": 26.39, "sharpe": 0.71, "maxdd": -37.53, "pos_years": 9, "ret_2025": 1.7168918067833507}, {"space_thresh": 0.008, "risk_reward_ratio": 2.0, "nav": 6.979429176000001, "cagr_pct": 26.39, "sharpe": 0.71, "maxdd": -37.53, "pos_years": 9, "ret_2025": 1.7168918067833507}, {"space_thresh": 0.008, "risk_reward_ratio": 2.2, "nav": 6.979429176000001, "cagr_pct": 26.39, "sharpe": 0.71, "maxdd": -37.53, "pos_years": 9, "ret_2025": 1.7168918067833507}, {"space_thresh": 0.008, "risk_reward_ratio": 2.5, "nav": 6.979429176000001, "cagr_pct": 26.39, "sharpe": 0.71, "maxdd": -37.53, "pos_years": 9, "ret_2025": 1.7168918067833507}, {"space_thresh": 0.01, "risk_reward_ratio": 1.5, "nav": 7.2677677450000004, "cagr_pct": 27.01, "sharpe": 0.73, "maxdd": -37.53, "pos_years": 9, "ret_2025": 1.715042304400496}, {"space_thresh": 0.01, "risk_reward_ratio": 1.8, "nav": 7.2677677450000004, "cagr_pct": 27.01, "sharpe": 0.73, "maxdd": -37.53, "pos_years": 9, "ret_2025": 1.715042304400496}, {"space_thresh": 0.01, "risk_reward_ratio": 2.0, "nav": 7.4145097810000005, "cagr_pct": 27.32, "sharpe": 0.74, "maxdd": -37.53, "pos_years": 9, "ret_2025": 1.715042304400496}, {"space_thresh": 0.01, "risk_reward_ratio": 2.2, "nav": 7.4145097810000005, "cagr_pct": 27.32, "sharpe": 0.74, "maxdd": -37.53, "pos_years": 9, "ret_2025": 1.715042304400496}, {"space_thresh": 0.01, "risk_reward_ratio": 2.5, "nav": 7.4145097810000005, "cagr_pct": 27.32, "sharpe": 0.74, "maxdd": -37.53, "pos_years": 9, "ret_2025": 1.715042304400496}, {"space_thresh": 0.012, "risk_reward_ratio": 1.5, "nav": 7.641059215, "cagr_pct": 27.78, "sharpe": 0.75, "maxdd": -37.53, "pos_years": 9, "ret_2025": 7.382847831707205}, {"space_thresh": 0.012, "risk_reward_ratio": 1.8, "nav": 7.641059215, "cagr_pct": 27.78, "sharpe": 0.75, "maxdd": -37.53, "pos_years": 9, "ret_2025": 7.382847831707205}, {"space_thresh": 0.012, "risk_reward_ratio": 2.0, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2025": 7.382847831707205}, {"space_thresh": 0.012, "risk_reward_ratio": 2.2, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2025": 7.382847831707205}, {"space_thresh": 0.012, "risk_reward_ratio": 2.5, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2025": 7.382847831707205}, {"space_thresh": 0.015, "risk_reward_ratio": 1.5, "nav": 7.410207992, "cagr_pct": 27.31, "sharpe": 0.75, "maxdd": -39.75, "pos_years": 9, "ret_2025": 10.604754164883918}, {"space_thresh": 0.015, "risk_reward_ratio": 1.8, "nav": 7.194523886, "cagr_pct": 26.85, "sharpe": 0.73, "maxdd": -39.75, "pos_years": 9, "ret_2025": 7.383813062249457}, {"space_thresh": 0.015, "risk_reward_ratio": 2.0, "nav": 7.339748762999999, "cagr_pct": 27.16, "sharpe": 0.74, "maxdd": -39.75, "pos_years": 9, "ret_2025": 7.383813062249457}, {"space_thresh": 0.015, "risk_reward_ratio": 2.2, "nav": 7.339748762999999, "cagr_pct": 27.16, "sharpe": 0.74, "maxdd": -39.75, "pos_years": 9, "ret_2025": 7.383813062249457}, {"space_thresh": 0.015, "risk_reward_ratio": 2.5, "nav": 7.5821526420000005, "cagr_pct": 27.66, "sharpe": 0.75, "maxdd": -37.53, "pos_years": 9, "ret_2025": 7.382847831707205}, {"space_thresh": 0.018, "risk_reward_ratio": 1.5, "nav": 4.673689399000001, "cagr_pct": 20.43, "sharpe": 0.56, "maxdd": -39.36, "pos_years": 8, "ret_2025": 2.8126082064640903}, {"space_thresh": 0.018, "risk_reward_ratio": 1.8, "nav": 4.627863132, "cagr_pct": 20.28, "sharpe": 0.55, "maxdd": -39.36, "pos_years": 8, "ret_2025": 1.8064047386869504}, {"space_thresh": 0.018, "risk_reward_ratio": 2.0, "nav": 4.721369889, "cagr_pct": 20.57, "sharpe": 0.56, "maxdd": -39.36, "pos_years": 8, "ret_2025": 1.8064047386869504}, {"space_thresh": 0.018, "risk_reward_ratio": 2.2, "nav": 4.75476108, "cagr_pct": 20.68, "sharpe": 0.56, "maxdd": -39.36, "pos_years": 8, "ret_2025": 1.8064047386869504}, {"space_thresh": 0.018, "risk_reward_ratio": 2.5, "nav": 4.907531288, "cagr_pct": 21.14, "sharpe": 0.57, "maxdd": -37.53, "pos_years": 8, "ret_2025": 1.803035961548197}]};
+        const gridB = {"title": "网格 B: 期限结构强Back否决(高) × 强Contango否决(低)", "param_x": "carry_low", "param_y": "carry_high", "x_vals": [0.1, 0.12, 0.15, 0.18, 0.2], "y_vals": [0.8, 0.82, 0.85, 0.88, 0.9], "records": [{"carry_high": 0.8, "carry_low": 0.1, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.8, "carry_low": 0.12, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.8, "carry_low": 0.15, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.8, "carry_low": 0.18, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.8, "carry_low": 0.2, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.82, "carry_low": 0.1, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.82, "carry_low": 0.12, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.82, "carry_low": 0.15, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.82, "carry_low": 0.18, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.82, "carry_low": 0.2, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.85, "carry_low": 0.1, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.85, "carry_low": 0.12, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.85, "carry_low": 0.15, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.85, "carry_low": 0.18, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.85, "carry_low": 0.2, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.88, "carry_low": 0.1, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.88, "carry_low": 0.12, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.88, "carry_low": 0.15, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.88, "carry_low": 0.18, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.88, "carry_low": 0.2, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.9, "carry_low": 0.1, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.9, "carry_low": 0.12, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.9, "carry_low": 0.15, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.9, "carry_low": 0.18, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}, {"carry_high": 0.9, "carry_low": 0.2, "nav": 7.795366283, "cagr_pct": 28.09, "sharpe": 0.76, "maxdd": -37.53, "pos_years": 9, "ret_2021": 1.488787949294126, "ret_2025": 7.382847831707205}]};
+
+        function renderGrid(containerId, gridObj) {
+            const div = document.getElementById(containerId);
+            let html = "<table><thead><tr><th>" + gridObj.param_y + " \ " + gridObj.param_x + "</th>";
+            gridObj.x_vals.forEach(x => { html += "<th>" + x + "</th>"; });
+            html += "</tr></thead><tbody>";
+
+            const map = {};
+            gridObj.records.forEach(r => {
+                map[r[gridObj.param_y] + "_" + r[gridObj.param_x]] = r;
+            });
+
+            gridObj.y_vals.forEach(y => {
+                html += "<tr><td style='font-weight:600; color: var(--accent-blue);'>" + y + "</td>";
+                gridObj.x_vals.forEach(x => {
+                    const rec = map[y + "_" + x];
+                    if (rec) {
+                        const bg = rec.nav >= 7.6 ? "rgba(52, 211, 153, 0.15)" : "transparent";
+                        html += "<td class='heat-cell' style='background-color:" + bg + ";'>" + rec.nav.toFixed(2) + " <span style='font-size:10px; color:#94a3b8;'>(" + rec.sharpe.toFixed(2) + ")</span></td>";
+                    } else {
+                        html += "<td>-</td>";
+                    }
+                });
+                html += "</tr>";
+            });
+            html += "</tbody></table>";
+            div.innerHTML = html;
+        }
+
+        window.onload = () => {
+            initButtons();
+            renderChart();
+            renderGrid("gridTableA", gridA);
+            renderGrid("gridTableB", gridB);
+        };
+    </script>
+</body>
+</html>

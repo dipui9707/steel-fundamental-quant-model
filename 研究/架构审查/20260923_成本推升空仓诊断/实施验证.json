@@ -1,0 +1,18 @@
+{
+  "version": "cost-push-0.1-candidate",
+  "date": "2026-09-23",
+  "tests": "132 passed in 56.68s",
+  "new_tests": 19,
+  "smoke_directory": "研究/回测实验/20260923_cost_push_final_smoke",
+  "smoke_days": 64,
+  "smoke_new_episodes": 0,
+  "source_hashes_match": true,
+  "artifact_hashes_match": true,
+  "baseline_unchanged_across_smokes": true,
+  "workbook": "Only 假设登记!A3,A34:R36 value changes; previews inspected; tabs/panes/merges/filters/validation counts preserved",
+  "limitations": [
+    "零新增成交不能判断追高风险；7月突破超过3ATR，未为该案例放宽参数",
+    "工程测试非收益或样本外验证；需扩大区间检查参与率与追高损失",
+    "PIT与连续价格换月伪突破未解决；日终浮动不是盘中MAE；止损可能因跳空超预算"
+  ]
+}

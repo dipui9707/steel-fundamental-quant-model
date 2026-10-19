@@ -1,0 +1,23 @@
+{
+  "version": "cost-push-0.2-candidate",
+  "test_result": "72 passed in 33.24s",
+  "smoke_directory": "研究/回测实验/20260923_cost_push_sizing_smoke",
+  "pilot_margin_utilization": 0.1,
+  "confirmed_margin_utilization": 0.25,
+  "full_margin_ceiling": 0.5,
+  "sizing_example": {
+    "equity": 1000000,
+    "price": 4000,
+    "margin_rate": 0.1,
+    "risk_distance": 100,
+    "old_lots": 2,
+    "new_lots": 25
+  },
+  "code_input_artifact_hashes_match": true,
+  "workbook_preserved_except": [
+    "假设登记!A3",
+    "假设登记!A37:R37"
+  ],
+  "data_source": "现有本地宽表及实约库，2026-09-23读取，无外部查询",
+  "validation_scope": "仓位计算、原规则兼容与运行验证，不是新增收益或追高风险评估"
+}

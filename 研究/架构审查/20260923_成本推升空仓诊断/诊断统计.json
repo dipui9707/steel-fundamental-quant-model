@@ -1,0 +1,124 @@
+{
+  "raw_push_proxy": {
+    "days": 129,
+    "raw_directions": {
+      "FLAT": 102,
+      "LONG": 27
+    },
+    "vetted_directions": {
+      "FLAT": 106,
+      "LONG": 23
+    },
+    "actual_flat_days": 108,
+    "flat_rationale": {
+      "模型置信度不足 ，降级观望": 44,
+      "盘面透支涨幅或假突破推升，安全垫一票否决追多": 23,
+      "看多但准入门槛未满足 ": 11,
+      "钢厂即期毛利极度低迷且成本推升，触发低毛利禁多锁，严禁高位追多接盘": 10,
+      "成材表需虽弱但遭遇原料强力推升，禁空保护": 6,
+      "真实钢厂现货深度亏损下轨支撑，安全垫一票否决杀跌做空": 4,
+      "基本面中性震荡 ": 4
+    },
+    "macro_override_days": 111,
+    "low_conf_lt40_days": 99,
+    "above_ma20_2p5_days": 52
+  },
+  "raw_push_and_positive_rb_5d": {
+    "days": 110,
+    "raw_directions": {
+      "FLAT": 90,
+      "LONG": 20
+    },
+    "vetted_directions": {
+      "FLAT": 91,
+      "LONG": 19
+    },
+    "actual_flat_days": 94,
+    "flat_rationale": {
+      "模型置信度不足 ，降级观望": 42,
+      "盘面透支涨幅或假突破推升，安全垫一票否决追多": 23,
+      "钢厂即期毛利极度低迷且成本推升，触发低毛利禁多锁，严禁高位追多接盘": 8,
+      "成材表需虽弱但遭遇原料强力推升，禁空保护": 5,
+      "看多但准入门槛未满足 ": 4,
+      "真实钢厂现货深度亏损下轨支撑，安全垫一票否决杀跌做空": 4,
+      "基本面中性震荡 ": 4
+    },
+    "macro_override_days": 97,
+    "low_conf_lt40_days": 85,
+    "above_ma20_2p5_days": 52
+  },
+  "sustained_push_proxy": {
+    "days": 69,
+    "raw_directions": {
+      "FLAT": 43,
+      "LONG": 26
+    },
+    "vetted_directions": {
+      "FLAT": 47,
+      "LONG": 22
+    },
+    "actual_flat_days": 52,
+    "flat_rationale": {
+      "盘面透支涨幅或假突破推升，安全垫一票否决追多": 23,
+      "看多但准入门槛未满足 ": 11,
+      "钢厂即期毛利极度低迷且成本推升，触发低毛利禁多锁，严禁高位追多接盘": 9
+    },
+    "macro_override_days": 59,
+    "low_conf_lt40_days": 54,
+    "above_ma20_2p5_days": 30
+  },
+  "sustained_and_low_margin_lock": {
+    "days": 9,
+    "raw_directions": {
+      "FLAT": 9
+    },
+    "vetted_directions": {
+      "FLAT": 9
+    },
+    "actual_flat_days": 8,
+    "flat_rationale": {
+      "钢厂即期毛利极度低迷且成本推升，触发低毛利禁多锁，严禁高位追多接盘": 9
+    },
+    "macro_override_days": 7,
+    "low_conf_lt40_days": 6,
+    "above_ma20_2p5_days": 7
+  },
+  "recent_2021_onward": {
+    "days": 65,
+    "raw_directions": {
+      "FLAT": 57,
+      "LONG": 8
+    },
+    "flat_rationale": {
+      "模型置信度不足 ，降级观望": 34,
+      "盘面透支涨幅或假突破推升，安全垫一票否决追多": 7,
+      "成材表需虽弱但遭遇原料强力推升，禁空保护": 5,
+      "真实钢厂现货深度亏损下轨支撑，安全垫一票否决杀跌做空": 4,
+      "基本面中性震荡 ": 4,
+      "看多但准入门槛未满足 ": 3
+    }
+  },
+  "metadata": {
+    "checked_on": "2026-09-23",
+    "experiment": "研究/回测实验/20260923T031956Z_2bc43b82",
+    "filter": "existing raw cost-push proxy AND past 5-trading-day RB return > 0; no forward-return filter",
+    "scope": "saved decision audit, not a new strategy backtest",
+    "settings": {
+      "initial_capital": 10000000,
+      "slippage_ticks": 1.0,
+      "commission_rate": 0.0001,
+      "margin_rate": 0.1,
+      "max_base_leverage": 5.0,
+      "max_margin_utilization": 0.5,
+      "scale_by_confidence": true,
+      "common_risk_controls": true
+    },
+    "sources": {
+      "数据/加工/阶段B_特征宽表.parquet": "a8a8c70778cfa2c95c4e59be0948c6d35cb31485dee23f350a86df5abb0be4f3",
+      "研究/回测实验/20260923T031956Z_2bc43b82/candidate_states.parquet": "2eea501823ecef384b00909e72f62179d44620fd0102e92004decbec67759740",
+      "研究/回测实验/20260923T031956Z_2bc43b82/util_50pct_FULL_WITH_DUPLICATE_PROXY_decisions.parquet": "e5e69f569c49219fc764f11fcb7c432312c9ecf0b175d07db7b73e92474bf8ae",
+      "研究/回测实验/20260923T031956Z_2bc43b82/util_50pct_FULL_WITH_DUPLICATE_PROXY_equity.parquet": "02e4fbeb0984ec73735c9f5033541dd888551960ec73e5bfcf134443cf8740f4"
+    },
+    "feature_hash_matches_experiment": true
+  }
+}

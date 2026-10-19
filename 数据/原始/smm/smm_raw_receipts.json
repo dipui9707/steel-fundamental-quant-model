@@ -1,0 +1,6200 @@
+[
+  {
+    "fetched_at": "2026-09-23T09:52:53.840521+00:00",
+    "batch_index": 1,
+    "requested_ids": [
+      "s22804474",
+      "s22804484",
+      "s22813839",
+      "s22813854",
+      "s22813804"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "s22804474",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-23",
+              "value": "497",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "497",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "498",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-26",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-25",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-24",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-21",
+              "value": "489",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-20",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-19",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-18",
+              "value": "487",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-17",
+              "value": "487",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-14",
+              "value": "487",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-13",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-12",
+              "value": "486",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-11",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-10",
+              "value": "485",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22804484",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-23",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "489",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "490",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "490",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-26",
+              "value": "490",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-25",
+              "value": "490",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-24",
+              "value": "490",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-21",
+              "value": "486",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-20",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-19",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-18",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-17",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-14",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-13",
+              "value": "482",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-12",
+              "value": "483",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-11",
+              "value": "482",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-10",
+              "value": "482",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22813839",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-23",
+              "value": "486",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "486",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "482",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "483",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "487",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "489",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "489",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "482",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-26",
+              "value": "482",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-25",
+              "value": "482",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-24",
+              "value": "482",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-21",
+              "value": "478",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-20",
+              "value": "476",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-19",
+              "value": "476",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-18",
+              "value": "475",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-17",
+              "value": "475",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-14",
+              "value": "475",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-13",
+              "value": "475",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-12",
+              "value": "476",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-11",
+              "value": "476",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-10",
+              "value": "478",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22813854",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-23",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-26",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-25",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-24",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-21",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-20",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-19",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-18",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-17",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-14",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-13",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-12",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-11",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-10",
+              "value": "530",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22813804",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-23",
+              "value": "472",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "472",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "471",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "465",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "465",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "467",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "465",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "461",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-26",
+              "value": "460",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-25",
+              "value": "460",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-24",
+              "value": "459",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-21",
+              "value": "457",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-20",
+              "value": "455",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-19",
+              "value": "455",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-18",
+              "value": "455",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-17",
+              "value": "455",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-14",
+              "value": "455",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-13",
+              "value": "454",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-12",
+              "value": "455",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-11",
+              "value": "455",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-10",
+              "value": "455",
+              "unit": "USD/tonne"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-09-23T09:52:55.513136+00:00",
+    "batch_index": 2,
+    "requested_ids": [
+      "a10148222",
+      "a10135358",
+      "a10135357",
+      "a10146512",
+      "a10102482"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "a10148222",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-18",
+              "value": "370.58",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "344.22",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "320.42",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "338.09",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-21",
+              "value": "268.11",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-14",
+              "value": "220.59",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10135358",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-18",
+              "value": "24.83",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "27.26",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "45.72",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "43.67",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-21",
+              "value": "27.08",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-14",
+              "value": "30.7",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10135357",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-18",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-21",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-14",
+              "value": "0",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10146512",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-18",
+              "value": "865.75",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "844.34",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "698.24",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "634.5",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-21",
+              "value": "925.32",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-14",
+              "value": "517.41",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10102482",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "81.7",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "77.8",
+              "unit": "10kt"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-09-23T09:52:57.167018+00:00",
+    "batch_index": 3,
+    "requested_ids": [
+      "a12885073",
+      "a12885074",
+      "a12885072",
+      "a12885082",
+      "a12885083"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "a12885073",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": []
+        },
+        {
+          "indicator_id": "a12885074",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": []
+        },
+        {
+          "indicator_id": "a12885072",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": []
+        },
+        {
+          "indicator_id": "a12885082",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "4.7",
+              "unit": "million mt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12885083",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "1.54",
+              "unit": "million mt"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-09-23T09:52:58.822396+00:00",
+    "batch_index": 4,
+    "requested_ids": [
+      "a12885081",
+      "a12796380",
+      "a12750001",
+      "a12817930",
+      "a12885068"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "a12885081",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "14.79",
+              "unit": "million mt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12796380",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "400.78",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "392.62",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12750001",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-17",
+              "value": "320.21",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "314.81",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "307.68",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "293.37",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-20",
+              "value": "300.1",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-13",
+              "value": "313.53",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12817930",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "1561.11",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12885068",
+          "data_range": {
+            "requested_start_date": "2026-08-09",
+            "requested_end_date": "2026-10-08",
+            "actual_start_date": "2026-08-09",
+            "actual_end_date": "2026-10-08",
+            "limited": false
+          },
+          "records": []
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-07T14:49:20.928788+00:00",
+    "batch_index": 1,
+    "requested_ids": [
+      "s22804474",
+      "s22804484",
+      "s22813839",
+      "s22813854",
+      "s22813804"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "s22804474",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "497",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "497",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "498",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-26",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-25",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-24",
+              "value": "492",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22804484",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "489",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "490",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "490",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-26",
+              "value": "490",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-25",
+              "value": "490",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-24",
+              "value": "490",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22813839",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "486",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "486",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "482",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "483",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "487",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "489",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "489",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "482",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-26",
+              "value": "482",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-25",
+              "value": "482",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-24",
+              "value": "482",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22813854",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-26",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-25",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-24",
+              "value": "530",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22813804",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "471",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "472",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "472",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "471",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "465",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "465",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "467",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "465",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "461",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-26",
+              "value": "460",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-25",
+              "value": "460",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-24",
+              "value": "459",
+              "unit": "USD/tonne"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-07T14:49:22.487259+00:00",
+    "batch_index": 2,
+    "requested_ids": [
+      "a10148222",
+      "a10135358",
+      "a10135357",
+      "a10146512",
+      "a10102482"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "a10148222",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-02",
+              "value": "338.09",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "319.51",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "370.58",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "344.22",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "320.42",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "338.09",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10135358",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-02",
+              "value": "35.9",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "10.29",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "24.83",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "27.26",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "45.72",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "43.67",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10135357",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-02",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "0",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10146512",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-02",
+              "value": "779.55",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "933.99",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "865.75",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "844.34",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "698.24",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "634.5",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10102482",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "81.7",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "77.8",
+              "unit": "10kt"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-07T14:49:24.044185+00:00",
+    "batch_index": 3,
+    "requested_ids": [
+      "a12885073",
+      "a12885074",
+      "a12885072",
+      "a12885082",
+      "a12885083"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "a12885073",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": []
+        },
+        {
+          "indicator_id": "a12885074",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": []
+        },
+        {
+          "indicator_id": "a12885072",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": []
+        },
+        {
+          "indicator_id": "a12885082",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "4.7",
+              "unit": "million mt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12885083",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "1.54",
+              "unit": "million mt"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-07T14:49:25.604144+00:00",
+    "batch_index": 4,
+    "requested_ids": [
+      "a12885081",
+      "a12796380",
+      "a12750001",
+      "a12817930",
+      "a12885068"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "a12885081",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "14.79",
+              "unit": "million mt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12796380",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "400.78",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "392.62",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12750001",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-01",
+              "value": "310.74",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "331",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "320.21",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "314.81",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "307.68",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "293.37",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12817930",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "1561.11",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12885068",
+          "data_range": {
+            "requested_start_date": "2026-08-23",
+            "requested_end_date": "2026-10-22",
+            "actual_start_date": "2026-08-23",
+            "actual_end_date": "2026-10-22",
+            "limited": false
+          },
+          "records": []
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-10T11:12:25.436131+00:00",
+    "batch_index": 1,
+    "requested_ids": [
+      "s22804474",
+      "s22804484",
+      "s22813839",
+      "s22813854",
+      "s22813804"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "s22804474",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-10",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-09",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "497",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "497",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "498",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-26",
+              "value": "492",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22804484",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-10",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-09",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "489",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "490",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "490",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-26",
+              "value": "490",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22813839",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-10",
+              "value": "481",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-09",
+              "value": "481",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "486",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "486",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "482",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "483",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "487",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "489",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "489",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "482",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-26",
+              "value": "482",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22813854",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-10",
+              "value": "545",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-09",
+              "value": "545",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-26",
+              "value": "530",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22813804",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-10",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-09",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "471",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "472",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "472",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "471",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "465",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "465",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "467",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "465",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "461",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-26",
+              "value": "460",
+              "unit": "USD/tonne"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-10T11:12:27.099600+00:00",
+    "batch_index": 2,
+    "requested_ids": [
+      "a10148222",
+      "a10135358",
+      "a10135357",
+      "a10146512",
+      "a10102482"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "a10148222",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-02",
+              "value": "338.09",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "319.51",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "370.58",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "344.22",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "320.42",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "338.09",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10135358",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-02",
+              "value": "35.9",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "10.29",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "24.83",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "27.26",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "45.72",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "43.67",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10135357",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-02",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "0",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10146512",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-02",
+              "value": "779.55",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "933.99",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "865.75",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "844.34",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "698.24",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-28",
+              "value": "634.5",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10102482",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "81.7",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "77.8",
+              "unit": "10kt"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-10T11:12:28.721277+00:00",
+    "batch_index": 3,
+    "requested_ids": [
+      "a12885073",
+      "a12885074",
+      "a12885072",
+      "a12885082",
+      "a12885083"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "a12885073",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": []
+        },
+        {
+          "indicator_id": "a12885074",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": []
+        },
+        {
+          "indicator_id": "a12885072",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": []
+        },
+        {
+          "indicator_id": "a12885082",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "4.7",
+              "unit": "million mt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12885083",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "1.54",
+              "unit": "million mt"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-10T11:12:30.362318+00:00",
+    "batch_index": 4,
+    "requested_ids": [
+      "a12885081",
+      "a12796380",
+      "a12750001",
+      "a12817930",
+      "a12885068"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "a12885081",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "14.79",
+              "unit": "million mt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12796380",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "400.78",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "392.62",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12750001",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-08",
+              "value": "286.77",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-10-01",
+              "value": "310.74",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "331",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "320.21",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "314.81",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "307.68",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-27",
+              "value": "293.37",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12817930",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "1561.11",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12885068",
+          "data_range": {
+            "requested_start_date": "2026-08-26",
+            "requested_end_date": "2026-10-25",
+            "actual_start_date": "2026-08-26",
+            "actual_end_date": "2026-10-25",
+            "limited": false
+          },
+          "records": []
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-14T06:35:57.586530+00:00",
+    "batch_index": 1,
+    "requested_ids": [
+      "s22804474",
+      "s22804484",
+      "s22813839",
+      "s22813854",
+      "s22813804"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "s22804474",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-14",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-13",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-12",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-10",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-09",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "497",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "497",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "498",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22804484",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-14",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-13",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-12",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-10",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-09",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "489",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "490",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "494",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22813839",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-14",
+              "value": "480",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-13",
+              "value": "481",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-12",
+              "value": "481",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-10",
+              "value": "481",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-09",
+              "value": "481",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "486",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "486",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "482",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "483",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "487",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "489",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "489",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22813854",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-14",
+              "value": "545",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-13",
+              "value": "545",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-12",
+              "value": "545",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-10",
+              "value": "545",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-09",
+              "value": "545",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "530",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22813804",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-14",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-13",
+              "value": "467",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-12",
+              "value": "467",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-10",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-09",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "471",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "472",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "472",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "471",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "465",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "465",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-01",
+              "value": "467",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "468",
+              "unit": "USD/tonne"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-14T06:35:59.471451+00:00",
+    "batch_index": 2,
+    "requested_ids": [
+      "a10148222",
+      "a10135358",
+      "a10135357",
+      "a10146512",
+      "a10102482"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "a10148222",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-09",
+              "value": "303.35",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-10-02",
+              "value": "338.09",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "319.51",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "370.58",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "344.22",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "320.42",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10135358",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-09",
+              "value": "47.69",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-10-02",
+              "value": "35.9",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "10.29",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "24.83",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "27.26",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "45.72",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10135357",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-09",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-10-02",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "0",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10146512",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-09",
+              "value": "847.38",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-10-02",
+              "value": "779.55",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "933.99",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "865.75",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "844.34",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "698.24",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10102482",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "81.7",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "77.8",
+              "unit": "10kt"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-14T06:36:01.359076+00:00",
+    "batch_index": 3,
+    "requested_ids": [
+      "a12885073",
+      "a12885074",
+      "a12885072",
+      "a12885082",
+      "a12885083"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "a12885073",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "4.5",
+              "unit": "million mt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12885074",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "1.5",
+              "unit": "million mt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12885072",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "14.7",
+              "unit": "million mt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12885082",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "5.2",
+              "unit": "million mt"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "4.7",
+              "unit": "million mt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12885083",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "1.5",
+              "unit": "million mt"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "1.54",
+              "unit": "million mt"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-14T06:36:03.191122+00:00",
+    "batch_index": 4,
+    "requested_ids": [
+      "a12885081",
+      "a12796380",
+      "a12750001",
+      "a12817930",
+      "a12885068"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "a12885081",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "15",
+              "unit": "million mt"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "14.79",
+              "unit": "million mt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12796380",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "400.78",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-08-31",
+              "value": "392.62",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12750001",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-08",
+              "value": "286.77",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-10-01",
+              "value": "310.74",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "331",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "320.21",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "314.81",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "307.68",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12817930",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "1561.11",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12885068",
+          "data_range": {
+            "requested_start_date": "2026-08-30",
+            "requested_end_date": "2026-10-29",
+            "actual_start_date": "2026-08-30",
+            "actual_end_date": "2026-10-29",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-08-31",
+              "value": "69.8",
+              "unit": "million mt"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-17T07:38:40.816261+00:00",
+    "batch_index": 1,
+    "requested_ids": [
+      "s22804474",
+      "s22804484",
+      "s22813839",
+      "s22813854",
+      "s22813804"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "s22804474",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-16",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-15",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-14",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-13",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-12",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-10",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-09",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "497",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "497",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "495",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "496",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "495",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22804484",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-16",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-15",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-14",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-13",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-12",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-10",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-09",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "493",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "494",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "489",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "490",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "492",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "491",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "492",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22813839",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-16",
+              "value": "479",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-15",
+              "value": "479",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-14",
+              "value": "480",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-13",
+              "value": "481",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-12",
+              "value": "481",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-10",
+              "value": "481",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-09",
+              "value": "481",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "486",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "486",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "485",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "484",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "482",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "483",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "488",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "487",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "488",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22813854",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-16",
+              "value": "545",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-15",
+              "value": "545",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-14",
+              "value": "545",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-13",
+              "value": "545",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-12",
+              "value": "545",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-10",
+              "value": "545",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-09",
+              "value": "545",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "540",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "535",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "530",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "530",
+              "unit": "USD/tonne"
+            }
+          ]
+        },
+        {
+          "indicator_id": "s22813804",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-16",
+              "value": "465",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-15",
+              "value": "465",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-14",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-13",
+              "value": "467",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-12",
+              "value": "467",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-10",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-09",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-29",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-28",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "471",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-23",
+              "value": "472",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-22",
+              "value": "472",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-21",
+              "value": "471",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-20",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-16",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-15",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-14",
+              "value": "465",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "465",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-09",
+              "value": "470",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-08",
+              "value": "469",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-07",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "468",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "466",
+              "unit": "USD/tonne"
+            },
+            {
+              "date": "2026-09-02",
+              "value": "466",
+              "unit": "USD/tonne"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-17T07:38:42.379768+00:00",
+    "batch_index": 2,
+    "requested_ids": [
+      "a10148222",
+      "a10135358",
+      "a10135357",
+      "a10146512",
+      "a10102482"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "a10148222",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-09",
+              "value": "303.35",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-10-02",
+              "value": "338.09",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "319.51",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "370.58",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "344.22",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "320.42",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10135358",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-09",
+              "value": "47.69",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-10-02",
+              "value": "35.9",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "10.29",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "24.83",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "27.26",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "45.72",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10135357",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-09",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-10-02",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "0",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "0",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10146512",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-09",
+              "value": "847.38",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-10-02",
+              "value": "779.55",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-25",
+              "value": "933.99",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-18",
+              "value": "865.75",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-11",
+              "value": "844.34",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-04",
+              "value": "698.24",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a10102482",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-31",
+              "value": "74",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "81.7",
+              "unit": "10kt"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-17T07:38:43.942423+00:00",
+    "batch_index": 3,
+    "requested_ids": [
+      "a12885073",
+      "a12885074",
+      "a12885072",
+      "a12885082",
+      "a12885083"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "a12885073",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": []
+        },
+        {
+          "indicator_id": "a12885074",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": []
+        },
+        {
+          "indicator_id": "a12885072",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": []
+        },
+        {
+          "indicator_id": "a12885082",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "5.2",
+              "unit": "million mt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12885083",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "1.5",
+              "unit": "million mt"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fetched_at": "2026-10-17T07:38:45.509825+00:00",
+    "batch_index": 4,
+    "requested_ids": [
+      "a12885081",
+      "a12796380",
+      "a12750001",
+      "a12817930",
+      "a12885068"
+    ],
+    "response": {
+      "data": [
+        {
+          "indicator_id": "a12885081",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-09-30",
+              "value": "15",
+              "unit": "million mt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12796380",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-31",
+              "value": "403.08",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-30",
+              "value": "400.78",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12750001",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": [
+            {
+              "date": "2026-10-15",
+              "value": "322.44",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-10-08",
+              "value": "286.8",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-10-01",
+              "value": "295.66",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-24",
+              "value": "331",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-17",
+              "value": "320.21",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-10",
+              "value": "314.81",
+              "unit": "10kt"
+            },
+            {
+              "date": "2026-09-03",
+              "value": "307.68",
+              "unit": "10kt"
+            }
+          ]
+        },
+        {
+          "indicator_id": "a12817930",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": []
+        },
+        {
+          "indicator_id": "a12885068",
+          "data_range": {
+            "requested_start_date": "2026-09-02",
+            "requested_end_date": "2026-11-01",
+            "actual_start_date": "2026-09-02",
+            "actual_end_date": "2026-11-01",
+            "limited": false
+          },
+          "records": []
+        }
+      ]
+    }
+  }
+]

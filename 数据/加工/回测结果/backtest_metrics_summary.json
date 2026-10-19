@@ -1,0 +1,122 @@
+{
+  "strat1_inventory": {
+    "name": "strat1_inventory",
+    "total_return_pct": 12.43,
+    "cagr_pct": 1.42,
+    "annualized_vol_pct": 15.38,
+    "max_drawdown_pct": -42.74,
+    "sharpe_ratio": -0.04,
+    "calmar_ratio": 0.03,
+    "win_rate_pct": 50.95,
+    "profit_loss_ratio": 0.97,
+    "trading_days": 2074,
+    "active_days": 1584,
+    "yearly_returns": {
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 27.64,
+      "2021": -31.1,
+      "2022": 29.84,
+      "2023": -3.27,
+      "2024": 2.78,
+      "2025": -6.63,
+      "2026": 6.07
+    }
+  },
+  "strat2_basis": {
+    "name": "strat2_basis",
+    "total_return_pct": -24.69,
+    "cagr_pct": -3.36,
+    "annualized_vol_pct": 9.64,
+    "max_drawdown_pct": -46.42,
+    "sharpe_ratio": -0.56,
+    "calmar_ratio": -0.07,
+    "win_rate_pct": 49.44,
+    "profit_loss_ratio": 0.9,
+    "trading_days": 2074,
+    "active_days": 625,
+    "yearly_returns": {
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": -42.27,
+      "2022": 6.92,
+      "2023": 3.14,
+      "2024": 19.66,
+      "2025": -2.26,
+      "2026": 1.13
+    }
+  },
+  "strat3_margin": {
+    "name": "strat3_margin",
+    "total_return_pct": -23.33,
+    "cagr_pct": -3.15,
+    "annualized_vol_pct": 15.44,
+    "max_drawdown_pct": -39.36,
+    "sharpe_ratio": -0.33,
+    "calmar_ratio": -0.08,
+    "win_rate_pct": 49.82,
+    "profit_loss_ratio": 0.95,
+    "trading_days": 2074,
+    "active_days": 1409,
+    "yearly_returns": {
+      "2018": -16.37,
+      "2019": -0.55,
+      "2020": 34.32,
+      "2021": -8.4,
+      "2022": -17.99,
+      "2023": 12.22,
+      "2024": -21.28,
+      "2025": 5.56,
+      "2026": -2.03
+    }
+  },
+  "strat4_combo": {
+    "name": "strat4_combo",
+    "total_return_pct": -7.92,
+    "cagr_pct": -0.99,
+    "annualized_vol_pct": 13.01,
+    "max_drawdown_pct": -44.06,
+    "sharpe_ratio": -0.23,
+    "calmar_ratio": -0.02,
+    "win_rate_pct": 50.72,
+    "profit_loss_ratio": 0.95,
+    "trading_days": 2074,
+    "active_days": 1175,
+    "yearly_returns": {
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 27.53,
+      "2021": -36.76,
+      "2022": 12.0,
+      "2023": -3.14,
+      "2024": 1.08,
+      "2025": -0.53,
+      "2026": 4.68
+    }
+  },
+  "benchmark_bnh": {
+    "name": "benchmark_bnh",
+    "total_return_pct": -16.35,
+    "cagr_pct": -2.13,
+    "annualized_vol_pct": 18.83,
+    "max_drawdown_pct": -51.94,
+    "sharpe_ratio": -0.22,
+    "calmar_ratio": -0.04,
+    "win_rate_pct": 51.09,
+    "profit_loss_ratio": 0.93,
+    "trading_days": 2074,
+    "active_days": 2073,
+    "yearly_returns": {
+      "2018": -8.27,
+      "2019": 0.09,
+      "2020": 26.39,
+      "2021": -0.12,
+      "2022": -4.98,
+      "2023": -2.13,
+      "2024": -17.2,
+      "2025": -5.59,
+      "2026": -0.74
+    }
+  }
+}
